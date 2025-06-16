@@ -275,6 +275,7 @@ section {
     max-width: 1200px;
     margin: 3rem auto 0;
     align-items: start;
+    perspective: 2000px;
 }
 
 .pricing-card {
@@ -284,17 +285,22 @@ section {
     text-align: left;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) rotateY(12deg);
     box-shadow: var(--shadow-md);
 }
 
 .pricing-card.featured {
     border-color: var(--purple-1);
     transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-10px) rotateY(12deg);
 }
 
 .card-header {
