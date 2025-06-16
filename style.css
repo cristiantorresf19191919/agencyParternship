@@ -285,8 +285,8 @@ section {
     text-align: left;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    transform-style: preserve-3d;
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+    transform-style: preserve-3d !important;
 }
 
 .pricing-card:hover {
