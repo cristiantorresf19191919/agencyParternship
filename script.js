@@ -90,4 +90,24 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroTitle) {
     heroTitle.classList.add('hero-title-animate');
   }
+
+  // Typing effect for hero subtitle
+  function typeText(element, text, delay = 40, cb) {
+    let i = 0;
+    function type() {
+      if (i <= text.length) {
+        element.innerHTML = text.slice(0, i) + '<span class="typed-cursor">|</span>';
+        i++;
+        setTimeout(type, delay);
+      } else {
+        element.innerHTML = text;
+        if (cb) setTimeout(cb, 600);
+      }
+    }
+    type();
+  }
+  const subtitleEl = document.getElementById('typed-subtitle');
+  if (subtitleEl) {
+    typeText(subtitleEl, 'Creamos <strong>activos digitales que venden.</strong><br>Diseño, estrategia y tecnología unidos para resultados reales.', 32);
+  }
 });

@@ -452,6 +452,7 @@ section {
     margin-bottom: 1.5rem;
     font-size: 1.08rem;
     box-shadow: 0 2px 8px rgba(160, 106, 249, 0.04);
+    list-style: none;
 }
 
 .features-list li {
@@ -1361,5 +1362,27 @@ section {
 
     .floating-gradient-banner i {
         font-size: 1.1em;
+    }
+}
+
+.typed-cursor {
+    display: inline-block;
+    width: 1ch;
+    color: #7a3ff7;
+    animation: blink-cursor 0.9s steps(1) infinite;
+    font-weight: 700;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+@keyframes blink-cursor {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
     }
 }
