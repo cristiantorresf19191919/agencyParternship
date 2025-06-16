@@ -110,4 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (subtitleEl) {
     typeText(subtitleEl, 'Creamos <strong>activos digitales que venden.</strong><br>Diseño, estrategia y tecnología unidos para resultados reales.', 32);
   }
+
+  // Dark/Light mode toggle
+  const btn = document.getElementById('theme-toggle');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && prefersDark)) {
+    document.body.classList.add('dark-mode');
+  }
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  });
 });

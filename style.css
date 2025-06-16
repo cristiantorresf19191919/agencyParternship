@@ -27,6 +27,15 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+    --bg-dark: #181c22;
+    --text-dark: #23272f;
+    --bg-light: #fdfcff;
+    --text-light: #6c757d;
+    --card-dark: #23243a;
+    --card-light: #fff;
+    --border-dark: #23243a;
+    --border-light: #e9ecef;
 }
 
 * {
@@ -45,6 +54,158 @@ body {
     background-color: var(--white);
     color: var(--text-dark);
     font-weight: 400;
+}
+
+body.dark-mode,
+body.dark-mode html,
+body.dark-mode main,
+body.dark-mode section,
+body.dark-mode .hero,
+body.dark-mode .features,
+body.dark-mode .portfolio,
+body.dark-mode .contact,
+body.dark-mode .full-width-cta,
+body.dark-mode .faq-section {
+    background: #181c22 !important;
+}
+
+body.dark-mode {
+    background: #181c22 !important;
+    color: #fdfcff;
+}
+
+body.dark-mode .header,
+body.dark-mode .footer {
+    background: #23243a !important;
+    color: #fff !important;
+}
+
+body.dark-mode .logo,
+body.dark-mode .footer .logo {
+    color: #fff !important;
+}
+
+body.dark-mode .nav-links a {
+    color: #fff !important;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #a06af9 !important;
+}
+
+body.dark-mode .pricing-card,
+body.dark-mode .features-list,
+body.dark-mode .info-box,
+body.dark-mode .portfolio-item {
+    background: #23243a !important;
+    color: #fff !important;
+    border-color: #23243a !important;
+}
+
+body.dark-mode .pricing-card h3,
+body.dark-mode .pricing-card .tag,
+body.dark-mode .features-list li,
+body.dark-mode .price-container,
+body.dark-mode .price-container strong,
+body.dark-mode .price-container .currency {
+    color: #fff !important;
+}
+
+body.dark-mode .cta-button.primary-light {
+    background: linear-gradient(90deg, #23243a 0%, #6f42c1 100%) !important;
+    color: #fff !important;
+    border: none;
+}
+
+body.dark-mode .cta-button.primary-light:hover {
+    background: linear-gradient(90deg, #6f42c1 0%, #23243a 100%) !important;
+    color: #fff !important;
+}
+
+body.dark-mode .accordion-trigger {
+    color: #fff !important;
+}
+
+body.dark-mode .section-title,
+body.dark-mode .section-title strong {
+    color: #fff !important;
+}
+
+body.dark-mode .header,
+body.dark-mode .footer,
+body.dark-mode .pricing-card,
+body.dark-mode .info-box,
+body.dark-mode .contact-card,
+body.dark-mode .portfolio-item,
+body.dark-mode .features-list {
+    background: var(--card-dark) !important;
+    color: #fdfcff !important;
+    border-color: var(--border-dark) !important;
+    box-shadow: none !important;
+}
+
+body.dark-mode .section-title,
+body.dark-mode .section-title strong,
+body.dark-mode .hero-title,
+body.dark-mode .hero-title strong,
+body.dark-mode .hero-stat-value,
+body.dark-mode .cta-button,
+body.dark-mode .cta-button.primary,
+body.dark-mode .cta-button.secondary,
+body.dark-mode .cta-button.purple-gradient,
+body.dark-mode .cta-button.pink-gradient,
+body.dark-mode .cta-button.teal-gradient {
+    color: #fff !important;
+}
+
+body.dark-mode .features-list {
+    background: #23243a !important;
+}
+
+body.dark-mode .gradient-banner,
+body.dark-mode .full-width-cta {
+    color: #fff;
+}
+
+body.dark-mode .gradient-banner-wave svg,
+body.dark-mode .hero-value-wave svg,
+body.dark-mode .hero__wave {
+    fill: #181c22 !important;
+}
+
+body.dark-mode .pill {
+    background: #23243a;
+    color: #fff;
+    border-color: #23243a;
+}
+
+body.dark-mode .contact-section-title {
+    color: #fff;
+}
+
+body.dark-mode .accordion-item {
+    background: #23243a;
+    color: #fff;
+    border-color: #23243a;
+}
+
+body.dark-mode .accordion-content {
+    color: #e9ecef;
+}
+
+body.dark-mode .portfolio-stats {
+    background: #23243a;
+    color: #fff;
+}
+
+body.dark-mode .portfolio-info p {
+    color: #e9ecef;
+}
+
+body.dark-mode .contact-card-title,
+body.dark-mode .contact-card-main,
+body.dark-mode .contact-card-sub {
+    color: #fff !important;
 }
 
 /* General & Reusable Styles */
@@ -1413,4 +1574,106 @@ section {
 .gradient-link:hover {
     opacity: 0.7;
     text-decoration: underline;
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 1200;
+    background: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    box-shadow: 0 2px 10px rgba(160, 106, 249, 0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.7rem;
+    outline: none;
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+    position: absolute;
+    transition: opacity 0.4s, transform 0.4s;
+    pointer-events: none;
+}
+
+.theme-toggle .icon-sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: #f9d923;
+}
+
+.theme-toggle .icon-moon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.7);
+    color: #7a3ff7;
+}
+
+body.dark-mode .theme-toggle .icon-sun {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.7);
+}
+
+body.dark-mode .theme-toggle .icon-moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+body.dark-mode .cta-button.secondary,
+body.dark-mode .faq-contact-suggest .cta-button.secondary,
+body.dark-mode .consult-cta .cta-button.secondary,
+body.dark-mode .cta-button.full-width {
+    background: #fff !important;
+    color: #23243a !important;
+    border: 1.5px solid #444 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+body.dark-mode .cta-button.secondary:hover,
+body.dark-mode .faq-contact-suggest .cta-button.secondary:hover,
+body.dark-mode .consult-cta .cta-button.secondary:hover,
+body.dark-mode .cta-button.full-width:hover {
+    background: #e9ecef !important;
+    color: #23243a !important;
+}
+
+body.dark-mode .faq-contact-suggest p,
+body.dark-mode .consult-cta p,
+body.dark-mode .hero-subtitle {
+    color: #fff !important;
+}
+
+body.dark-mode #contact-form {
+    background: #23243a !important;
+    color: #fff !important;
+    border-color: #23243a !important;
+    box-shadow: 1px 3px 6px #000000b5;
+}
+
+body.dark-mode #contact-form input,
+body.dark-mode #contact-form select,
+body.dark-mode #contact-form textarea {
+    background: #181c22 !important;
+    color: #fff !important;
+    border: 1px solid #333 !important;
+}
+
+body.dark-mode #contact-form input::placeholder,
+body.dark-mode #contact-form textarea::placeholder {
+    color: #b0b0b0 !important;
+    opacity: 1;
+}
+
+body.dark-mode #contact-form label {
+    color: #e9ecef !important;
 }
