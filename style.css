@@ -42,15 +42,10 @@ body {
     line-height: 1.7;
     background-color: var(--white);
     color: var(--text-dark);
-    overflow-x: hidden;
     font-weight: 400;
 }
 
 /* General & Reusable Styles */
-main {
-    overflow: hidden;
-}
-
 section {
     padding: 6rem 5%;
     text-align: center;
@@ -285,23 +280,25 @@ section {
     text-align: left;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
-    transition: all 0.5s ease !important;
-    transform-style: preserve-3d !important;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px) rotateY(12deg) !important;
-    box-shadow: var(--shadow-md) !important;
-    transition: all 0.5s ease !important;
+    transform: translateY(-10px) rotateY(12deg);
+    box-shadow: var(--shadow-md);
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 
 .pricing-card.featured {
     border-color: var(--purple-1);
-    transform: scale(1.05) !important;
+    transform: scale(1.05);
 }
 
 .pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-10px) rotateY(12deg) !important;
+    transform: scale(1.05) translateY(-10px) rotateY(12deg);
 }
 
 .card-header {
