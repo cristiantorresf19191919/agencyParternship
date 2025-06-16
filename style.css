@@ -747,6 +747,17 @@ section {
 }
 
 /* Animations & Responsive Design */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;

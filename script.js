@@ -44,15 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.animation = 
-          `fadeInUp 1s ${entry.target.dataset.delay||'0s'} forwards ease-out`;
+        entry.target.classList.add('is-visible');
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.2 });
 
-  document.querySelectorAll('.pricing-card, .portfolio-item, .section-title, .section-subtitle, .pill, .contact-container > *').forEach((el) => {
-    el.style.opacity = '0';
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
     scrollObserver.observe(el);
   });
 
