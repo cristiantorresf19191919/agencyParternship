@@ -1720,32 +1720,39 @@ body.dark-mode #contact-form label {
 }
 
 .service-card .card-icon {
-    font-size: 2.2rem;
-    padding: 1rem;
-    border-radius: 15px;
-    margin-bottom: 1.1rem;
-    display: inline-block;
-    transition: background 0.3s, color 0.3s, transform 0.4s cubic-bezier(.23, 1.01, .32, 1);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1.1rem auto;
+    font-size: 2rem;
+    background: linear-gradient(135deg, #eafcf6 60%, #d2fbe7 100%);
+    box-shadow: 0 4px 16px 0 rgba(44, 62, 80, 0.10);
+    color: #2EDC9B;
+    transition: background 0.4s, transform 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
 .service-card:hover .card-icon {
-    transform: scale(1.18) rotate(-8deg);
-    filter: brightness(1.1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.10));
+    transform: scale(1.13) rotate(-6deg);
+    box-shadow: 0 8px 24px 0 rgba(44, 62, 80, 0.18);
+    filter: brightness(1.08);
 }
 
 .service-card .card-icon.green {
-    background: linear-gradient(135deg, #eafcf6 60%, #d2fbe7 100%);
-    color: #2EDC9B;
+    background: linear-gradient(135deg, #2EDC9B 40%, #b6f7e1 100%);
+    color: #fff;
 }
 
 .service-card .card-icon.teal {
-    background: linear-gradient(135deg, #eafcf6 60%, #e0f7fa 100%);
-    color: #1cc7b6;
+    background: linear-gradient(135deg, #1cc7b6 40%, #b6f7f7 100%);
+    color: #fff;
 }
 
 .service-card .card-icon.blue {
-    background: linear-gradient(135deg, #eaf1fc 60%, #d2e6fb 100%);
-    color: #3a8ef6;
+    background: linear-gradient(135deg, #3a8ef6 40%, #b6d7f7 100%);
+    color: #fff;
 }
 
 .service-card h3 {
@@ -1811,18 +1818,18 @@ body.dark-mode .service-card .features-list {
 }
 
 body.dark-mode .service-card .card-icon.green {
-    background: linear-gradient(135deg, #1b2e2b 60%, #1a3a2e 100%);
-    color: #2EDC9B;
+    background: linear-gradient(135deg, #1b2e2b 60%, #2EDC9B 100%);
+    color: #fff;
 }
 
 body.dark-mode .service-card .card-icon.teal {
-    background: linear-gradient(135deg, #1b2e2b 60%, #1a3a2e 100%);
-    color: #1cc7b6;
+    background: linear-gradient(135deg, #1b2e2b 60%, #1cc7b6 100%);
+    color: #fff;
 }
 
 body.dark-mode .service-card .card-icon.blue {
-    background: linear-gradient(135deg, #1a233a 60%, #1a2e3a 100%);
-    color: #3a8ef6;
+    background: linear-gradient(135deg, #1a233a 60%, #3a8ef6 100%);
+    color: #fff;
 }
 
 body.dark-mode .services-overview .section-title,
