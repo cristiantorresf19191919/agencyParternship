@@ -425,44 +425,47 @@ section {
 }
 
 .pricing-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: #181c22;
 }
 
 .tag {
-    font-size: 0.9rem;
+    font-size: 1.08rem;
     font-weight: 500;
-    color: var(--text-light);
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
 }
 
 .card-description {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-    text-align: center;
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
 }
 
 .features-list {
-    list-style: none;
-    margin-bottom: 2rem;
+    background: #f8f5ff;
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.08rem;
+    box-shadow: 0 2px 8px rgba(160, 106, 249, 0.04);
 }
 
 .features-list li {
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-light);
+    color: #181c22;
+    font-weight: 500;
 }
 
 .features-list i {
     color: var(--teal-1);
+    font-size: 1.1rem;
 }
 
 .price-container {
-    text-align: center;
-    margin-bottom: 2rem;
+    margin: 1.2rem 0 0.5rem 0;
 }
 
 .price-container span {
@@ -471,9 +474,10 @@ section {
 }
 
 .price-container strong {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-dark);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #6c757d;
+    letter-spacing: 0;
 }
 
 .price-container .currency {
@@ -531,27 +535,30 @@ section {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
+    transform: scale(1);
+    transform-origin: center;
     text-align: left;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-md);
+    transform: scale(1.05) translateY(-5px) skewY(-2.8deg);
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
 .portfolio-item img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    transition: transform 0.4s cubic-bezier(.4, 0, .2, 1), box-shadow 0.3s;
+    transition: transform 0.4s ease, box-shadow 0.3s;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     will-change: transform;
 }
 
 .portfolio-item:hover img {
-    animation: imgBounceZoom 0.7s cubic-bezier(.23, 1.05, .32, 1);
+    transform: scale(1.05) translateY(-5px) skewY(-2.8deg);
+    transition: transform 0.4s ease, box-shadow 0.6s;
     box-shadow: 0 8px 32px 0 rgba(138, 84, 248, 0.13);
     z-index: 2;
 }
