@@ -300,7 +300,7 @@ section {
 }
 
 .pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-10px) rotateY(12deg);
+    transform: scale(1.05) translateY(-10px) rotateY(12deg) !important;
 }
 
 .card-header {
