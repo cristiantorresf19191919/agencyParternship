@@ -1194,3 +1194,47 @@ section {
         transform: scale(1) skewY(0) rotate(0);
     }
 }
+
+.gradient-banner {
+    width: 100%;
+    background: linear-gradient(90deg, #a06af9 0%, #f8549b 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 3.5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gradient-banner-content {
+    color: #fff;
+    font-size: 2.3rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    padding: 0 1rem;
+}
+
+.gradient-banner-wave {
+    width: 100%;
+    line-height: 0;
+    position: relative;
+    top: 0;
+}
+
+@media (max-width: 600px) {
+    .gradient-banner-content {
+        font-size: 1.3rem;
+        padding: 0 0.5rem;
+    }
+
+    .gradient-banner {
+        padding: 2rem 0 0 0;
+    }
+
+    .gradient-banner-wave svg {
+        height: 30px !important;
+    }
+}
