@@ -51,25 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.pricing-card, .portfolio-item, .section-title, .section-subtitle, .pill, .contact-container > *')
-    .forEach(el => {
-      el.style.opacity = '0';
-      scrollObserver.observe(el);
-    });
-
-  // Inserta keyframes
-  const sheet = document.styleSheets[0];
-  sheet.insertRule(`
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  `, sheet.cssRules.length);
+  document.querySelectorAll('.pricing-card, .portfolio-item, .section-title, .section-subtitle, .pill, .contact-container > *').forEach((el) => {
+    el.style.opacity = '0';
+    scrollObserver.observe(el);
+  });
 
   // ——— Envío de formulario ———
   document.getElementById('contact-form').addEventListener('submit', async e => {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.target).entries());
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
     data.timestamp = new Date();
 
     // Guarda en Firestore

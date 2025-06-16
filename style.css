@@ -749,6 +749,18 @@ section {
 }
 
 /* Animations & Responsive Design */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media(max-width: 992px) {
     .hero-title {
         font-size: 3.5rem;
