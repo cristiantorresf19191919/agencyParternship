@@ -23,8 +23,10 @@
     --cta-gradient: linear-gradient(90deg, #A06AF9, #F8549B);
 
     /* Shadows */
-    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -278,7 +280,7 @@ section {
     padding: 2.5rem;
     border-radius: 20px;
     text-align: left;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
     transition: all 0.5s ease;
     transform-style: preserve-3d;
@@ -287,14 +289,16 @@ section {
 
 .pricing-card:hover {
     transform: translateY(-10px) rotateY(12deg) !important;
-    box-shadow: var(--shadow-md);
-    transition: all 0.5s ease;
-    cursor: pointer;
+    box-shadow: var(--shadow-lg);
 }
 
 .pricing-card.featured {
     border-color: var(--purple-1);
     transform: scale(1.05);
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pricing-card.featured:hover {
@@ -535,44 +539,57 @@ section {
     flex: 2;
     min-width: 320px;
     background: var(--white);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 2px 4px 21px #0000007d;
     border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 4px 21px #0000009f;
 }
 
 .form-row {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 2rem;
+    margin-bottom: 1.75rem;
 }
 
 .form-group {
     flex: 1;
     display: flex;
     flex-direction: column;
-}
-
-.form-group:last-child {
     margin-bottom: 0;
 }
 
 .form-group label {
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-size: 0.9rem;
+    color: var(--text-light);
 }
 
 #contact-form input,
 #contact-form select,
 #contact-form textarea {
     width: 100%;
-    padding: 0.9rem 1rem;
+    padding: 1rem 1.25rem;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #fafbff;
+}
+
+#contact-form input:hover,
+#contact-form select:hover,
+#contact-form textarea:hover {
+    transform: translateY(-2px);
+    border-color: #d8cfff;
+    box-shadow: var(--shadow-sm);
 }
 
 #contact-form input:focus,
@@ -580,12 +597,15 @@ section {
 #contact-form textarea:focus {
     outline: none;
     border-color: var(--purple-1);
-    box-shadow: 0 0 0 3px rgba(138, 84, 248, 0.2);
+    box-shadow: 0 0 0 4px rgba(138, 84, 248, 0.15);
+    background-color: var(--white);
 }
 
 .cta-button.full-width {
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.1rem;
 }
 
 .contact-info {
@@ -594,13 +614,19 @@ section {
 }
 
 .info-box {
-    padding: 2rem;
-    border-radius: 15px;
+    padding: 2.5rem;
+    border-radius: 20px;
     margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
 .info-box.benefits {
-    background-color: #f2eefc;
+    background-color: #f8f5ff;
 }
 
 .info-box.other-contact {
@@ -645,14 +671,13 @@ section {
 .footer-container {
     max-width: 1400px;
     margin: 0 auto 3rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
+    text-align: center;
 }
 
 .footer-about .logo {
     color: var(--white);
     margin-bottom: 1.5rem;
+    display: inline-flex;
 }
 
 .footer-about .logo i {
@@ -660,9 +685,11 @@ section {
 }
 
 .footer-about p {
-    max-width: 350px;
+    max-width: 450px;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-about .made-with {
@@ -776,7 +803,7 @@ section {
     }
 
     .footer-container {
-        grid-template-columns: 1fr 1fr;
+        /* This rule is no longer needed with a single-column layout */
     }
 }
 
@@ -805,8 +832,7 @@ section {
     }
 
     .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
+        /* This is now handled by the main .footer-container style */
     }
 
     .footer-about p {
