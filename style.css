@@ -285,13 +285,14 @@ section {
     text-align: left;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
-    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+    transition: all 0.5s ease !important;
     transform-style: preserve-3d !important;
 }
 
 .pricing-card:hover {
     transform: translateY(-10px) rotateY(12deg) !important;
     box-shadow: var(--shadow-md) !important;
+    transition: all 0.5s ease !important;
 }
 
 .pricing-card.featured {
