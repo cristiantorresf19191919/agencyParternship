@@ -290,13 +290,13 @@ section {
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px) rotateY(12deg);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-10px) rotateY(12deg) !important;
+    box-shadow: var(--shadow-md) !important;
 }
 
 .pricing-card.featured {
     border-color: var(--purple-1);
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 .pricing-card.featured:hover {
