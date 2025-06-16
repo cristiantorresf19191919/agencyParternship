@@ -1,129 +1,86 @@
 // script.js
+// ——— Importar sólo desde la CDN de Firebase (v9 modular) ———
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import {
+  getFirestore,
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Header scroll effect
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.background = 'rgba(255, 255, 255, 0.8)';
-            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.07)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.8)';
-            header.style.boxShadow = 'none';
-        }
-    });
-
-    // Scroll animations for elements
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = `fadeInUp 1s ${entry.target.dataset.delay || '0s'} forwards ease-out`;
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.pricing-card, .portfolio-item, .section-title, .section-subtitle, .pill, .contact-container > *').forEach((el) => {
-        el.style.opacity = '0';
-        scrollObserver.observe(el);
-    });
-
-    // Add fadeInUp keyframe animation to the stylesheet
-    const styleSheet = document.styleSheets[0];
-    styleSheet.insertRule(`
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    `, styleSheet.cssRules.length);
-
-
-    // Contact form submission
-    document.getElementById('contact-form').addEventListener('submit', e => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const contactData = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            company: formData.get('company'),
-            projectType: formData.get('project-type'),
-            budget: formData.get('budget'),
-            timeline: formData.get('timeline'),
-            message: formData.get('message'),
-            timestamp: new Date()
-        };
-
-        console.log('Form Submitted:', contactData);
-        
-        // Asynchronously save data to Firebase
-        saveContactDataToFirebase(contactData);
-
-        alert('Gracias por tu mensaje. Te contactaremos pronto.');
-        e.target.reset();
-    });
-
-});
-
-// --- Firebase Integration Skeleton ---
-
-// IMPORTANT: Replace with your actual Firebase configuration
+// ——— Tu configuración de Firebase (cópiala de la consola, Apps web) ———
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID", // IMPORTANT: Enter your Project ID here
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAY8bJ3fj_Z3XiFCYhB9-0Np6d6Hsihq88",
+  authDomain: "agencyparnertdhip.firebaseapp.com",
+  projectId: "agencyparnertdhip",
+  storageBucket: "agencyparnertdhip.firebasestorage.app",
+  messagingSenderId: "544806440830",
+  appId: "1:544806440830:web:f5b2877ce2162dd3dfad2f"
 };
 
-// Initialize Firebase
-let app;
-let db;
-// Basic check if config is placeholder
-if (firebaseConfig.projectId !== "YOUR_PROJECT_ID") {
-    app = initializeApp(firebaseConfig);
-    db = getFirestore(app);
-} else {
-    console.warn("Firebase config is not set. Form data will not be saved to Firestore.");
-}
+// ——— Inicializa Firebase y Firestore ———
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-/**
- * Saves contact form data to Firebase Firestore.
- * This function will only work if you have configured your firebaseConfig object above.
- */
-async function saveContactDataToFirebase(data) {
-    if (!db) {
-        console.log("Firebase is not initialized. Cannot save data.");
-        // Log the data locally as a fallback
-        console.log("Firebase skeleton: Data to be sent:", data);
-        return;
+// ——— Helper para animaciones y scroll (tu código existente) ———
+document.addEventListener('DOMContentLoaded', () => {
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute('href'))
+        .scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Efecto en header
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    header.style.boxShadow = window.scrollY > 50
+      ? '0 2px 10px rgba(0,0,0,0.07)'
+      : 'none';
+  });
+
+  // Scroll animations
+  const scrollObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 
+          `fadeInUp 1s ${entry.target.dataset.delay||'0s'} forwards ease-out`;
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pricing-card, .portfolio-item, .section-title, .section-subtitle, .pill, .contact-container > *')
+    .forEach(el => {
+      el.style.opacity = '0';
+      scrollObserver.observe(el);
+    });
+
+  // Inserta keyframes
+  const sheet = document.styleSheets[0];
+  sheet.insertRule(`
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
+  `, sheet.cssRules.length);
 
+  // ——— Envío de formulario ———
+  document.getElementById('contact-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    data.timestamp = new Date();
+
+    // Guarda en Firestore
     try {
-        const docRef = await addDoc(collection(db, "contacts"), data);
-        console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-        console.error("Error adding document to Firestore: ", e);
-        alert("Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo.");
+      const docRef = await addDoc(collection(db, 'contacts'), data);
+      console.log('Documento creado con ID:', docRef.id);
+      alert('Gracias por tu mensaje. Te contactaremos pronto.');
+      e.target.reset();
+    } catch (err) {
+      console.error('Error guardando en Firestore:', err);
+      alert('Hubo un error al enviar tu mensaje. Intenta de nuevo.');
     }
-}
+  });
+});
