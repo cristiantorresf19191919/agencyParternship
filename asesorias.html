@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mentoría, asesoría y clases personalizadas en programación, arquitectura de software y tecnologías modernas. Lleva tu carrera y tus proyectos al siguiente nivel con expertos.">
+    <title>Mentoría y Asesoría en Programación | Arquitectura de Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <i class="fas fa-chalkboard-teacher"></i> CodeMentor <strong>Pro</strong>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#casos-de-exito">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span>Lleva tu <strong>código</strong> y arquitectura al <strong>siguiente nivel</strong></span>
+                </h1>
+                <div class="floating-gradient-banner">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Mentoría, asesoría y clases personalizadas en desarrollo de software</span>
+                </div>
+                <div class="hero-value-wave">
+                    <svg viewBox="0 0 700 40" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                        style="display:block;width:100%;height:32px;">
+                        <path d="M0,20 Q175,60 350,20 T700,20 L700,40 L0,40 Z" fill="#fdfcff" />
+                    </svg>
+                </div>
+                <p class="hero-subtitle">
+                    <span id="typed-subtitle"></span>
+                </p>
+                <div class="hero-features">
+                    <div class="hero-stat">
+                        <span class="hero-stat-value stat-blue">100+</span>
+                        <span class="hero-stat-label">Proyectos asesorados</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value stat-green">98%</span>
+                        <span class="hero-stat-label">Satisfacción de estudiantes</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value stat-blue">10 años</span>
+                        <span class="hero-stat-label">Experiencia real</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="cta-button primary">Solicitar asesoría</a>
+                    <a href="#servicios" class="cta-button secondary">Ver servicios</a>
+                </div>
+                <svg class="hero__wave" viewBox="0 0 700 40" preserveAspectRatio="none">
+                    <path d="M0,20 Q175,60 350,20 T700,20 L700,40 L0,40 Z" fill="#fdfcff" />
+                </svg>
+            </div>
+        </section>
+        <section id="servicios" class="features">
+            <div class="pill animate-on-scroll">
+                <i class="fas fa-laptop-code"></i> Servicios de Mentoría y Asesoría
+            </div>
+            <h2 class="section-title animate-on-scroll">Soluciones <strong>a tu medida</strong></h2>
+            <p class="section-subtitle animate-on-scroll">Acompañamiento experto, clases prácticas y consultoría para
+                que avances más rápido y seguro en tu carrera o proyecto.</p>
+            <div class="pricing-cards-container">
+                <!-- Asesoría Express -->
+                <div class="pricing-card animate-on-scroll">
+                    <div class="card-header">
+                        <i class="fas fa-bolt card-icon purple"></i>
+                        <h3>Asesoría Express</h3>
+                        <span class="tag">Resuelve tus dudas puntuales</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 1 sesión personalizada (60 min)</li>
+                        <li><i class="fas fa-check"></i> Resolución de bloqueos</li>
+                        <li><i class="fas fa-check"></i> Revisión de código en vivo</li>
+                        <li><i class="fas fa-check"></i> Grabación de la sesión</li>
+                        <li><i class="fas fa-check"></i> Soporte por chat 24h</li>
+                    </ul>
+                    <div class="price-container">
+                        <strong>$120,000</strong> <span class="currency">COP</span>
+                    </div>
+                    <a href="#contacto" class="cta-button purple-gradient">Agendar ahora</a>
+                </div>
+                <!-- Mentoría Continua -->
+                <div class="pricing-card featured animate-on-scroll">
+                    <div class="card-header">
+                        <i class="fas fa-user-graduate card-icon pink"></i>
+                        <h3>Mentoría Continua</h3>
+                        <span class="tag">Acompañamiento y evolución constante</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 4 sesiones mensuales 1:1</li>
+                        <li><i class="fas fa-check"></i> Seguimiento de tu proyecto</li>
+                        <li><i class="fas fa-check"></i> Plan de aprendizaje personalizado</li>
+                        <li><i class="fas fa-check"></i> Code review y buenas prácticas</li>
+                        <li><i class="fas fa-check"></i> Material de apoyo exclusivo</li>
+                        <li><i class="fas fa-check"></i> Soporte por chat ilimitado</li>
+                    </ul>
+                    <div class="price-container">
+                        <strong>$390,000</strong> <span class="currency">COP/mes</span>
+                    </div>
+                    <a href="#contacto" class="cta-button pink-gradient">Quiero mentoría</a>
+                </div>
+                <!-- Clases Personalizadas -->
+                <div class="pricing-card animate-on-scroll">
+                    <div class="card-header">
+                        <i class="fas fa-chalkboard card-icon teal"></i>
+                        <h3>Clases Personalizadas</h3>
+                        <span class="tag">Aprende lo que realmente necesitas</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Temas a la medida (JS, Python, Kotlin, etc.)</li>
+                        <li><i class="fas fa-check"></i> Ejercicios prácticos y retos</li>
+                        <li><i class="fas fa-check"></i> Acceso a grabaciones</li>
+                        <li><i class="fas fa-check"></i> Feedback en tiempo real</li>
+                        <li><i class="fas fa-check"></i> Material descargable</li>
+                    </ul>
+                    <div class="price-container">
+                        <strong>$150,000</strong> <span class="currency">COP/sesión</span>
+                    </div>
+                    <a href="#contacto" class="cta-button teal-gradient">Solicitar clase</a>
+                </div>
+                <!-- Arquitectura & Code Review -->
+                <div class="pricing-card animate-on-scroll">
+                    <div class="card-header">
+                        <i class="fas fa-project-diagram card-icon purple"></i>
+                        <h3>Arquitectura & Code Review</h3>
+                        <span class="tag">Mejora tu software con expertos</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Análisis de arquitectura</li>
+                        <li><i class="fas fa-check"></i> Revisión de código profesional</li>
+                        <li><i class="fas fa-check"></i> Recomendaciones de escalabilidad</li>
+                        <li><i class="fas fa-check"></i> Seguridad y performance</li>
+                        <li><i class="fas fa-check"></i> Informe detallado y plan de acción</li>
+                    </ul>
+                    <div class="price-container">
+                        <strong>$250,000</strong> <span class="currency">COP</span>
+                    </div>
+                    <a href="#contacto" class="cta-button purple-gradient">Mejorar mi software</a>
+                </div>
+            </div>
+            <div class="consult-cta">
+                <p>¿No sabes qué servicio elegir? ¡Te ayudo a encontrar la mejor opción para ti!</p>
+                <a href="#contacto" class="cta-button secondary">Recibir asesoría gratuita</a>
+            </div>
+        </section>
+        <!-- FAQ Accordion Section -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">Preguntas <strong>Frecuentes</strong></h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Qué tecnologías cubren las asesorías?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">JavaScript, Python, Kotlin, Flutter, Spring Boot, Docker, bases de
+                        datos SQL y NoSQL, arquitectura de software, buenas prácticas y más.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Cómo se agenda una sesión?<span class="chevron"></span></button>
+                    <div class="accordion-content">Simplemente llena el formulario de contacto o escríbenos por
+                        WhatsApp. Te responderemos en menos de 24h para coordinar fecha y hora.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Puedo llevar mi propio proyecto o código?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">¡Por supuesto! Puedes traer tu proyecto, código o idea y te ayudamos
+                        a resolver dudas, mejorar la arquitectura o avanzar más rápido.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Las clases y asesorías son grabadas?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">Sí, todas las sesiones pueden ser grabadas y te compartimos el video
+                        para que repases cuando quieras.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Qué nivel necesito para tomar una mentoría?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">No importa tu nivel: desde principiante hasta avanzado. Adaptamos la
+                        mentoría a tus objetivos y conocimientos.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Puedo pedir ayuda para entrevistas técnicas o coding
+                        interviews?<span class="chevron"></span></button>
+                    <div class="accordion-content">¡Claro! Te preparamos para entrevistas técnicas, algoritmos,
+                        estructuras de datos y simulacros de entrevistas reales.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Incluyen material de estudio y ejercicios?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">Sí, recibirás material de apoyo, ejercicios prácticos y recursos
+                        recomendados según tu objetivo.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Cómo es el proceso de pago?<span class="chevron"></span></button>
+                    <div class="accordion-content">Puedes pagar por transferencia, Nequi, Daviplata o tarjeta. Te
+                        enviamos los datos al agendar.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Puedo solicitar factura o recibo?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">Sí, emitimos factura electrónica o recibo si lo necesitas para tu
+                        empresa o contabilidad.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Ofrecen asesoría para empresas o equipos?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">Sí, realizamos talleres, capacitaciones y consultoría para equipos de
+                        desarrollo y empresas.</div>
+                </div>
+            </div>
+        </section>
+        <div class="faq-contact-suggest">
+            <p>¿Tienes otra pregunta sobre mentoría o desarrollo?</p>
+            <a href="#contacto" class="cta-button secondary">Contáctanos</a>
+        </div>
+        <section id="casos-de-exito" class="portfolio">
+            <div class="pill animate-on-scroll">
+                <i class="fas fa-star"></i> Testimonios y Casos de Éxito
+            </div>
+            <h2 class="section-title animate-on-scroll">Historias de <strong>impacto real</strong></h2>
+            <p class="section-subtitle animate-on-scroll">Más de 100 estudiantes y profesionales han transformado su
+                carrera y proyectos con nuestra mentoría.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+                        alt="Testimonio 1">
+                    <div class="portfolio-info">
+                        <h4>Laura G. (Desarrolladora Frontend)</h4>
+                        <p>"Gracias a la mentoría, conseguí mi primer trabajo como desarrolladora y lancé mi portafolio
+                            en React."</p>
+                    </div>
+                    <div class="portfolio-stats">
+                        <div><i class="fas fa-code"></i><span>+3</span><small>Proyectos lanzados</small></div>
+                        <div><i class="fas fa-user-graduate"></i><span>1er empleo</span><small>Logrado</small></div>
+                        <div><i class="fas fa-star"></i><span>5/5</span><small>Valoración</small></div>
+                    </div>
+                </div>
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
+                        alt="Testimonio 2">
+                    <div class="portfolio-info">
+                        <h4>Carlos M. (Backend & DevOps)</h4>
+                        <p>"Me ayudaron a estructurar mi backend con Spring Boot y Docker. Ahora mi app es escalable y
+                            segura."</p>
+                    </div>
+                    <div class="portfolio-stats">
+                        <div><i class="fas fa-server"></i><span>+2</span><small>Microservicios</small></div>
+                        <div><i class="fas fa-database"></i><span>+3</span><small>Bases de datos</small></div>
+                        <div><i class="fas fa-star"></i><span>5/5</span><small>Valoración</small></div>
+                    </div>
+                </div>
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                        alt="Testimonio 3">
+                    <div class="portfolio-info">
+                        <h4>Andrea P. (Mobile & Flutter)</h4>
+                        <p>"Las clases personalizadas de Flutter me permitieron lanzar mi primera app en Google Play."
+                        </p>
+                    </div>
+                    <div class="portfolio-stats">
+                        <div><i class="fab fa-google-play"></i><span>1</span><small>App publicada</small></div>
+                        <div><i class="fas fa-mobile-alt"></i><span>Flutter</span><small>Stack</small></div>
+                        <div><i class="fas fa-star"></i><span>5/5</span><small>Valoración</small></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="full-width-cta">
+            <h2 class="section-title">¿Listo para potenciar tu carrera o proyecto?</h2>
+            <p>Agenda tu primera asesoría y empieza a avanzar con el acompañamiento de un experto.</p>
+            <a href="#contacto" class="cta-button primary-light">Solicitar asesoría gratuita</a>
+        </section>
+        <section id="contacto" class="contact">
+            <div class="pill animate-on-scroll">
+                <i class="far fa-paper-plane"></i> Agenda tu Asesoría
+            </div>
+            <h2 class="section-title animate-on-scroll">¿Listo para <br><strong>despegar tu aprendizaje?</strong></h2>
+            <p class="section-subtitle animate-on-scroll">Completa el formulario y te contactaremos para agendar tu
+                sesión personalizada.</p>
+            <div class="contact-container">
+                <form id="contact-form" class="animate-on-scroll">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+57 300 000 0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Empresa (opcional)</label>
+                            <input type="text" id="company" name="company" placeholder="Empresa o proyecto">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="project-type">Tipo de asesoría *</label>
+                            <select id="project-type" name="project-type" required>
+                                <option value="" disabled selected>Selecciona el tipo de asesoría</option>
+                                <option value="express">Asesoría Express</option>
+                                <option value="mentoria">Mentoría Continua</option>
+                                <option value="clase">Clases Personalizadas</option>
+                                <option value="arquitectura">Arquitectura & Code Review</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tech">Tecnología de interés</label>
+                            <select id="tech" name="tech">
+                                <option value="" disabled selected>Selecciona la tecnología</option>
+                                <option value="js">JavaScript</option>
+                                <option value="python">Python</option>
+                                <option value="kotlin">Kotlin</option>
+                                <option value="flutter">Flutter</option>
+                                <option value="spring">Spring Boot</option>
+                                <option value="docker">Docker</option>
+                                <option value="sql">SQL</option>
+                                <option value="mongo">MongoDB</option>
+                                <option value="frontend">Frontend</option>
+                                <option value="backend">Backend</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Cuéntanos tu objetivo o reto</label>
+                        <textarea id="message" name="message"
+                            placeholder="¿Qué quieres lograr? ¿Qué reto tienes? ¿Qué tecnología te interesa?"
+                            rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button purple-gradient full-width">Solicitar Asesoría</button>
+                </form>
+                <div class="contact-info animate-on-scroll">
+                    <div class="info-box benefits">
+                        <h4>¿Por qué elegirnos?</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Experiencia real en la industria</li>
+                            <li><i class="fas fa-check"></i> Acompañamiento personalizado</li>
+                            <li><i class="fas fa-check"></i> Resultados comprobados</li>
+                            <li><i class="fas fa-check"></i> Material y recursos exclusivos</li>
+                            <li><i class="fas fa-check"></i> Respuesta rápida y soporte continuo</li>
+                        </ul>
+                    </div>
+                    <div class="contact-cards">
+                        <h3 class="contact-section-title">Información de Contacto</h3>
+                        <div class="contact-card">
+                            <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <div class="contact-card-title">Email</div>
+                                <div class="contact-card-main">cristian.torres19@hotmail.com</div>
+                                <div class="contact-card-sub">Respuesta en menos de 24 horas</div>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <div class="contact-card-title">WhatsApp</div>
+                                <div class="contact-card-main"><a href="https://wa.me/573237992985" target="_blank"
+                                        style="color:inherit;text-decoration:none;">+57 323 799 2985</a></div>
+                                <div class="contact-card-sub">Lunes a Viernes, 9AM - 6PM (COT)</div>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon location"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <div class="contact-card-title">Ubicación</div>
+                                <div class="contact-card-main">Bogotá, Colombia</div>
+                                <div class="contact-card-sub">Servicio remoto disponible</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="logo">
+                    <i class="fas fa-chalkboard-teacher"></i> CodeMentor <strong>Pro</strong>
+                </a>
+                <p>Mentoría y asesoría para programadores, equipos y empresas. Aprende, crece y lleva tus proyectos al
+                    siguiente nivel con expertos en tecnología.</p>
+                <p class="made-with">Hecho con <i class="fas fa-heart"></i> y <i class="fas fa-bolt"></i> para la
+                    comunidad dev</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CodeMentor Pro. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+                <a href="asesorias.html" class="gradient-link">Asesorías</a>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/573237992985?text=Hola,%20quiero%20una%20asesoría%20de%20programación"
+        class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

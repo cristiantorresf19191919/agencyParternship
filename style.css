@@ -1386,3 +1386,31 @@ section {
         opacity: 0;
     }
 }
+
+.gradient-link {
+    font-weight: 700;
+    background: linear-gradient(90deg, #a06af9 0%, #f8549b 50%, #35E4B2 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    transition: opacity 0.2s;
+    margin-left: 1.5rem;
+    animation: gradientMove 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.gradient-link:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
