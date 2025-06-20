@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Diseño y desarrollo de agentes virtuales inteligentes para automatizar atención al cliente, ventas y procesos internos. Potencia tu negocio con IA.">
+    <title>Creación de Agentes Virtuales | Automatización con IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <i class="fas fa-robot"></i> Agentes <strong>Virtuales</strong>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#servicios">Soluciones</a></li>
+                <li><a href="#casos-de-exito">Casos de Éxito</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-wave-container">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .path-anim-agentes {
+                        animation: path-anim-agentes 10s linear infinite;
+                    }
+
+                    @keyframes path-anim-agentes {
+                        0% {
+                            d: path("M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z");
+                        }
+
+                        25% {
+                            d: path("M0,150 C123.3,119.5,246.7,88.9,431,77 C615.3,65.1,860.7,71.7,1039,87 C1217.3,102.3,1328.7,126.1,1440,150L1440,151L0,151Z");
+                        }
+
+                        50% {
+                            d: path("M0,150 C131.7,168.4,263.5,186.8,432,188 C600.5,189.2,805.9,173.2,980,164 C1154.1,154.8,1297.1,152.4,1440,150L1440,151L0,151Z");
+                        }
+
+                        75% {
+                            d: path("M0,150 C171.6,149.5,343.2,148.9,500,141 C656.8,133.1,798.8,117.7,953,118 C1107.2,118.3,1273.6,134.1,1440,150L1440,151L0,151Z");
+                        }
+
+                        100% {
+                            d: path("M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z");
+                        }
+                    }
+                </style>
+                <defs>
+                    <linearGradient id="wave-gradient-agentes" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="0%" stop-color="#a06af9"></stop>
+                        <stop offset="100%" stop-color="#f8549b"></stop>
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z"
+                    stroke="none" stroke-width="0" fill="url(#wave-gradient-agentes)" class="path-anim-agentes"></path>
+            </svg>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span><strong>Automatiza</strong> tu negocio con <strong>agentes virtuales</strong>
+                        inteligentes</span>
+                </h1>
+                <div class="floating-gradient-banner">
+                    <i class="fas fa-brain"></i>
+                    <span>Soluciones de IA para atención al cliente, ventas y procesos internos</span>
+                </div>
+
+                <p class="hero-subtitle">
+                    <span id="typed-subtitle"></span>
+                </p>
+                <div class="hero-features">
+                    <div class="hero-stat">
+                        <span class="hero-stat-value stat-blue">90%</span>
+                        <span class="hero-stat-label">Tasa de resolución</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value stat-green">24/7</span>
+                        <span class="hero-stat-label">Disponibilidad</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value stat-blue">50+</span>
+                        <span class="hero-stat-label">Procesos automatizados</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="cta-button primary">Crear mi Agente Virtual</a>
+                    <a href="#servicios" class="cta-button secondary">Ver Soluciones</a>
+                </div>
+
+            </div>
+        </section>
+        <section id="servicios" class="features">
+            <div class="pill animate-on-scroll">
+                <i class="fas fa-cogs"></i> Nuestras Soluciones de IA
+            </div>
+            <h2 class="section-title animate-on-scroll">Agentes <strong>listos para trabajar</strong></h2>
+            <p class="section-subtitle animate-on-scroll">Implementamos agentes virtuales entrenados para resolver
+                necesidades específicas de tu negocio, desde el primer día.</p>
+            <div class="pricing-cards-container">
+                <!-- Agente de Soporte -->
+                <div class="pricing-card animate-on-scroll">
+                    <div class="card-header">
+                        <i class="fas fa-headset card-icon purple"></i>
+                        <h3>Agente de Soporte</h3>
+                        <span class="tag">Atención al cliente 24/7</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Responde preguntas frecuentes</li>
+                        <li><i class="fas fa-check"></i> Resuelve problemas comunes</li>
+                        <li><i class="fas fa-check"></i> Escala a un humano si es necesario</li>
+                        <li><i class="fas fa-check"></i> Integración con WhatsApp y Web</li>
+                        <li><i class="fas fa-check"></i> Panel de control y métricas</li>
+                    </ul>
+                    <div class="price-container">
+                        <strong>$1,500,000</strong> <span class="currency">COP/mes</span>
+                    </div>
+                    <a href="#contacto" class="cta-button purple-gradient">Automatizar Soporte</a>
+                </div>
+                <!-- Agente de Ventas -->
+                <div class="pricing-card featured animate-on-scroll">
+                    <div class="card-header">
+                        <i class="fas fa-dollar-sign card-icon pink"></i>
+                        <h3>Agente de Ventas</h3>
+                        <span class="tag">Califica leads y cierra ventas</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Calificación de leads automática</li>
+                        <li><i class="fas fa-check"></i> Agenda reuniones y demos</li>
+                        <li><i class="fas fa-check"></i> Responde dudas de productos</li>
+                        <li><i class="fas fa-check"></i> Recuperación de carritos</li>
+                        <li><i class="fas fa-check"></i> Integración con CRM</li>
+                        <li><i class="fas fa-check"></i> Reportes de conversión</li>
+                    </ul>
+                    <div class="price-container">
+                        <strong>$2,800,000</strong> <span class="currency">COP/mes</span>
+                    </div>
+                    <a href="#contacto" class="cta-button pink-gradient">Aumentar Ventas</a>
+                </div>
+                <!-- Agente Interno -->
+                <div class="pricing-card animate-on-scroll">
+                    <div class="card-header">
+                        <i class="fas fa-sitemap card-icon teal"></i>
+                        <h3>Agente de Procesos</h3>
+                        <span class="tag">Automatiza tareas internas</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Onboarding de empleados</li>
+                        <li><i class="fas fa-check"></i> Soporte de RRHH y TI</li>
+                        <li><i class="fas fa-check"></i> Gestión de documentos</li>
+                        <li><i class="fas fa-check"></i> Automatización de reportes</li>
+                        <li><i class="fas fa-check"></i> Base de conocimiento interna</li>
+                    </ul>
+                    <div class="price-container">
+                        <strong>$1,800,000</strong> <span class="currency">COP/mes</span>
+                    </div>
+                    <a href="#contacto" class="cta-button teal-gradient">Optimizar Procesos</a>
+                </div>
+            </div>
+            <div class="consult-cta">
+                <p>¿Necesitas una solución a la medida? ¡Construimos el agente perfecto para tu reto!</p>
+                <a href="#contacto" class="cta-button secondary">Cotización Personalizada</a>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">Preguntas <strong>Frecuentes</strong></h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Cómo "aprende" el agente sobre mi negocio?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">Lo entrenamos con tu propia información: documentos, sitio web,
+                        FAQs, y bases de datos. El agente aprende de tu contenido para dar respuestas precisas y
+                        alineadas con tu marca.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿En qué canales puede operar el agente?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">Nuestros agentes se integran con los canales más populares: WhatsApp
+                        Business, tu sitio web, Facebook Messenger, Instagram, Slack y más.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿El agente puede escalar la conversación a un humano?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">Sí. Diseñamos flujos para que el agente identifique cuándo un
+                        problema requiere intervención humana y pueda transferir la conversación de forma transparente a
+                        tu equipo.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger">¿Cuánto tiempo toma la implementación?<span
+                            class="chevron"></span></button>
+                    <div class="accordion-content">Un agente básico puede estar operativo en 1-2 semanas. Soluciones más
+                        complejas pueden tomar de 3 a 4 semanas, dependiendo del alcance y las integraciones.</div>
+                </div>
+            </div>
+        </section>
+        <div class="faq-contact-suggest">
+            <p>¿Tienes otra pregunta sobre agentes virtuales?</p>
+            <a href="#contacto" class="cta-button secondary">Contáctanos</a>
+        </div>
+        <section id="casos-de-exito" class="portfolio">
+            <div class="pill animate-on-scroll">
+                <i class="fas fa-star"></i> Casos de Éxito
+            </div>
+            <h2 class="section-title animate-on-scroll">Resultados <strong>reales</strong> con IA</h2>
+            <p class="section-subtitle animate-on-scroll">Empresas que ya están transformando su operación con nuestros
+                agentes virtuales.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=600&q=80"
+                        alt="Caso de Éxito 1">
+                    <div class="portfolio-info">
+                        <h4>E-commerce de Moda</h4>
+                        <p>Implementamos un agente de soporte que redujo el tiempo de respuesta en un 95% y aumentó la
+                            satisfacción del cliente.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80"
+                        alt="Caso de Éxito 2">
+                    <div class="portfolio-info">
+                        <h4>Agencia de Viajes</h4>
+                        <p>Un agente de ventas que califica leads y agenda citas, aumentando las oportunidades de venta
+                            en un 40%.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
+                        alt="Caso de Éxito 3">
+                    <div class="portfolio-info">
+                        <h4>Consultora de TI</h4>
+                        <p>Un agente interno que automatiza el onboarding de nuevos empleados, ahorrando 10 horas de
+                            trabajo a la semana.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="full-width-cta">
+            <h2 class="section-title">¿Listo para que la IA trabaje para ti?</h2>
+            <p>Agenda una demostración gratuita y descubre el potencial de los agentes virtuales para tu negocio.</p>
+            <a href="#contacto" class="cta-button primary-light">Solicitar Demo</a>
+        </section>
+        <section id="contacto" class="contact">
+            <div class="pill animate-on-scroll">
+                <i class="far fa-paper-plane"></i> Hablemos de tu Proyecto
+            </div>
+            <h2 class="section-title animate-on-scroll">Construyamos tu <strong>fuerza de trabajo
+                    digital</strong></h2>
+            <p class="section-subtitle animate-on-scroll">Completa el formulario y te contactaremos para una
+                evaluación gratuita.</p>
+            <div class="contact-container">
+                <form id="contact-form" class="animate-on-scroll">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Cuéntanos tu necesidad de automatización</label>
+                        <textarea id="message" name="message"
+                            placeholder="¿Qué proceso quieres automatizar? ¿Qué problema buscas resolver?"
+                            rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button purple-gradient full-width">Solicitar Evaluación</button>
+                </form>
+                <div class="contact-info animate-on-scroll">
+                    <div class="info-box benefits">
+                        <h4>Beneficios Clave</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Reducción de costos operativos</li>
+                            <li><i class="fas fa-check"></i> Mejora en la satisfacción del cliente</li>
+                            <li><i class="fas fa-check"></i> Disponibilidad 24/7</li>
+                            <li><i class="fas fa-check"></i> Escalabilidad inmediata</li>
+                            <li><i class="fas fa-check"></i> Liberación de tu equipo humano</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-wave-container">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .path-anim-footer-agentes {
+                        animation: path-anim-footer-agentes 10s linear infinite;
+                    }
+
+                    @keyframes path-anim-footer-agentes {
+                        0% {
+                            d: path("M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,0L0,0Z");
+                        }
+
+                        25% {
+                            d: path("M0,150 C123.3,119.5,246.7,88.9,431,77 C615.3,65.1,860.7,71.7,1039,87 C1217.3,102.3,1328.7,126.1,1440,150L1440,0L0,0Z");
+                        }
+
+                        50% {
+                            d: path("M0,150 C131.7,168.4,263.5,186.8,432,188 C600.5,189.2,805.9,173.2,980,164 C1154.1,154.8,1297.1,152.4,1440,150L1440,0L0,0Z");
+                        }
+
+                        75% {
+                            d: path("M0,150 C171.6,149.5,343.2,148.9,500,141 C656.8,133.1,798.8,117.7,953,118 C1107.2,118.3,1273.6,134.1,1440,150L1440,0L0,0Z");
+                        }
+
+                        100% {
+                            d: path("M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,0L0,0Z");
+                        }
+                    }
+                </style>
+                <defs>
+                    <linearGradient id="wave-gradient-footer-agentes" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="0%" stop-color="#a06af9"></stop>
+                        <stop offset="100%" stop-color="#f8549b"></stop>
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,0L0,0Z"
+                    stroke="none" stroke-width="0" fill="var(--bg-light)" class="path-anim-footer-agentes"></path>
+            </svg>
+        </div>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="logo">
+                    <i class="fas fa-robot"></i> Agentes <strong>Virtuales</strong>
+                </a>
+                <p>Creamos agentes virtuales inteligentes para potenciar tu negocio. Automatización, eficiencia y
+                    resultados medibles.</p>
+                <p class="made-with">Hecho con <i class="fas fa-heart"></i> y <i class="fas fa-brain"></i> para la era
+                    de la IA</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Agentes Virtuales Pro. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="index.html" class="gradient-link">Desarrollo Web</a>
+                <a href="asesorias.html" class="gradient-link">Asesorías</a>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/573237992985?text=Hola,%20estoy%20interesado%20en%20un%20agente%20virtual"
+        class="whatsapp-button-container" target="_blank">
+        <div class="whatsapp-blob">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo">
+        <span class="icon-sun"><i class="fas fa-sun"></i></span>
+        <span class="icon-moon"><i class="fas fa-moon"></i></span>
+    </button>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

@@ -23,6 +23,7 @@ const db = getFirestore(app);
 
 // ——— Helper para animaciones y scroll (tu código existente) ———
 document.addEventListener('DOMContentLoaded', () => {
+
   // Smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
