@@ -282,7 +282,8 @@ body {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    padding: var(--space-2xl) var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    padding-top: 0px !important;
 }
 
 /* Improved Typography */
@@ -365,8 +366,8 @@ body {
 }
 
 .whatsapp-blob {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     border-radius: 50%;
     display: flex;
@@ -381,8 +382,8 @@ body {
     content: '';
     position: absolute;
     top: -2px;
-    left: -2px;
-    right: -2px;
+    left: -4px;
+    right: -4px;
     bottom: -2px;
     background: linear-gradient(135deg, #25D366, #128C7E, #25D366);
     border-radius: 50%;
@@ -501,7 +502,6 @@ body.dark-mode .nav-links a:hover {
 }
 
 body.dark-mode .pricing-card,
-body.dark-mode .features-list,
 body.dark-mode .info-box,
 body.dark-mode .portfolio-item {
     background: #23243a !important;
@@ -511,7 +511,6 @@ body.dark-mode .portfolio-item {
 
 body.dark-mode .pricing-card h3,
 body.dark-mode .pricing-card .tag,
-body.dark-mode .features-list li,
 body.dark-mode .price-container,
 body.dark-mode .price-container strong,
 body.dark-mode .price-container .currency {
@@ -543,8 +542,7 @@ body.dark-mode .footer,
 body.dark-mode .pricing-card,
 body.dark-mode .info-box,
 body.dark-mode .contact-card,
-body.dark-mode .portfolio-item,
-body.dark-mode .features-list {
+body.dark-mode .portfolio-item {
     background: var(--card-dark) !important;
     color: #fdfcff !important;
     border-color: var(--border-dark) !important;
@@ -563,10 +561,6 @@ body.dark-mode .cta-button.purple-gradient,
 body.dark-mode .cta-button.pink-gradient,
 body.dark-mode .cta-button.teal-gradient {
     color: #fff !important;
-}
-
-body.dark-mode .features-list {
-    background: #23243a !important;
 }
 
 body.dark-mode .gradient-banner,
@@ -617,7 +611,7 @@ body.dark-mode .contact-card-sub {
 
 /* General & Reusable Styles */
 section {
-    padding: 6rem 5%;
+    padding: 3rem 5%;
     text-align: center;
 }
 
@@ -1257,7 +1251,7 @@ section {
 
 .footer-wave-container {
     position: absolute;
-    top: -1px;
+    top: -67px;
     left: 0;
     width: 100%;
     height: 150px;
@@ -2677,9 +2671,14 @@ body.dark-mode .service-card .features-list {
 /* Enhanced Dark Mode */
 body.dark-mode .pricing-card,
 body.dark-mode .service-card,
-body.dark-mode .contact-card {
+body.dark-mode .contact-card,
+body.dark-mode .pricing-card>.features-list {
     background: var(--card-dark);
     border-color: var(--border-dark);
+    color: var(--white);
+}
+
+body.dark-mode .pricing-card>.features-list>li {
     color: var(--white);
 }
 
@@ -3024,4 +3023,49 @@ table.amortization-table::-webkit-scrollbar-thumb {
     font-size: 2.2rem !important;
     font-weight: 700;
     margin-bottom: 0.2em;
+}
+
+/* Preserve service-card coloring in both themes */
+.service-card.card-green,
+.service-card.card-blue,
+.service-card.card-purple,
+.service-card.card-orange,
+.service-card.card-teal,
+.service-card.card-pink {
+    background: linear-gradient(135deg, #2EDC9B 0%, #1cc7b6 100%) !important;
+    color: #fff !important;
+}
+
+.service-card.card-blue {
+    background: linear-gradient(135deg, #3a8ef6 0%, #5ad0ff 100%) !important;
+}
+
+.service-card.card-purple {
+    background: linear-gradient(135deg, #8A54F8 0%, #b07cff 100%) !important;
+}
+
+.service-card.card-orange {
+    background: linear-gradient(135deg, #FFB86C 0%, #ff8c42 100%) !important;
+}
+
+.service-card.card-teal {
+    background: linear-gradient(135deg, #1cc7b6 0%, #2EDC9B 100%) !important;
+}
+
+.service-card.card-pink {
+    background: linear-gradient(135deg, #F8549B 0%, #ffb6d5 100%) !important;
+}
+
+/* Accordion: hide content by default, show when open */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+}
+
+.accordion-item.open .accordion-content {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
 }

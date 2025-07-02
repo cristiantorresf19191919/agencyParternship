@@ -74,18 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // FAQ Accordion logic
-  document.querySelectorAll('.accordion-trigger').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const item = this.parentElement;
-      const isOpen = item.classList.contains('open');
-      // Close all
-      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
-      // Open this if it was closed
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
   // Animate hero title on load
   const heroTitle = document.querySelector('.hero-title');
   if (heroTitle) {
