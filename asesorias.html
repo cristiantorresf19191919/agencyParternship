@@ -525,15 +525,15 @@
         });
     </script>
     <style>
-        .accordion {
+        .faq-section .accordion {
             max-width: 800px;
             margin: 3rem auto 0 auto;
             text-align: left;
             font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
         }
 
-        .accordion-item {
-            background: #23243a;
+        .faq-section .accordion-item {
+            background: var(--white, #fff);
             border-radius: 18px;
             margin-bottom: 1.1rem;
             border: none;
@@ -543,12 +543,21 @@
             transition: box-shadow 0.3s, margin-bottom 0.3s, background 0.3s;
         }
 
-        .accordion-item.open {
-            background: #292a3a;
+        body.dark-mode .faq-section .accordion-item {
+            background: #23243a;
+            box-shadow: 0 4px 24px 0 rgba(160, 106, 249, 0.10);
+        }
+
+        .faq-section .accordion-item.open {
+            background: var(--faq-open-bg, #f8f5ff);
             box-shadow: 0 8px 32px 0 rgba(160, 106, 249, 0.18);
         }
 
-        .accordion-item.open::before {
+        body.dark-mode .faq-section .accordion-item.open {
+            background: #292a3a;
+        }
+
+        .faq-section .accordion-item.open::before {
             content: '';
             position: absolute;
             left: 0;
@@ -561,7 +570,7 @@
             transition: background 0.3s;
         }
 
-        .accordion-trigger {
+        .faq-section .accordion-trigger {
             width: 100%;
             padding: 1.4rem 2.5rem 1.4rem 2.2rem;
             background: none;
@@ -569,7 +578,7 @@
             text-align: left;
             font-size: 1.18rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--text-dark, #23243a);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -581,28 +590,37 @@
             gap: 1.2rem;
         }
 
-        .accordion-trigger:focus-visible {
+        body.dark-mode .faq-section .accordion-trigger {
+            color: #fff;
+        }
+
+        .faq-section .accordion-trigger:focus-visible {
+            background: #f8f5ff;
+            color: #a06af9;
+        }
+
+        body.dark-mode .faq-section .accordion-trigger:focus-visible {
             background: #23243a;
             color: #a06af9;
         }
 
-        .accordion-trigger .chevron {
+        .faq-section .accordion-trigger .chevron {
             display: inline-block;
             margin-left: 1.2rem;
             font-size: 1.3em;
             color: #a06af9;
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s;
         }
 
-        .accordion-item.open .accordion-trigger .chevron {
+        .faq-section .accordion-item.open .accordion-trigger .chevron {
             transform: rotate(90deg);
             color: #35E4B2;
         }
 
-        .accordion-content {
+        .faq-section .accordion-content {
             background: rgba(160, 106, 249, 0.07);
             padding: 0 2.2rem;
-            color: #e9ecef;
+            color: var(--text-dark, #23243a);
             line-height: 1.7;
             max-height: 0;
             overflow: hidden;
@@ -612,7 +630,12 @@
             font-size: 1.08rem;
         }
 
-        .accordion-item.open .accordion-content {
+        body.dark-mode .faq-section .accordion-content {
+            background: rgba(160, 106, 249, 0.07);
+            color: #e9ecef;
+        }
+
+        .faq-section .accordion-item.open .accordion-content {
             max-height: 400px;
             opacity: 1;
             padding: 1.3rem 2.2rem 1.7rem 2.2rem;
@@ -621,20 +644,24 @@
             border-radius: 0 0 16px 16px;
         }
 
+        body.dark-mode .faq-section .accordion-item.open .accordion-content {
+            background: rgba(160, 106, 249, 0.13);
+        }
+
         @media (max-width: 600px) {
 
-            .accordion,
-            .accordion-item {
+            .faq-section .accordion,
+            .faq-section .accordion-item {
                 border-radius: 12px;
             }
 
-            .accordion-trigger,
-            .accordion-content {
+            .faq-section .accordion-trigger,
+            .faq-section .accordion-content {
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
 
-            .accordion-item.open .accordion-content {
+            .faq-section .accordion-item.open .accordion-content {
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
