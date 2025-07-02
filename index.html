@@ -7,8 +7,9 @@
     <meta name="description"
         content="Transformamos ideas en experiencias digitales impactantes. Diseño web, desarrollo y SEO para llevar tu negocio al siguiente nivel.">
     <title>Estudio de Diseño Web | Soluciones Creativas y Profesionales</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 </head>
 
 <body>
@@ -90,16 +91,16 @@
 
                 <div class="hero-features">
                     <div class="hero-stat">
-                        <span class="hero-stat-value stat-blue">4+</span>
-                        <span class="hero-stat-label">Proyectos completados</span>
+                        <span class="hero-stat-value stat-blue" id="stat-proyectos">0</span>
+                        <div class="hero-stat-label">Proyectos completados</div>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat-value stat-green">98%</span>
-                        <span class="hero-stat-label">Satisfacción del cliente</span>
+                        <span class="hero-stat-value stat-blue" id="stat-satisfaccion">0</span>
+                        <div class="hero-stat-label">Satisfacción del cliente</div>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat-value stat-blue">15&nbsp;días</span>
-                        <span class="hero-stat-label">Entrega promedio</span>
+                        <span class="hero-stat-value stat-blue" id="stat-entrega">0</span>
+                        <div class="hero-stat-label">Entrega promedio</div>
                     </div>
                 </div>
 
@@ -200,7 +201,7 @@
                 <!-- Starter Card -->
                 <div class="pricing-card animate-on-scroll">
                     <div class="card-header">
-                        <i class="fas fa-rocket card-icon purple"></i>
+                        <div class="card-icon purple"><i class="bi bi-rocket"></i></div>
                         <h3>Starter</h3>
                         <span class="tag">Perfecto para landing pages y sitios web básicos</span>
                     </div>
@@ -223,7 +224,7 @@
                 <!-- Professional Card -->
                 <div class="pricing-card featured animate-on-scroll">
                     <div class="card-header">
-                        <i class="fas fa-briefcase card-icon pink"></i>
+                        <div class="card-icon pink"><i class="bi bi-briefcase"></i></div>
                         <h3>Professional</h3>
                         <span class="tag">Ideal para sitios corporativos y pequeñas aplicaciones</span>
                     </div>
@@ -248,7 +249,7 @@
                 <!-- Custom Card -->
                 <div class="pricing-card animate-on-scroll">
                     <div class="card-header">
-                        <i class="fas fa-cogs card-icon teal"></i>
+                        <div class="card-icon teal"><i class="bi bi-gear"></i></div>
                         <h3>¿Necesitas algo más complejo?</h3>
                         <span class="tag">Aplicaciones web, sistemas empresariales, integraciones avanzadas</span>
                     </div>
@@ -519,7 +520,8 @@
 
     <footer class="footer">
         <div class="footer-wave-container">
-            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="wave-gradient-footer-index" x1="0%" y1="50%" x2="100%" y2="50%">
                         <stop offset="5%" stop-color="#8e44ad"></stop>
@@ -553,19 +555,63 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/573237992985?text=Hola,%20estoy%20interesado%20en%20una%20solución%20web."
-        class="whatsapp-button-container" target="_blank">
-        <div class="whatsapp-blob">
-            <i class="fab fa-whatsapp"></i>
-        </div>
-    </a>
-
-    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo">
-        <span class="icon-sun"><i class="fas fa-sun"></i></span>
-        <span class="icon-moon"><i class="fas fa-moon"></i></span>
-    </button>
+    <div class="button-stack">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo">
+            <span class="icon-sun"><i class="fas fa-sun"></i></span>
+            <span class="icon-moon"><i class="fas fa-moon"></i></span>
+        </button>
+        <a href="https://wa.me/573237992985?text=Hola,%20estoy%20interesado%20en%20una%20soluci%C3%B3n%20web."
+            class="whatsapp-button-container" target="_blank">
+            <div class="whatsapp-blob">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+        </a>
+    </div>
 
     <script type="module" src="script.js"></script>
+    <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new TypeIt("#typed-subtitle", {
+                speed: 48,
+                loop: true,
+                html: true
+            })
+                .type("Impulsa tu negocio con <strong>páginas web que convierten</strong>.", { delay: 900 })
+                .break({ delay: 400 })
+                .type("Landing pages irresistibles para captar más clientes.", { delay: 1200 })
+                .pause(1200)
+                .delete(null, { delay: 600 })
+                .type("Desarrollamos tu presencia digital <strong>en tiempo récord</strong>.", { delay: 900 })
+                .pause(1200)
+                .delete(null, { delay: 600 })
+                .type("Tu web, tu mejor vendedor <strong>24/7</strong>.", { delay: 900 })
+                .pause(1200)
+                .delete(null, { delay: 600 })
+                .go();
+
+            // GSAP number animation for hero stats
+            function animateNumber(id, end, duration, suffix = "") {
+                const el = document.getElementById(id);
+                if (!el) return;
+                gsap.fromTo(el, { innerText: 0 }, {
+                    innerText: end,
+                    duration: duration,
+                    ease: "power1.out",
+                    snap: { innerText: 1 },
+                    onUpdate: function () {
+                        el.innerText = Math.floor(el.innerText) + suffix;
+                    },
+                    onComplete: function () {
+                        el.innerText = end + suffix;
+                    }
+                });
+            }
+            animateNumber("stat-proyectos", 4, 1.2, "+");
+            animateNumber("stat-satisfaccion", 98, 1.2, "%");
+            animateNumber("stat-entrega", 15, 1.2, " días");
+        });
+    </script>
 
 </body>
 

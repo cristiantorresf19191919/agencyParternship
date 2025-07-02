@@ -7,8 +7,9 @@
     <meta name="description"
         content="Mentoría, asesoría y clases personalizadas en programación, arquitectura de software y tecnologías modernas. Lleva tu carrera y tus proyectos al siguiente nivel con expertos.">
     <title>Mentoría y Asesoría en Programación | Arquitectura de Software</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 </head>
 
 <body>
@@ -81,16 +82,16 @@
                 </p>
                 <div class="hero-features">
                     <div class="hero-stat">
-                        <span class="hero-stat-value stat-blue">100+</span>
-                        <span class="hero-stat-label">Proyectos asesorados</span>
+                        <span class="hero-stat-value stat-blue" id="stat-proyectos">0</span>
+                        <div class="hero-stat-label">Proyectos asesorados</div>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat-value stat-green">98%</span>
-                        <span class="hero-stat-label">Satisfacción de estudiantes</span>
+                        <span class="hero-stat-value stat-green" id="stat-satisfaccion">0</span>
+                        <div class="hero-stat-label">Satisfacción de estudiantes</div>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat-value stat-blue">10 años</span>
-                        <span class="hero-stat-label">Experiencia real</span>
+                        <span class="hero-stat-value stat-blue" id="stat-experiencia">0</span>
+                        <div class="hero-stat-label">Experiencia real</div>
                     </div>
                 </div>
                 <div class="hero-buttons">
@@ -111,7 +112,7 @@
                 <!-- Asesoría Express -->
                 <div class="pricing-card animate-on-scroll">
                     <div class="card-header">
-                        <i class="fas fa-bolt card-icon purple"></i>
+                        <div class="card-icon purple"><i class="bi bi-lightning"></i></div>
                         <h3>Asesoría Express</h3>
                         <span class="tag">Resuelve tus dudas puntuales</span>
                     </div>
@@ -130,7 +131,7 @@
                 <!-- Mentoría Continua -->
                 <div class="pricing-card featured animate-on-scroll">
                     <div class="card-header">
-                        <i class="fas fa-user-graduate card-icon pink"></i>
+                        <div class="card-icon pink"><i class="bi bi-mortarboard"></i></div>
                         <h3>Mentoría Continua</h3>
                         <span class="tag">Acompañamiento y evolución constante</span>
                     </div>
@@ -150,7 +151,7 @@
                 <!-- Clases Personalizadas -->
                 <div class="pricing-card animate-on-scroll">
                     <div class="card-header">
-                        <i class="fas fa-chalkboard card-icon teal"></i>
+                        <div class="card-icon teal"><i class="bi bi-easel"></i></div>
                         <h3>Clases Personalizadas</h3>
                         <span class="tag">Aprende lo que realmente necesitas</span>
                     </div>
@@ -169,7 +170,7 @@
                 <!-- Arquitectura & Code Review -->
                 <div class="pricing-card animate-on-scroll">
                     <div class="card-header">
-                        <i class="fas fa-project-diagram card-icon purple"></i>
+                        <div class="card-icon purple"><i class="bi bi-diagram-3"></i></div>
                         <h3>Arquitectura & Code Review</h3>
                         <span class="tag">Mejora tu software con expertos</span>
                     </div>
@@ -428,7 +429,8 @@
     </main>
     <footer class="footer">
         <div class="footer-wave-container">
-            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="wave-gradient-footer-asesorias" x1="0%" y1="50%" x2="100%" y2="50%">
                         <stop offset="5%" stop-color="#9b59b6"></stop>
@@ -461,18 +463,63 @@
             </div>
         </div>
     </footer>
-    <a href="https://wa.me/573237992985?text=Hola,%20quiero%20una%20asesoría%20de%20programación"
-        class="whatsapp-button-container" target="_blank">
-        <div class="whatsapp-blob">
-            <i class="fab fa-whatsapp"></i>
-        </div>
-    </a>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo">
-        <span class="icon-sun"><i class="fas fa-sun"></i></span>
-        <span class="icon-moon"><i class="fas fa-moon"></i></span>
-    </button>
+    <div class="button-stack">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo">
+            <span class="icon-sun"><i class="fas fa-sun"></i></span>
+            <span class="icon-moon"><i class="fas fa-moon"></i></span>
+        </button>
+        <a href="https://wa.me/573237992985?text=Hola,%20quiero%20una%20asesor%C3%ADa%20de%20programaci%C3%B3n"
+            class="whatsapp-button-container" target="_blank">
+            <div class="whatsapp-blob">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+        </a>
+    </div>
 
     <script type="module" src="script.js"></script>
+    <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new TypeIt("#typed-subtitle", {
+                speed: 48,
+                loop: true,
+                html: true
+            })
+                .type("Mentoría y asesoría para <strong>llevar tu código al siguiente nivel</strong>.", { delay: 900 })
+                .break({ delay: 400 })
+                .type("Resuelve bloqueos, aprende buenas prácticas y <strong>acelera tu aprendizaje</strong>.", { delay: 1200 })
+                .pause(1200)
+                .delete(null, { delay: 600 })
+                .type("Acompañamiento experto en <strong>desarrollo de software</strong>.", { delay: 900 })
+                .pause(1200)
+                .delete(null, { delay: 600 })
+                .type("Clases personalizadas y consultoría <strong>para tus proyectos reales</strong>.", { delay: 900 })
+                .pause(1200)
+                .delete(null, { delay: 600 })
+                .go();
+
+            // GSAP number animation for hero stats
+            function animateNumber(id, end, duration, suffix = "") {
+                const el = document.getElementById(id);
+                if (!el) return;
+                gsap.fromTo(el, { innerText: 0 }, {
+                    innerText: end,
+                    duration: duration,
+                    ease: "power1.out",
+                    snap: { innerText: 1 },
+                    onUpdate: function () {
+                        el.innerText = Math.floor(el.innerText) + suffix;
+                    },
+                    onComplete: function () {
+                        el.innerText = end + suffix;
+                    }
+                });
+            }
+            animateNumber("stat-proyectos", 100, 1.2, "+");
+            animateNumber("stat-satisfaccion", 98, 1.2, "%");
+            animateNumber("stat-experiencia", 10, 1.2, " años");
+        });
+    </script>
 </body>
 
 </html>
