@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
     <style>
         .faq-section .accordion {
             max-width: 800px;
@@ -152,6 +154,19 @@
                 padding-right: 1rem;
             }
         }
+
+        /* Custom glowing effect for Mouse Follower sphere - MORE SHINY */
+        .hero .mf-cursor-inner {
+            box-shadow:
+                0 0 64px 32px rgba(160, 106, 249, 0.45),
+                0 0 128px 48px rgba(53, 228, 178, 0.25),
+                0 0 32px 8px #fff,
+                0 0 12px 4px #f8549b;
+            background: radial-gradient(circle, #fff 70%, #a06af9 90%, #35E4B2 100%);
+            opacity: 0.95;
+            border: 2px solid #fff;
+            transition: box-shadow 0.3s, background 0.3s;
+        }
     </style>
 </head>
 
@@ -166,8 +181,8 @@
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#casos-de-exito">Casos de Éxito</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <a href="asesorias.html" class="gradient-link">Asesorías</a>
-                <a href="agentes.html" class="gradient-link">Agentes</a>
+                <li><a href="asesorias.html" class="gradient-link">Asesorías</a></li>
+                <li><a href="agentes.html" class="gradient-link">Agentes</a></li>
             </ul>
         </nav>
         <div class="header-wave-container">
@@ -716,6 +731,7 @@
 
     <script type="module" src="script.js"></script>
     <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             new TypeIt("#typed-subtitle", {
@@ -753,9 +769,49 @@
                     }
                 });
             }
-            animateNumber("stat-proyectos", 4, 1.2, "+");
-            animateNumber("stat-satisfaccion", 98, 1.2, "%");
+            animateNumber("stat-proyectos", 4, 0.5, "+");
+            animateNumber("stat-satisfaccion", 98, 1.4, "%");
             animateNumber("stat-entrega", 15, 1.2, " días");
+
+            if (window.MouseFollower) {
+                new MouseFollower({
+                    container: document.querySelector('.hero'),
+                    visible: true,
+                    speed: 0.35,
+                    ease: 'expo.out',
+                    skewing: 0.1,
+                    className: 'mf-cursor',
+                    innerClassName: 'mf-cursor-inner',
+                    // Add a glowing effect via CSS below
+                });
+            }
+
+            // GSAP staggered nav animation ONLY in .hero
+            let navAnimated = false;
+            const navLinks = document.querySelectorAll('.nav-links li');
+            const heroSection = document.querySelector('.hero');
+            if (window.gsap && navLinks.length && heroSection) {
+                gsap.set(navLinks, { opacity: 0, y: 30, scale: 2, x: 30 });
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !navAnimated) {
+                            gsap.to(navLinks, {
+                                opacity: 1,
+                                y: 0,
+                                x: 0,
+                                scale: 1,
+                                duration: 0.6,
+                                ease: 'power3.out',
+                                stagger: 0.13,
+                                delay: 0.2
+                            });
+                            navAnimated = true;
+                            obs.disconnect();
+                        }
+                    });
+                }, { threshold: 0.3 });
+                observer.observe(heroSection);
+            }
         });
     </script>
 

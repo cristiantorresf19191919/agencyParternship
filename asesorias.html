@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
 </head>
 
 <body>
@@ -482,6 +484,7 @@
 
     <script type="module" src="script.js"></script>
     <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             new TypeIt("#typed-subtitle", {
@@ -522,6 +525,45 @@
             animateNumber("stat-proyectos", 100, 1.2, "+");
             animateNumber("stat-satisfaccion", 98, 1.2, "%");
             animateNumber("stat-experiencia", 10, 1.2, " años");
+
+            if (window.MouseFollower) {
+                new MouseFollower({
+                    container: document.querySelector('.hero'),
+                    visible: true,
+                    speed: 0.35,
+                    ease: 'expo.out',
+                    skewing: 0.1,
+                    className: 'mf-cursor',
+                    innerClassName: 'mf-cursor-inner',
+                });
+            }
+
+            // GSAP staggered nav animation ONLY in .hero (with scale/skew for impressive effect)
+            let navAnimated = false;
+            const navLinks = document.querySelectorAll('.nav-links li');
+            const heroSection = document.querySelector('.hero');
+            if (window.gsap && navLinks.length && heroSection) {
+                gsap.set(navLinks, { opacity: 0, y: 40, scale: 1.18, skewY: 8 });
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !navAnimated) {
+                            gsap.to(navLinks, {
+                                opacity: 1,
+                                y: 0,
+                                scale: 1,
+                                skewY: 0,
+                                duration: 1.05,
+                                ease: 'back.out(1.7)',
+                                stagger: 0.13,
+                                delay: 0.18
+                            });
+                            navAnimated = true;
+                            obs.disconnect();
+                        }
+                    });
+                }, { threshold: 0.3 });
+                observer.observe(heroSection);
+            }
         });
     </script>
     <style>
@@ -665,6 +707,13 @@
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
+        }
+
+        /* Custom glowing effect for Mouse Follower sphere */
+        .hero .mf-cursor-inner {
+            box-shadow: 0 0 32px 12px rgba(160, 106, 249, 0.25), 0 0 64px 24px rgba(53, 228, 178, 0.10);
+            background: radial-gradient(circle, #fff 60%, #a06af9 100%);
+            opacity: 0.85;
         }
     </style>
 </body>

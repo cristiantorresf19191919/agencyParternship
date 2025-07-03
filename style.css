@@ -2696,7 +2696,7 @@ body.dark-mode .nav {
 
 body.dark-mode .nav-links a:hover {
     background: rgba(111, 66, 193, 0.2);
-    color: var(--white);
+    color: var(--white) !important;
 }
 
 body.dark-mode #contact-form input,
