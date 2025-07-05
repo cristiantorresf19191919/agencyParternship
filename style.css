@@ -3093,10 +3093,23 @@ table.amortization-table::-webkit-scrollbar-thumb {
     transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
     position: relative;
     overflow: hidden;
-    border-left: 6px solid #a06af9;
+    border-left: none !important;
+    position: relative !important;
     display: flex;
     flex-direction: column;
     min-height: 220px;
+}
+
+.experience-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    border-radius: 1.25rem 0 0 1.25rem;
+    background: linear-gradient(180deg, #a06af9 0%, #35E4B2 100%);
+    z-index: 2;
 }
 
 .experience-card:hover {
