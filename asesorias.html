@@ -71,7 +71,8 @@
         </div>
     </header>
     <main>
-        <section class="hero">
+        <section class="hero" style="position:relative;overflow:hidden;">
+            <div id="particles-js" style="position:absolute;inset:0;"></div>
             <div class="hero-content">
                 <h1 class="hero-title">
                     <span>Lleva tu <strong>código</strong> y arquitectura al <strong>siguiente nivel</strong></span>
@@ -485,6 +486,7 @@
     <script type="module" src="script.js"></script>
     <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
     <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             new TypeIt("#typed-subtitle", {
@@ -563,6 +565,33 @@
                     });
                 }, { threshold: 0.3 });
                 observer.observe(heroSection);
+            }
+
+            // particles.js in .hero
+            if (window.particlesJS) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 900 } },
+                        color: { value: ['#fff', '#fff', '#fff'] },
+                        shape: { type: 'circle' },
+                        opacity: { value: 0.18, random: true },
+                        size: { value: 3.5, random: true },
+                        line_linked: { enable: true, distance: 110, color: '#fff', opacity: 0.30, width: 1 },
+                        move: { enable: true, speed: 1.1, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: {
+                            onhover: { enable: true, mode: 'repulse' },
+                            onclick: { enable: false },
+                            resize: true
+                        },
+                        modes: {
+                            repulse: { distance: 90, duration: 0.4 }
+                        }
+                    },
+                    retina_detect: true
+                });
             }
         });
     </script>
@@ -714,6 +743,19 @@
             box-shadow: 0 0 32px 12px rgba(160, 106, 249, 0.25), 0 0 64px 24px rgba(53, 228, 178, 0.10);
             background: radial-gradient(circle, #fff 60%, #a06af9 100%);
             opacity: 0.85;
+        }
+
+        .hero::before {
+            z-index: 0 !important;
+        }
+
+        #particles-js {
+            z-index: 1 !important;
+        }
+
+        .hero-content {
+            z-index: 2 !important;
+            position: relative;
         }
     </style>
 </body>
