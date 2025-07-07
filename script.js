@@ -114,16 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function stickCursorToCorner() {
     if (mf && !stuck) {
-      // Move to bottom left (adjust 40 as needed)
       if (typeof mf.setPosition === 'function') {
         mf.setPosition({ x: 40, y: window.innerHeight - 40 });
       }
-      // Prevent following the mouse
       if (typeof mf.lock === 'function') {
         mf.lock();
-      } else {
-        // Fallback: temporarily disable pointer events
-        document.body.style.pointerEvents = 'none';
       }
       stuck = true;
     }
@@ -133,8 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mf && stuck) {
       if (typeof mf.unlock === 'function') {
         mf.unlock();
-      } else {
-        document.body.style.pointerEvents = '';
       }
       stuck = false;
     }
