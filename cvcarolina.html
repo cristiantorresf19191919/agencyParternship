@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Carolina Chavez Muñoz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <i class="fas fa-user-astronaut"></i> Carolina <strong>Chavez</strong>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#educacion">Educación</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+            </ul>
+        </nav>
+        <div class="header-wave-container">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="wave-gradient-cv" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="5%" stop-color="#20c997"></stop>
+                        <stop offset="95%" stop-color="#8e44ad"></stop>
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z"
+                    stroke="none" stroke-width="0" fill="url(#wave-gradient-cv)"></path>
+            </svg>
+        </div>
+    </header>
+    <main>
+        <section class="hero" style="position:relative;overflow:hidden;">
+            <div id="particles-js" style="position:absolute;inset:0;"></div>
+            <div class="hero-content">
+                <div class="pill animate-on-scroll">
+                    <i class="fas fa-database"></i> Data Engineer & Data Scientist
+                </div>
+                <h1 class="hero-title animate-on-scroll">Carolina Chavez Muñoz</h1>
+                <div class="floating-gradient-banner animate-on-scroll">
+                    <span style="font-size:1.15rem;font-weight:600;letter-spacing:0.5px;">Transforming Data Into
+                        Impactful Solutions</span>
+                </div>
+            </div>
+        </section>
+        <section id="perfil" class="profile animate-on-scroll">
+            <h2 class="section-title">Perfil <strong>Profesional</strong></h2>
+            <p>Versatile software-engineer-turned-data-scientist with hands-on expertise in Python, JavaScript and Java.
+                I architect and deploy end-to-end analytics solutions— from ETL pipelines in Docker to predictive models
+                in TensorFlow / Keras— and translate them into clear, decision-ready insights via Power BI and custom
+                APIs. Passionate about scalable ML, RAG-based knowledge systems and accessible design, I aim to help
+                organisations convert raw data into high-impact products.</p>
+        </section>
+        <section id="experiencia" class="experience animate-on-scroll">
+            <h2 class="section-title">Experiencia</h2>
+            <div class="experience-cards-container">
+                <div class="experience-card animate-on-scroll">
+                    <div class="card-header">
+                        <div class="card-icon teal"><i class="fas fa-rocket"></i></div>
+                        <div>
+                            <h3>Data Engineer & Co-founder</h3>
+                            <div class="pill">Jan 2025 – Jul 2025 <span>📍 Remote</span></div>
+                        </div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Delivered 5+ responsive data-driven web apps using React + AEM, cutting content-authoring
+                            time for editors by one-third.</li>
+                        <li>Consolidated and cleansed datasets for 10 projects, raising data validity from "partial" to
+                            >95% and enabling reliable model training.</li>
+                        <li>Performed 12 deep-dive web-traffic analyses with NumPy & Seaborn; uncovered behavioural
+                            trends that steered product-roadmap decisions.</li>
+                        <li>Co-founded a startup and led end-to-end UX research and documentation sprints, refining
+                            product workflows and elevating overall user satisfaction through iterative, human-centred
+                            design.</li>
+                        <li>Mentored a small analytics squad, standardising Python data-quality scripts and dashboard
+                            templates that now power weekly exec reports.</li>
+                    </ul>
+                </div>
+                <div class="experience-card animate-on-scroll">
+                    <div class="card-header">
+                        <div class="card-icon purple"><i class="fas fa-flask"></i></div>
+                        <div>
+                            <h3>Data Scientist - UNODC</h3>
+                            <div class="pill">Sep 2022 – Jun 2025 <span>Remote</span></div>
+                        </div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Designed and automated end-to-end ETL pipelines in Python, moving raw data from REST sources
+                            into Amazon S3, cleansing it with Pandas, and loading curated tables for analysis.</li>
+                        <li>Built predictive and descriptive models (e.g., linear regression, classification) with
+                            scikit-learn to forecast crime trends and support evidence-based policy.</li>
+                        <li>Prepared and documented decision-ready datasets: joined, de-duplicated, and validated
+                            previously inconsistent or out-of-date records for reliable reporting.</li>
+                        <li>Created interactive Power BI / Matplotlib visualizations that turned complex findings into
+                            clear insights for non-technical stakeholders and senior UN officials.</li>
+                        <li>Wrote reusable Python scripts for data quality checks and scheduled them in CI pipelines,
+                            reducing manual effort and ensuring fresh data for daily dashboards.</li>
+                        <li>Acted as an internal data-consulting point, advising policy units on big-data best practices
+                            and helping teams frame analytical questions aligned with UN objectives.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="educacion" class="animate-on-scroll">
+            <h2 class="section-title">Educación</h2>
+            <ul class="features-list">
+                <li><strong>Universidad de Nariño</strong>, 2011 - 2016 — Computer Systems Engineering</li>
+                <li><strong>UTEL</strong>, Jan 2022 - Oct 2024 (current) — Software Development and Mobile Applications
+                </li>
+                <li><strong>UTP</strong>, Mar 2020 - Dec 2020, Pereira — Data Analytics and Machine Learning</li>
+                <li><strong>MINTIC</strong>, Jun 2024 - Present (current), Pasto — Prometheus Code Project Manager
+                    (Full-time)</li>
+                <li><strong>Universidad de Nariño</strong>, Feb 2018 - Jun 2021 — Master in Research</li>
+            </ul>
+        </section>
+        <section id="proyectos" class="animate-on-scroll">
+            <h2 class="section-title">Proyectos</h2>
+            <ul class="features-list">
+                <li><strong>ARIS Project (Government of Kenya)</strong>, Sep 2024 - May 2025, Pasto — Created a
+                    scalable, accessibility-first reporting platform empowering citizens (including visually-impaired
+                    users) to submit anonymous complaints and feedback.</li>
+                <li><strong>ARIS Platform</strong>, Jan 2024 - May 2025 (Remote) — Led a cross-functional team to
+                    deliver ARIS, a government platform for anonymous complaints and reports. Designed and implemented
+                    the database and admin panel, ensuring secure storage and auditability of sensitive data. Built a
+                    voice-assistant module using Python, Keras and PyTorch, giving visually-impaired users full access
+                    through natural-language interaction. Developed data-engineering pipelines that cleaned, labeled and
+                    transformed text data for model training and real-time inference. Balanced project-management tasks
+                    (roadmaps, sprint planning, task assignment) with hands-on coding of API endpoints and ML scripts.
+                    Coordinated with government stakeholders to gather requirements, run user-acceptance tests and
+                    launch the system on schedule.</li>
+            </ul>
+        </section>
+        <section id="habilidades" class="animate-on-scroll">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-card">Python</div>
+                <div class="skill-card">NumPy</div>
+                <div class="skill-card">Pandas</div>
+                <div class="skill-card">scikit-learn</div>
+                <div class="skill-card">Seaborn</div>
+                <div class="skill-card">Matplotlib</div>
+                <div class="skill-card">Keras</div>
+                <div class="skill-card">Torch</div>
+                <div class="skill-card">Power BI</div>
+                <div class="skill-card">Power Apps</div>
+                <div class="skill-card">Databricks</div>
+                <div class="skill-card">Amazon S3</div>
+                <div class="skill-card">SQL</div>
+            </div>
+        </section>
+        <section id="contacto" class="animate-on-scroll" style="margin-top:2.5rem;">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-grid">
+                <a href="mailto:carolinamnz03@gmail.com" class="contact-card" target="_blank"><i
+                        class="fas fa-envelope"></i> carolinamnz03@gmail.com</a>
+                <a href="tel:+573187898054" class="contact-card" target="_blank"><i class="fas fa-phone"></i>
+                    3187898054</a>
+                <a href="https://wa.me/573187898054" class="contact-card" target="_blank"><i
+                        class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </section>
+        <section class="full-width-cta animate-on-scroll">
+            <h2 class="section-title">¿Quieres conectar conmigo?</h2>
+            <p>¡Estoy disponible para nuevas oportunidades y colaboraciones!</p>
+            <a href="mailto:carolinamnz03@gmail.com" target="_blank" class="cta-button primary-light"
+                style="margin-right:1rem;"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://wa.me/573187898054" target="_blank" class="cta-button teal-gradient"><i
+                    class="fab fa-whatsapp"></i> WhatsApp</a>
+        </section>
+    </main>
+    <div class="button-stack">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo" title="Cambiar modo claro/oscuro">
+            <span class="icon-sun"><i class="fas fa-sun" aria-hidden="true"></i></span>
+            <span class="icon-moon"><i class="fas fa-moon" aria-hidden="true"></i></span>
+        </button>
+        <a href="https://wa.me/573187898054" class="whatsapp-button-container" target="_blank"
+            aria-label="Contactar por WhatsApp" title="Contactar por WhatsApp">
+            <div class="whatsapp-blob">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </div>
+        </a>
+        <!-- Add LinkedIn or other social links as needed -->
+    </div>
+    <footer class="footer">
+        <div class="footer-wave-container">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="wave-gradient-footer-cv" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="5%" stop-color="#20c997"></stop>
+                        <stop offset="95%" stop-color="#8e44ad"></stop>
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,0L0,0Z"
+                    class="footer-wave-path" fill="url(#wave-gradient-footer-cv)"></path>
+            </svg>
+        </div>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="logo">
+                    <i class="fas fa-user-astronaut"></i> Carolina <strong>Chavez</strong>
+                </a>
+                <p>Data Engineer & Data Scientist apasionada por la analítica, la automatización y la mejora continua.
+                </p>
+                <p class="made-with">Hecho con <i class="fas fa-heart"></i> y <i class="fas fa-bolt"></i> en Colombia
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Carolina Chavez. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="mailto:carolinamnz03@gmail.com">Email</a>
+                <a href="https://wa.me/573187898054" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Smooth scroll for nav links
+        document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', e => {
+            e.preventDefault();
+            document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        }));
+        // Animate on scroll
+        const obs = new IntersectionObserver((es, o) => {
+            es.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('is-visible');
+                    o.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll('.animate-on-scroll').forEach(s => obs.observe(s));
+        // Dark mode toggle
+        const btn = document.getElementById('theme-toggle');
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+        // GSAP Hero Animation
+        if (window.gsap) {
+            gsap.set('.hero-content .pill, .hero-content .hero-title, .hero-content .floating-gradient-banner', { opacity: 0, y: 40, scale: 0.95, skewY: 6 });
+            const heroAnim = () => {
+                gsap.to('.hero-content .pill', { opacity: 1, y: 0, scale: 1, skewY: 0, duration: 0.7, ease: 'back.out(1.7)' });
+                gsap.to('.hero-content .hero-title', { opacity: 1, y: 0, scale: 1, skewY: 0, duration: 0.8, delay: 0.15, ease: 'back.out(1.7)' });
+                gsap.to('.hero-content .floating-gradient-banner', { opacity: 1, y: 0, scale: 1, skewY: 0, duration: 0.8, delay: 0.3, ease: 'back.out(1.7)' });
+            };
+            // Only trigger when .hero is in view
+            const heroObs = new IntersectionObserver((es, o) => {
+                es.forEach(e => {
+                    if (e.isIntersecting) { heroAnim(); o.disconnect(); }
+                });
+            }, { threshold: 0.4 });
+            heroObs.observe(document.querySelector('.hero'));
+        }
+        // particles.js in .hero
+        if (window.particlesJS) {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 900 } },
+                    color: { value: ['#fff', '#fff', '#fff'] },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.18, random: true },
+                    size: { value: 3.5, random: true },
+                    line_linked: { enable: true, distance: 110, color: '#fff', opacity: 0.30, width: 1 },
+                    move: { enable: true, speed: 1.1, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'repulse' },
+                        onclick: { enable: false },
+                        resize: true
+                    },
+                    modes: {
+                        repulse: { distance: 90, duration: 0.4 }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+    </script>
+    <style>
+        .hero::before {
+            z-index: 0 !important;
+        }
+
+        #particles-js {
+            z-index: 1 !important;
+        }
+
+        .hero-content {
+            z-index: 2 !important;
+            position: relative;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.6rem;
+            margin-top: 1.2rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #6a82fb 0%, #fc5c7d 100%);
+            color: #fff;
+            padding: 0.7rem 1rem;
+            border-radius: 0.7rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-align: center;
+            box-shadow: 0 1.5px 8px 0 rgba(106, 130, 251, 0.08), 0 1.5px 8px 0 rgba(252, 92, 125, 0.08);
+            transition: transform 0.14s cubic-bezier(.4, 2, .6, 1), box-shadow 0.14s cubic-bezier(.4, 2, .6, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.04) rotate(-1deg);
+            box-shadow: 0 4px 16px 0 rgba(106, 130, 251, 0.16), 0 4px 16px 0 rgba(252, 92, 125, 0.16);
+            background: linear-gradient(135deg, #fc5c7d 0%, #6a82fb 100%);
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin-top: 1.2rem;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: #232946;
+            color: #fff;
+            padding: 0.8rem 1.3rem;
+            border-radius: 0.8rem;
+            font-size: 1.08rem;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 1.5px 8px 0 rgba(35, 41, 70, 0.10);
+            transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+        }
+
+        .contact-card:hover {
+            background: #20c997;
+            color: #fff;
+            box-shadow: 0 4px 16px 0 rgba(32, 201, 151, 0.18);
+        }
+    </style>
+</body>
+
+</html>
