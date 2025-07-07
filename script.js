@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
   });
 
-  // === MouseFollower sticky logic for hero section ===
-  let mf; // MouseFollower instance
+  // === MouseFollower sticky logic for hero section (with debug) ===
+  let mf;
   let stuck = false;
 
-  // Initialize MouseFollower and store instance
+  // Initialize MouseFollower only once!
   if (window.MouseFollower) {
     mf = new MouseFollower({
       container: document.querySelector('.hero'),
@@ -107,23 +107,35 @@ document.addEventListener('DOMContentLoaded', () => {
       className: 'mf-cursor',
       innerClassName: 'mf-cursor-inner',
     });
-    window.mf = mf; // for debugging
+    window.mf = mf;
   }
 
-  // Sticky logic for MouseFollower
   const heroSection = document.querySelector('.hero');
 
   function stickCursorToCorner() {
     if (mf && !stuck) {
-      mf.setPosition({ x: 40, y: window.innerHeight - 40 }); // 40px from left/bottom
-      if (typeof mf.lock === 'function') mf.lock(); // lock if available
+      // Move to bottom left (adjust 40 as needed)
+      if (typeof mf.setPosition === 'function') {
+        mf.setPosition({ x: 40, y: window.innerHeight - 40 });
+      }
+      // Prevent following the mouse
+      if (typeof mf.lock === 'function') {
+        mf.lock();
+      } else {
+        // Fallback: temporarily disable pointer events
+        document.body.style.pointerEvents = 'none';
+      }
       stuck = true;
     }
   }
 
   function releaseCursor() {
     if (mf && stuck) {
-      if (typeof mf.unlock === 'function') mf.unlock(); // unlock if available
+      if (typeof mf.unlock === 'function') {
+        mf.unlock();
+      } else {
+        document.body.style.pointerEvents = '';
+      }
       stuck = false;
     }
   }
@@ -143,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('resize', () => {
-    if (stuck && mf) {
+    if (stuck && mf && typeof mf.setPosition === 'function') {
       mf.setPosition({ x: 40, y: window.innerHeight - 40 });
     }
   });

@@ -788,19 +788,6 @@
             animateNumber("stat-satisfaccion", 98, 1.4, "%");
             animateNumber("stat-entrega", 15, 1.2, " días");
 
-            if (window.MouseFollower) {
-                new MouseFollower({
-                    container: document.querySelector('.hero'),
-                    visible: true,
-                    speed: 0.35,
-                    ease: 'expo.out',
-                    skewing: 0.1,
-                    className: 'mf-cursor',
-                    innerClassName: 'mf-cursor-inner',
-                    // Add a glowing effect via CSS below
-                });
-            }
-
             // GSAP staggered nav animation ONLY in .hero
             let navAnimated = false;
             const navLinks = document.querySelectorAll('.nav-links li');
