@@ -91,6 +91,62 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.toggle('dark-mode');
     localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
   });
+
+  // === MouseFollower sticky logic for hero section ===
+  let mf; // MouseFollower instance
+  let stuck = false;
+
+  // Initialize MouseFollower and store instance
+  if (window.MouseFollower) {
+    mf = new MouseFollower({
+      container: document.querySelector('.hero'),
+      visible: true,
+      speed: 0.35,
+      ease: 'expo.out',
+      skewing: 0.1,
+      className: 'mf-cursor',
+      innerClassName: 'mf-cursor-inner',
+    });
+    window.mf = mf; // for debugging
+  }
+
+  // Sticky logic for MouseFollower
+  const heroSection = document.querySelector('.hero');
+
+  function stickCursorToCorner() {
+    if (mf && !stuck) {
+      mf.setPosition({ x: 40, y: window.innerHeight - 40 }); // 40px from left/bottom
+      if (typeof mf.lock === 'function') mf.lock(); // lock if available
+      stuck = true;
+    }
+  }
+
+  function releaseCursor() {
+    if (mf && stuck) {
+      if (typeof mf.unlock === 'function') mf.unlock(); // unlock if available
+      stuck = false;
+    }
+  }
+
+  if (heroSection && window.MouseFollower) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          stickCursorToCorner();
+        } else {
+          releaseCursor();
+        }
+      },
+      { threshold: 0.01 }
+    );
+    observer.observe(heroSection);
+  }
+
+  window.addEventListener('resize', () => {
+    if (stuck && mf) {
+      mf.setPosition({ x: 40, y: window.innerHeight - 40 });
+    }
+  });
 });
 
 // Enhanced JavaScript for improved UI/UX
