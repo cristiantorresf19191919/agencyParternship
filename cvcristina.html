@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Cristina Ángela Rodríguez Vásquez</title>
+    <title>CV - Cristina Angelica Rodríguez Vásquez</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -107,30 +107,95 @@
         </section>
         <section id="educacion" class="animate-on-scroll">
             <h2 class="section-title">Educación</h2>
-            <ul class="features-list">
-                <li><strong>ECCI (Ingeniería Industrial)</strong>, 2013</li>
-                <li><strong>SENA (Contabilidad y Gestión Financiera)</strong>, 2006</li>
-                <li><strong>IED Brisas del Diamante (Bachiller)</strong>, 2004</li>
-            </ul>
+            <div class="education-grid">
+                <div class="education-card">
+                    <i class="fas fa-university"></i>
+                    <div>
+                        <strong>ECCI</strong><br>
+                        <span>Ingeniería Industrial</span>
+                    </div>
+                    <span class="education-year">2013</span>
+                </div>
+                <div class="education-card">
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <strong>SENA</strong><br>
+                        <span>Contabilidad y Gestión Financiera</span>
+                    </div>
+                    <span class="education-year">2006</span>
+                </div>
+                <div class="education-card">
+                    <i class="fas fa-school"></i>
+                    <div>
+                        <strong>IED Brisas del Diamante</strong><br>
+                        <span>Bachiller</span>
+                    </div>
+                    <span class="education-year">2004</span>
+                </div>
+            </div>
         </section>
         <section id="habilidades" class="animate-on-scroll">
             <h2 class="section-title">Habilidades</h2>
-            <ul class="features-list">
-                <li>Automatización: Selenium, Cypress</li>
-                <li>APIs & Testing: Postman, SoapUI, JMeter</li>
-                <li>Herramientas QA: Jira, QTracker, Linear</li>
-                <li>Metodologías: Scrum, Agile</li>
-                <li>Otras: SQL, AS400, Figma, Amplitude</li>
-            </ul>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fas fa-robot"></i><span>Automatización</span>
+                    <div class="skill-list">Selenium, Cypress</div>
+                </div>
+                <div class="skill-card"><i class="fas fa-vial"></i><span>APIs & Testing</span>
+                    <div class="skill-list">Postman, SoapUI, JMeter</div>
+                </div>
+                <div class="skill-card"><i class="fas fa-tools"></i><span>Herramientas QA</span>
+                    <div class="skill-list">Jira, QTracker, Linear</div>
+                </div>
+                <div class="skill-card"><i class="fas fa-project-diagram"></i><span>Metodologías</span>
+                    <div class="skill-list">Scrum, Agile</div>
+                </div>
+                <div class="skill-card"><i class="fas fa-database"></i><span>Otras</span>
+                    <div class="skill-list">SQL, AS400, Figma, Amplitude</div>
+                </div>
+            </div>
         </section>
         <section id="certificaciones" class="animate-on-scroll">
             <h2 class="section-title">Certificaciones</h2>
-            <ul class="features-list">
-                <li>Cisco: English for IT, 2025</li>
-                <li>IBM: Fundamentos de IA, 2024</li>
-                <li>CertiProf: Scrum Master / Product Owner / Developer, 2018</li>
-                <li>Politécnico: Java Programming, 2019</li>
-            </ul>
+            <div class="certs-grid">
+                <div class="cert-card"><i class="fas fa-certificate"></i>
+                    <div><strong>Cisco</strong><br><span>English for IT</span></div><span class="cert-date">2025</span>
+                </div>
+                <div class="cert-card"><i class="fas fa-brain"></i>
+                    <div><strong>IBM</strong><br><span>Fundamentos de IA</span></div><span class="cert-date">2024</span>
+                </div>
+                <div class="cert-card"><i class="fas fa-users"></i>
+                    <div><strong>CertiProf</strong><br><span>Scrum Master / Product Owner / Developer</span></div><span
+                        class="cert-date">2018</span>
+                </div>
+                <div class="cert-card"><i class="fas fa-code"></i>
+                    <div><strong>Politécnico</strong><br><span>Java Programming</span></div><span
+                        class="cert-date">2019</span>
+                </div>
+            </div>
+        </section>
+        <section id="contacto" class="contact animate-on-scroll">
+            <h2 class="section-title">Contáctame por WhatsApp</h2>
+            <form id="wa-contact-form" class="wa-contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="wa-name">Nombre</label>
+                        <input type="text" id="wa-name" name="wa-name" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="wa-email">Email</label>
+                        <input type="email" id="wa-email" name="wa-email" required placeholder="tu@email.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="flex:1;">
+                        <label for="wa-message">Mensaje</label>
+                        <textarea id="wa-message" name="wa-message" rows="3" required
+                            placeholder="¿En qué puedo ayudarte?"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="cta-button teal-gradient full-width"><i class="fab fa-whatsapp"></i> Enviar
+                    WhatsApp</button>
+            </form>
         </section>
         <section class="full-width-cta animate-on-scroll">
             <h2 class="section-title">¿Quieres conectar conmigo?</h2>
@@ -257,6 +322,20 @@
                 retina_detect: true
             });
         }
+        // WhatsApp contact form logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const waForm = document.getElementById('wa-contact-form');
+            if (waForm) {
+                waForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const name = document.getElementById('wa-name').value.trim();
+                    const email = document.getElementById('wa-email').value.trim();
+                    const msg = document.getElementById('wa-message').value.trim();
+                    const waMsg = encodeURIComponent(`Hola Cristina! Mi nombre es ${name}. Mi email es ${email}. ${msg}`);
+                    window.open(`https://wa.me/573203183177?text=${waMsg}`, '_blank');
+                });
+            }
+        });
     </script>
     <style>
         .hero::before {
@@ -270,6 +349,199 @@
         .hero-content {
             z-index: 2 !important;
             position: relative;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+
+        .skill-card {
+            background: #232946;
+            color: #fff;
+            padding: 1.1rem 1.2rem;
+            border-radius: 1.1rem;
+            font-weight: 600;
+            font-size: 1.08rem;
+            text-align: center;
+            box-shadow: 0 2px 16px 0 rgba(32, 201, 151, 0.10);
+            transition: transform 0.14s cubic-bezier(.4, 2, .6, 1), box-shadow 0.14s cubic-bezier(.4, 2, .6, 1), background 0.14s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-card i {
+            font-size: 2.1rem;
+            margin-bottom: 0.2rem;
+            color: #20c997;
+        }
+
+        .skill-card .skill-list {
+            font-size: 0.98rem;
+            font-weight: 400;
+            color: #bfc2d5;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.04) rotate(-1deg);
+            box-shadow: 0 4px 24px 0 rgba(32, 201, 151, 0.18);
+            background: #20c997;
+            color: #fff;
+        }
+
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+
+        .cert-card {
+            background: #232946;
+            color: #fff;
+            padding: 1.1rem 1.2rem;
+            border-radius: 1.1rem;
+            font-weight: 500;
+            font-size: 1.05rem;
+            text-align: left;
+            box-shadow: 0 2px 16px 0 rgba(160, 106, 249, 0.10);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .cert-card i {
+            font-size: 2.1rem;
+            color: #a06af9;
+        }
+
+        .cert-card .cert-date {
+            margin-left: auto;
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: #20c997;
+        }
+
+        .wa-contact-form {
+            background: #232946;
+            border-radius: 1.1rem;
+            box-shadow: 0 2px 16px 0 rgba(32, 201, 151, 0.10);
+            padding: 1.5rem 1.2rem;
+            max-width: 520px;
+            margin: 1.5rem auto 0 auto;
+        }
+
+        .wa-contact-form .form-row {
+            display: flex;
+            gap: 1.1rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .wa-contact-form .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .wa-contact-form label {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #a06af9;
+        }
+
+        .wa-contact-form input,
+        .wa-contact-form textarea {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            border-radius: 0.7rem;
+            border: 2px solid #20c997;
+            background: #181b22;
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            transition: border 0.18s, background 0.18s;
+        }
+
+        .wa-contact-form input:focus,
+        .wa-contact-form textarea:focus {
+            border-color: #a06af9;
+            background: #232946;
+        }
+
+        .wa-contact-form .cta-button {
+            margin-top: 0.7rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 700px) {
+
+            .skills-grid,
+            .certs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wa-contact-form .form-row {
+                flex-direction: column;
+            }
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+            background: #f8f5ff;
+            border-radius: 1.1rem;
+            box-shadow: 0 2px 16px 0 rgba(160, 106, 249, 0.07);
+            padding: 1.5rem 1.2rem;
+        }
+
+        .education-card {
+            background: #fff;
+            color: #232946;
+            padding: 1.1rem 1.2rem;
+            border-radius: 1.1rem;
+            font-weight: 500;
+            font-size: 1.05rem;
+            text-align: left;
+            box-shadow: 0 2px 16px 0 rgba(160, 106, 249, 0.10);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            transition: transform 0.14s cubic-bezier(.4, 2, .6, 1), box-shadow 0.14s cubic-bezier(.4, 2, .6, 1);
+        }
+
+        .education-card i {
+            font-size: 2.1rem;
+            color: #a06af9;
+        }
+
+        .education-card .education-year {
+            margin-left: auto;
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: #20c997;
+        }
+
+        .education-card:hover {
+            transform: scale(1.04) rotate(-1deg);
+            box-shadow: 0 4px 24px 0 rgba(160, 106, 249, 0.18);
+        }
+
+        @media (max-width: 700px) {
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </body>
