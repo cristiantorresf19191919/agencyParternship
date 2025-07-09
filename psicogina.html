@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Consultorio Psicológico Psi. Esp. Gina Rodríguez. Terapia individual, de pareja, manejo de duelo, estrés, ansiedad y más. Presencial y online. Agenda abierta. ¡Cultiva tu bienestar emocional!">
+    <title>Consultorio Psicológico | Psi. Esp. Gina Rodríguez</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tupsicorefugio.com/">
+    <meta property="og:title" content="Consultorio Psicológico | Psi. Esp. Gina Rodríguez 🌱">
+    <meta property="og:description"
+        content="Terapia individual, de pareja, manejo de duelo, estrés, ansiedad y más. Presencial y online. Agenda abierta. ¡Cultiva tu bienestar emocional!">
+    <meta property="og:image" content="gina-profile.jpg">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://tupsicorefugio.com/">
+    <meta name="twitter:title" content="Consultorio Psicológico | Psi. Esp. Gina Rodríguez 🌱">
+    <meta name="twitter:description"
+        content="Terapia individual, de pareja, manejo de duelo, estrés, ansiedad y más. Presencial y online. Agenda abierta. ¡Cultiva tu bienestar emocional!">
+    <meta name="twitter:image" content="gina-profile.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+    <style>
+        .horarios-section {
+            max-width: 480px;
+            margin: 2.5rem auto 0 auto;
+            background: var(--white, #fff);
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px 0 rgba(53, 228, 178, 0.10);
+            padding: 2rem 2.2rem 1.5rem 2.2rem;
+            color: #23243a;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+        }
+
+        body.dark-mode .horarios-section {
+            background: #23243a;
+            color: #e9ecef;
+        }
+
+        .horarios-section h3 {
+            color: #20c997;
+            font-size: 1.2rem;
+            margin-bottom: 1.1rem;
+            font-weight: 700;
+        }
+
+        .horarios-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.2rem;
+        }
+
+        .horarios-table th,
+        .horarios-table td {
+            padding: 0.45rem 0.5rem;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+
+        .horarios-table th {
+            color: #20c997;
+            font-weight: 700;
+            border-bottom: 1.5px solid #20c997;
+        }
+
+        .horarios-table td {
+            color: #23243a;
+        }
+
+        body.dark-mode .horarios-table td {
+            color: #e9ecef;
+        }
+
+        .horarios-table .open-now {
+            color: #20c997;
+            font-weight: 700;
+        }
+
+        .horarios-table .closed {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .horarios-section .contacto-horario {
+            color: #20c997;
+            font-weight: 700;
+            font-size: 1.08rem;
+            margin-top: 0.7rem;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .horarios-section {
+                padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+            }
+
+            .horarios-table th,
+            .horarios-table td {
+                font-size: 0.98rem;
+            }
+        }
+
+        .hero-img-mental {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 1.2rem;
+            filter: drop-shadow(0 4px 24px #20c99733);
+        }
+
+        .footer-profile {
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+        }
+
+        .footer-profile-img {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2.5px solid #20c997;
+            box-shadow: 0 2px 12px #20c99733;
+        }
+
+        @media (max-width: 600px) {
+            .footer-profile-img {
+                width: 38px;
+                height: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <i class="fas fa-leaf"></i> Psi. Gina <strong>Rodríguez</strong>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-wave-container">
+            <!-- SVG wave as in index.html -->
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="wave-gradient-psico" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="5%" stop-color="#20c997"></stop>
+                        <stop offset="95%" stop-color="#8e44ad"></stop>
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z"
+                    stroke="none" stroke-width="0" fill="url(#wave-gradient-psico)"></path>
+            </svg>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" style="position:relative;overflow:hidden;">
+            <div id="particles-js" style="position:absolute;inset:0;"></div>
+            <div class="hero-content">
+                <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png" alt="Salud Mental"
+                    class="hero-img-mental animate-on-scroll" loading="lazy">
+                <div class="pill animate-on-scroll">
+                    <i class="fas fa-seedling"></i> Consultorio Psicológico
+                </div>
+                <h1 class="hero-title animate-on-scroll">
+                    <span>🌻 Te recuerdo tu valor y cultivamos <strong>junt@s</strong> tu bienestar emocional 🌻</span>
+                </h1>
+                <div class="floating-gradient-banner animate-on-scroll">
+                    <i class="fas fa-unlock"></i> Agenda abierta — sesiones presenciales y online
+                </div>
+                <p class="hero-subtitle animate-on-scroll">
+                    Aquí encontrarás apoyo y comprensión en tu camino hacia el <strong>bienestar emocional</strong> 💚
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="cta-button primary">Agendar Sesión</a>
+                    <a href="#servicios" class="cta-button secondary">Ver Servicios</a>
+                </div>
+            </div>
+        </section>
+        <!-- Servicios Section -->
+        <section id="servicios" class="features animate-on-scroll">
+            <div class="pill animate-on-scroll">
+                <i class="fas fa-heart"></i> Servicios
+            </div>
+            <h2 class="section-title animate-on-scroll">Acompañamiento <strong>Psicológico</strong> Personalizado</h2>
+            <p class="section-subtitle animate-on-scroll">Sesiones diseñadas para tu bienestar, con enfoque humano y
+                profesional.</p>
+            <div class="services-cards-container">
+                <div class="service-card card-green animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-user-friends"></i></div>
+                    <h3>Terapia Individual y de Pareja</h3>
+                    <p>Espacio seguro para trabajar emociones, relaciones y crecimiento personal.</p>
+                </div>
+                <div class="service-card card-blue animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-heart-broken"></i></div>
+                    <h3>Manejo de Duelo</h3>
+                    <p>Acompañamiento empático para transitar procesos de pérdida y sanar.</p>
+                </div>
+                <div class="service-card card-purple animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Gestión del Estrés y Ansiedad</h3>
+                    <p>Estrategias prácticas para recuperar tu calma y bienestar.</p>
+                </div>
+                <div class="service-card card-orange animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-child"></i></div>
+                    <h3>Población Infantil, Juvenil y Adulto</h3>
+                    <p>Atención integral para todas las etapas de la vida.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Especialidades Section -->
+        <section id="especialidades" class="features animate-on-scroll">
+            <div class="pill animate-on-scroll">
+                <i class="fas fa-star"></i> Especialidades
+            </div>
+            <h2 class="section-title animate-on-scroll">Experticia en <strong>Crisis y Trauma</strong></h2>
+            <p class="section-subtitle animate-on-scroll">Enfoque cognitivo-conductual y atención en situaciones de
+                crisis.</p>
+            <div class="services-cards-container">
+                <div class="service-card card-teal animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-umbrella-beach"></i></div>
+                    <h3>Manejo de Crisis y Trauma</h3>
+                    <p>Herramientas para afrontar y superar momentos difíciles.</p>
+                </div>
+                <div class="service-card card-pink animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Enfoque Cognitivo-Conductual</h3>
+                    <p>Intervenciones basadas en evidencia para transformar pensamientos y conductas.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Horarios Section -->
+        <section id="horarios" class="horarios-section animate-on-scroll">
+            <h3><i class="fas fa-clock"></i> Horarios de Atención</h3>
+            <table class="horarios-table">
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td class="open-now">Open now</td>
+                    <td class="open-now">9:00 AM - 8:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>9:00 AM - 8:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>9:00 AM - 8:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>10:00 AM - 3:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td class="closed">Closed</td>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>9:00 AM - 8:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>9:00 AM - 8:00 PM</td>
+                </tr>
+            </table>
+            <span class="contacto-horario"><i class="fas fa-envelope"></i> soytupsicorefugio@gmail.com</span>
+        </section>
+        <!-- Contacto Section -->
+        <section id="contacto" class="contact animate-on-scroll">
+            <div class="pill animate-on-scroll">
+                <i class="far fa-paper-plane"></i> Contáctame
+            </div>
+            <h2 class="section-title animate-on-scroll">¿List@ para dar el <br><strong>primer paso?</strong></h2>
+            <p class="section-subtitle animate-on-scroll">Agenda tu sesión o consulta cualquier duda. ¡Estoy aquí para
+                apoyarte!</p>
+            <div class="contact-container">
+                <form id="contact-form" class="animate-on-scroll">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="test@gmail.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="message">¿En qué puedo ayudarte?</label>
+                            <textarea id="message" name="message"
+                                placeholder="Cuéntame tu motivo de consulta, disponibilidad, etc..."
+                                rows="4"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="cta-button primary full-width">Solicitar Sesión</button>
+                </form>
+                <div class="contact-info animate-on-scroll">
+                    <div class="info-box benefits">
+                        <h4>¿Por qué elegir este consultorio?</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Atención cálida y profesional</li>
+                            <li><i class="fas fa-check"></i> Sesiones presenciales y online</li>
+                            <li><i class="fas fa-check"></i> Enfoque personalizado</li>
+                            <li><i class="fas fa-check"></i> Confidencialidad garantizada</li>
+                            <li><i class="fas fa-check"></i> Respuesta rápida</li>
+                        </ul>
+                    </div>
+                    <div class="contact-cards">
+                        <h3 class="contact-section-title">Información de Contacto</h3>
+                        <div class="contact-card">
+                            <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <div class="contact-card-title">Email</div>
+                                <div class="contact-card-main">soytupsicorefugio@gmail.com</div>
+                                <div class="contact-card-sub">Respuesta en menos de 24 horas</div>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <div class="contact-card-title">WhatsApp</div>
+                                <div class="contact-card-main"><a
+                                        href="https://wa.me/573118635580?text=Hola%20Gina!%20Me%20gustaría%20agendar%20una%20sesión%20o%20recibir%20información%20sobre%20tus%20servicios%20de%20psicología.%20🌱"
+                                        target="_blank" style="color:inherit;text-decoration:none;">+57 311 863 5580</a>
+                                </div>
+                                <div class="contact-card-sub">¡Escríbeme por WhatsApp!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-wave-container">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="wave-gradient-footer-psico" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="5%" stop-color="#20c997"></stop>
+                        <stop offset="95%" stop-color="#8e44ad"></stop>
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,0L0,0Z"
+                    class="footer-wave-path" fill="url(#wave-gradient-footer-psico)"></path>
+            </svg>
+        </div>
+        <div class="footer-container">
+            <div class="footer-about footer-profile">
+                <img src="gina-profile.jpg" alt="Foto de Gina Rodríguez, psicóloga" class="footer-profile-img">
+                <div>
+                    <a href="#" class="logo">
+                        <i class="fas fa-leaf"></i> Psi. Gina <strong>Rodríguez</strong>
+                    </a>
+                    <p>Te acompaño a cultivar tu bienestar emocional. Atención cálida, profesional y confidencial.</p>
+                    <p class="made-with">Hecho con <i class="fas fa-heart"></i> y <i class="fas fa-seedling"></i> en
+                        Colombia</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Psi. Gina Rodríguez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <div class="button-stack">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo">
+            <span class="icon-sun"><i class="fas fa-sun"></i></span>
+            <span class="icon-moon"><i class="fas fa-moon"></i></span>
+        </button>
+        <a href="https://wa.me/573118635580?text=Hola%20Gina!%20Me%20gustaría%20agendar%20una%20sesión%20o%20recibir%20información%20sobre%20tus%20servicios%20de%20psicología.%20🌱"
+            class="whatsapp-button-container" target="_blank">
+            <div class="whatsapp-blob">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+        </a>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new TypeIt(".hero-subtitle", {
+                speed: 44,
+                loop: true,
+                html: true
+            })
+                .type("Sesiones presenciales y online disponibles.", { delay: 900 })
+                .break({ delay: 400 })
+                .type("Terapia individual, de pareja y manejo de duelo.", { delay: 1200 })
+                .pause(1200)
+                .delete(null, { delay: 600 })
+                .type("Estrategias para el estrés, ansiedad y crisis.", { delay: 900 })
+                .pause(1200)
+                .delete(null, { delay: 600 })
+                .type("Aquí encontrarás apoyo y comprensión 💚", { delay: 900 })
+                .pause(1200)
+                .delete(null, { delay: 600 })
+                .go();
+
+            // particles.js en .hero (idéntico a index.html)
+            if (window.particlesJS) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 900 } },
+                        color: { value: ['#fff', '#fff', '#fff'] },
+                        shape: { type: 'circle' },
+                        opacity: { value: 0.18, random: true },
+                        size: { value: 3.5, random: true },
+                        line_linked: { enable: true, distance: 110, color: '#fff', opacity: 0.30, width: 1 },
+                        move: { enable: true, speed: 1.1, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: {
+                            onhover: { enable: true, mode: 'repulse' },
+                            onclick: { enable: false },
+                            resize: true
+                        },
+                        modes: {
+                            repulse: { distance: 90, duration: 0.4 }
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
