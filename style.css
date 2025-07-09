@@ -731,6 +731,7 @@ section {
     line-height: 1.7;
     font-weight: 400;
     letter-spacing: -0.2px;
+    margin-bottom: 2.2rem !important;
 }
 
 @media (max-width: 600px) {

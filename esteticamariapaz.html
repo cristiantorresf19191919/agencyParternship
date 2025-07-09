@@ -144,6 +144,473 @@
             z-index: 2 !important;
             position: relative;
         }
+
+        .benefit-gradient-title {
+            font-size: 2.6rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #a06af9 10%, #f8549b 50%, #20c997 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: gradientMove 6s linear infinite;
+        }
+
+        .benefit-gradient-name {
+            background: linear-gradient(90deg, #f8549b 10%, #a06af9 60%, #20c997 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-weight: 900;
+            animation: gradientMove 4s linear infinite reverse;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .benefits-glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 2.2rem 0 1.5rem 0;
+            padding: 2.2rem 1.2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 48px 0 rgba(160, 106, 249, 0.10), 0 1.5px 8px 0 rgba(32, 201, 151, 0.08);
+            backdrop-filter: blur(16px) saturate(160%);
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-glass-card {
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px 0 rgba(160, 106, 249, 0.10), 0 1.5px 8px 0 rgba(32, 201, 151, 0.08);
+            padding: 2.1rem 1.2rem 1.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.22s cubic-bezier(.4, 2, .6, 1), box-shadow 0.22s cubic-bezier(.4, 2, .6, 1), background 0.22s;
+            position: relative;
+            overflow: hidden;
+            border: 1.5px solid rgba(160, 106, 249, 0.13);
+            cursor: pointer;
+            min-height: 220px;
+        }
+
+        .benefit-glass-card::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -40%;
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle at 60% 40%, #a06af9 0%, #20c997 100%, transparent 80%);
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .benefit-glass-card:hover {
+            transform: translateY(-10px) scale(1.04) rotate(-1deg);
+            box-shadow: 0 8px 48px 0 rgba(160, 106, 249, 0.18), 0 4px 16px 0 rgba(32, 201, 151, 0.18);
+            background: rgba(160, 106, 249, 0.13);
+        }
+
+        .benefit-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1.1rem;
+            color: #a06af9;
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            background-clip: initial;
+            text-fill-color: initial;
+            filter: drop-shadow(0 2px 12px #a06af955);
+            animation: floatIcon 2.8s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatIcon {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-10px) scale(1.08);
+            }
+        }
+
+        .benefit-title {
+            font-size: 1.18rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #232946;
+            letter-spacing: 0.01em;
+        }
+
+        .benefit-desc {
+            font-size: 1.01rem;
+            color: #232946;
+            font-weight: 400;
+        }
+
+        @media (max-width: 700px) {
+            .benefits-glass-grid {
+                grid-template-columns: 1fr;
+                padding: 1.2rem 0.3rem;
+            }
+
+            .benefit-glass-card {
+                min-height: 180px;
+                padding: 1.3rem 0.7rem 1rem 0.7rem;
+            }
+
+            .benefit-icon {
+                font-size: 2.1rem;
+            }
+        }
+
+        body.dark-mode .benefit-glass-card {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .benefit-title,
+        body.dark-mode .benefit-desc {
+            color: #fff;
+        }
+
+        body.dark-mode .benefit-icon {
+            color: #20c997;
+        }
+
+        .horarios-section-glass {
+            max-width: 480px;
+            margin: 2.5rem auto 0 auto;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 48px 0 rgba(160, 106, 249, 0.10), 0 1.5px 8px 0 rgba(32, 201, 151, 0.08);
+            backdrop-filter: blur(16px) saturate(160%);
+            padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+            color: #232946;
+            font-family: 'Poppins', 'Inter', Arial, sans-serif;
+            position: relative;
+            animation: fadeInUp 1.1s cubic-bezier(.4, 2, .6, 1);
+        }
+
+        .horarios-header {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .horarios-icon {
+            font-size: 2.1rem;
+            color: #20c997;
+            animation: rotateClock 2.5s linear infinite;
+        }
+
+        @keyframes rotateClock {
+            0% {
+                transform: rotate(-10deg);
+            }
+
+            100% {
+                transform: rotate(350deg);
+            }
+        }
+
+        .horarios-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #232946;
+            letter-spacing: 0.01em;
+        }
+
+        .horarios-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .horario-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.08rem;
+            padding: 0.4rem 0.7rem;
+            border-radius: 0.7rem;
+            background: rgba(255, 255, 255, 0.10);
+            box-shadow: 0 1.5px 8px 0 rgba(160, 106, 249, 0.04);
+            transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+            color: #232946;
+            font-weight: 500;
+            animation: fadeInUp 0.7s cubic-bezier(.4, 2, .6, 1);
+        }
+
+        .horario-row.open-now {
+            background: linear-gradient(90deg, #20c997 0%, #a06af9 100%);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 4px 16px 0 rgba(32, 201, 151, 0.13);
+            animation: pulseOpenNow 1.5s infinite alternate;
+        }
+
+        @keyframes pulseOpenNow {
+            0% {
+                box-shadow: 0 4px 16px 0 rgba(32, 201, 151, 0.13);
+            }
+
+            100% {
+                box-shadow: 0 8px 32px 0 rgba(32, 201, 151, 0.22);
+            }
+        }
+
+        .horario-row .closed {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        .horarios-contacto {
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.08rem;
+            color: #20c997;
+            font-weight: 700;
+            border-top: 1.5px solid #20c997;
+            padding-top: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .horarios-contacto a {
+            color: #20c997;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .horarios-section-glass {
+                padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+            }
+
+            .horarios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        body.dark-mode .horarios-section-glass {
+            background: rgba(35, 36, 58, 0.92);
+            color: #e9ecef;
+            box-shadow: 0 8px 48px 0 rgba(32, 201, 151, 0.10), 0 1.5px 8px 0 rgba(160, 106, 249, 0.08);
+        }
+
+        body.dark-mode .horarios-title,
+        body.dark-mode .horario-row,
+        body.dark-mode .horarios-contacto {
+            color: #e9ecef;
+        }
+
+        body.dark-mode .horario-row {
+            background: rgba(35, 36, 58, 0.7);
+        }
+
+        body.dark-mode .horario-row.open-now {
+            background: linear-gradient(90deg, #20c997 0%, #a06af9 100%);
+            color: #fff;
+        }
+
+        body.dark-mode .horario-row .closed {
+            color: #e74c3c;
+        }
+
+        body.dark-mode .horarios-contacto a {
+            color: #20c997;
+        }
+
+        body.dark-mode .wa-contact-form {
+            background: #232946;
+            color: #fff;
+            box-shadow: 0 2px 16px 0 rgba(160, 106, 249, 0.10);
+        }
+
+        body.dark-mode .wa-contact-form input,
+        body.dark-mode .wa-contact-form textarea {
+            background: #181b22;
+            color: #fff;
+            border-color: #a06af9;
+        }
+
+        body.dark-mode .wa-contact-form label {
+            color: #20c997;
+        }
+
+        body.dark-mode .wa-contact-form .cta-button {
+            background: linear-gradient(90deg, #20c997 0%, #a06af9 100%);
+            color: #fff;
+        }
+
+        .hero-subtitle {
+            background: none;
+            color: white;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0;
+            margin: 1.2rem auto 0 auto;
+            max-width: 650px;
+            font-size: 1.18rem;
+            font-weight: 500;
+            line-height: 1.5;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark-mode .hero-subtitle {
+            background: rgba(35, 36, 58, 0.92);
+            color: #e9ecef;
+            border-radius: 1.1rem;
+            box-shadow: 0 2px 16px 0 rgba(32, 201, 151, 0.10);
+            padding: 1.1rem 1.7rem;
+        }
+
+        .wa-contact-form {
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 48px 0 rgba(160, 106, 249, 0.10), 0 1.5px 8px 0 rgba(32, 201, 151, 0.08);
+            backdrop-filter: blur(16px) saturate(160%);
+            padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+            margin: 2rem auto 0 auto;
+            max-width: 540px;
+            animation: fadeInUp 1.1s cubic-bezier(.4, 2, .6, 1);
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        body.dark-mode .wa-contact-form {
+            background: rgba(35, 36, 58, 0.92);
+            color: #e9ecef;
+            box-shadow: 0 8px 48px 0 rgba(32, 201, 151, 0.10), 0 1.5px 8px 0 rgba(160, 106, 249, 0.08);
+        }
+
+        .wa-contact-form .form-row {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        @media (max-width: 700px) {
+            .wa-contact-form .form-row {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+
+            .wa-contact-form {
+                padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+            }
+        }
+
+        .wa-contact-form .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin-bottom: 1.1rem;
+        }
+
+        .wa-contact-form label {
+            font-weight: 700;
+            color: #a06af9;
+            margin-bottom: 0.5rem;
+            font-size: 1.08rem;
+            letter-spacing: 0.01em;
+            transition: color 0.3s;
+        }
+
+        body.dark-mode .wa-contact-form label {
+            color: #20c997;
+        }
+
+        .wa-contact-form input,
+        .wa-contact-form select,
+        .wa-contact-form textarea {
+            border: none;
+            border-radius: 0.8rem;
+            background: rgba(255, 255, 255, 0.7);
+            color: #232946;
+            font-size: 1.08rem;
+            padding: 0.85rem 1.1rem;
+            margin-top: 0.1rem;
+            box-shadow: 0 2px 12px 0 rgba(160, 106, 249, 0.07);
+            outline: none;
+            transition: box-shadow 0.2s, background 0.3s, color 0.3s;
+        }
+
+        .wa-contact-form input:focus,
+        .wa-contact-form select:focus,
+        .wa-contact-form textarea:focus {
+            box-shadow: 0 4px 24px 0 rgba(160, 106, 249, 0.13);
+            background: #fff;
+        }
+
+        body.dark-mode .wa-contact-form input,
+        body.dark-mode .wa-contact-form select,
+        body.dark-mode .wa-contact-form textarea {
+            background: #181b22;
+            color: #fff;
+            border: 1.5px solid #a06af9;
+        }
+
+        .wa-contact-form textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .wa-contact-form .cta-button {
+            margin-top: 0.7rem;
+            font-size: 1.18rem;
+            font-weight: 700;
+            border-radius: 1.1rem;
+            padding: 1.1rem 0;
+            box-shadow: 0 4px 24px 0 rgba(32, 201, 151, 0.13);
+            background: linear-gradient(90deg, #20c997 0%, #a06af9 100%);
+            color: #fff;
+            transition: background 0.3s, transform 0.18s, box-shadow 0.18s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            cursor: pointer;
+            animation: pulseOpenNow 1.5s infinite alternate;
+        }
+
+        .wa-contact-form .cta-button:hover {
+            background: linear-gradient(90deg, #a06af9 0%, #20c997 100%);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(160, 106, 249, 0.18);
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
@@ -241,125 +708,138 @@
             <div class="pill animate-on-scroll">
                 <i class="fas fa-gem"></i> Beneficios
             </div>
-            <h2 class="section-title animate-on-scroll">¿Por qué elegir <strong>Maria Paz</strong>?</h2>
-            <ul class="features-list animate-on-scroll">
-                <li><i class="fas fa-check-circle"></i> Atención cálida y personalizada</li>
-                <li><i class="fas fa-check-circle"></i> Equipos de última tecnología</li>
-                <li><i class="fas fa-check-circle"></i> Resultados visibles desde la primera sesión</li>
-                <li><i class="fas fa-check-circle"></i> Ambiente relajante y seguro</li>
-                <li><i class="fas fa-check-circle"></i> Protocolos de higiene certificados</li>
-            </ul>
+            <h2 class="section-title animate-on-scroll benefit-gradient-title">¿Por qué elegir <span
+                    class="benefit-gradient-name">Maria Paz</span>?</h2>
+            <div class="benefits-glass-grid animate-on-scroll">
+                <div class="benefit-glass-card">
+                    <div class="benefit-icon"><i class="fas fa-hands-helping"></i></div>
+                    <div class="benefit-title">Atención cálida y personalizada</div>
+                    <div class="benefit-desc">Te acompañamos con empatía y dedicación en cada sesión.</div>
+                </div>
+                <div class="benefit-glass-card">
+                    <div class="benefit-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="benefit-title">Equipos de última tecnología</div>
+                    <div class="benefit-desc">Tratamientos con tecnología avanzada para mejores resultados.</div>
+                </div>
+                <div class="benefit-glass-card">
+                    <div class="benefit-icon"><i class="fas fa-star"></i></div>
+                    <div class="benefit-title">Resultados visibles desde la primera sesión</div>
+                    <div class="benefit-desc">Notarás el cambio y la frescura en tu piel desde el primer día.</div>
+                </div>
+                <div class="benefit-glass-card">
+                    <div class="benefit-icon"><i class="fas fa-spa"></i></div>
+                    <div class="benefit-title">Ambiente relajante y seguro</div>
+                    <div class="benefit-desc">Un espacio pensado para tu bienestar y tranquilidad.</div>
+                </div>
+                <div class="benefit-glass-card">
+                    <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="benefit-title">Protocolos de higiene certificados</div>
+                    <div class="benefit-desc">Cumplimos los más altos estándares de limpieza y seguridad.</div>
+                </div>
+            </div>
         </section>
         <!-- Horarios Section -->
-        <section id="horarios" class="horarios-section animate-on-scroll"
-            style="max-width:480px;margin:2.5rem auto 0 auto;background:#181b22;border-radius:1.2rem;box-shadow:0 4px 24px 0 rgba(53,228,178,0.10);padding:2rem 2.2rem 1.5rem 2.2rem;color:#fff;">
-            <h3
-                style="color:#20c997;font-size:1.2rem;margin-bottom:1.1rem;font-weight:700;display:flex;align-items:center;gap:0.6rem;">
-                <i class="fas fa-clock"></i> Horarios de Atención
-            </h3>
-            <table class="horarios-table" style="width:100%;border-collapse:collapse;margin-bottom:1.2rem;">
-                <tr>
-                    <th style="border:none;padding-bottom:0.2rem;"></th>
-                    <th style="border:none;padding-bottom:0.2rem;"></th>
-                </tr>
-                <tr>
-                    <td class="open-now" style="color:#20c997;font-weight:700;">Open now</td>
-                    <td class="open-now" style="color:#fff;font-weight:700;">9:00 AM - 7:00 PM</td>
-                </tr>
-                <tr>
-                    <td style="color:#fff;">Thursday</td>
-                    <td style="color:#fff;">9:00 AM - 7:00 PM</td>
-                </tr>
-                <tr>
-                    <td style="color:#fff;">Friday</td>
-                    <td style="color:#fff;">9:00 AM - 7:00 PM</td>
-                </tr>
-                <tr>
-                    <td style="color:#fff;">Saturday</td>
-                    <td style="color:#fff;">10:00 AM - 3:00 PM</td>
-                </tr>
-                <tr>
-                    <td style="color:#fff;">Sunday</td>
-                    <td class="closed" style="color:#e74c3c;font-weight:600;">Closed</td>
-                </tr>
-                <tr>
-                    <td style="color:#fff;">Monday</td>
-                    <td style="color:#fff;">9:00 AM - 7:00 PM</td>
-                </tr>
-                <tr>
-                    <td style="color:#fff;">Tuesday</td>
-                    <td style="color:#fff;">9:00 AM - 7:00 PM</td>
-                </tr>
-            </table>
-            <hr style="border:0;border-top:1px solid #20c997;margin:0.7rem 0 0.7rem 0;">
-            <span class="contacto-horario"
-                style="color:#20c997;font-weight:700;font-size:1.08rem;display:block;margin-top:0.7rem;"><i
-                    class="fas fa-envelope"></i> estetica.mariapaz@gmail.com</span>
+        <section id="horarios" class="horarios-section-glass animate-on-scroll">
+            <div class="horarios-header">
+                <span class="horarios-icon"><i class="fas fa-clock"></i></span>
+                <span class="horarios-title">Horarios de Atención</span>
+            </div>
+            <div class="horarios-grid">
+                <div class="horario-row open-now animate-on-scroll">
+                    <span class="horario-dia">Open now</span>
+                    <span class="horario-horas"><strong>9:00 AM - 7:00 PM</strong></span>
+                </div>
+                <div class="horario-row animate-on-scroll"><span class="horario-dia">Thursday</span><span
+                        class="horario-horas">9:00 AM - 7:00 PM</span></div>
+                <div class="horario-row animate-on-scroll"><span class="horario-dia">Friday</span><span
+                        class="horario-horas">9:00 AM - 7:00 PM</span></div>
+                <div class="horario-row animate-on-scroll"><span class="horario-dia">Saturday</span><span
+                        class="horario-horas">10:00 AM - 3:00 PM</span></div>
+                <div class="horario-row animate-on-scroll"><span class="horario-dia">Sunday</span><span
+                        class="horario-horas closed">Closed</span></div>
+                <div class="horario-row animate-on-scroll"><span class="horario-dia">Monday</span><span
+                        class="horario-horas">9:00 AM - 7:00 PM</span></div>
+                <div class="horario-row animate-on-scroll"><span class="horario-dia">Tuesday</span><span
+                        class="horario-horas">9:00 AM - 7:00 PM</span></div>
+            </div>
+            <div class="horarios-contacto animate-on-scroll">
+                <i class="fas fa-envelope"></i> <a
+                    href="mailto:estetica.mariapaz@gmail.com">estetica.mariapaz@gmail.com</a>
+            </div>
         </section>
-        <!-- Contacto Section -->
-        <section id="contacto" class="contact animate-on-scroll" style="text-align:center;">
-            <a href="#contacto" class="cta-button primary" style="margin-bottom:1.2rem;display:inline-block;"><i
-                    class="fas fa-paper-plane"></i> Contáctame</a>
-            <h2 class="section-title animate-on-scroll"
-                style="font-size:2.5rem;font-weight:800;line-height:1.1;margin-bottom:0.7rem;color:#fff;">
-                ¿List@ para <span
-                    style="background:linear-gradient(90deg,#a06af9,#f8549b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-fill-color:transparent;">consentir
-                    tu piel?</span>
-            </h2>
-            <p class="section-subtitle animate-on-scroll" style="color:#bfc2d5;font-size:1.18rem;margin-bottom:2.2rem;">
-                Agenda tu cita o consulta cualquier duda. ¡Estoy aquí para ayudarte a brillar!</p>
+        <!-- Contacto WhatsApp Section -->
+        <section id="contacto" class="contact animate-on-scroll">
+            <div class="pill animate-on-scroll">
+                <i class="fab fa-whatsapp"></i> Contáctame por WhatsApp
+            </div>
+            <h2 class="section-title animate-on-scroll">¿List@ para consentir tu piel?</h2>
+            <p class="section-subtitle animate-on-scroll">Agenda tu cita o consulta cualquier duda. ¡Estoy aquí para
+                ayudarte a brillar!</p>
             <div class="contact-container">
-                <form id="contact-form" class="animate-on-scroll">
+                <form id="wa-contact-form" class="wa-contact-form animate-on-scroll">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Nombre completo *</label>
-                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                            <label for="wa-name">Nombre completo *</label>
+                            <input type="text" id="wa-name" name="wa-name" placeholder="Tu nombre" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="test@gmail.com" required>
+                            <label for="wa-email">Email *</label>
+                            <input type="email" id="wa-email" name="wa-email" placeholder="tu@email.com" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="message">¿En qué puedo ayudarte?</label>
-                            <textarea id="message" name="message"
-                                placeholder="Cuéntame qué tratamiento te interesa, disponibilidad, etc..."
-                                rows="4"></textarea>
+                            <label for="wa-phone">Teléfono</label>
+                            <input type="tel" id="wa-phone" name="wa-phone" placeholder="+57 322 347 93 37">
+                        </div>
+                        <div class="form-group">
+                            <label for="wa-service">Servicio</label>
+                            <select id="wa-service" name="wa-service" required>
+                                <option value="" disabled selected>Selecciona el servicio</option>
+                                <option value="limpieza">Limpieza Facial</option>
+                                <option value="ozono">Vapor de Ozono</option>
+                                <option value="alta-frecuencia">Alta Frecuencia</option>
+                                <option value="personalizado">Tratamiento Personalizado</option>
+                                <option value="otro">Otro</option>
+                            </select>
                         </div>
                     </div>
-                    <button type="submit" class="cta-button primary full-width">Solicitar Cita</button>
+                    <div class="form-group">
+                        <label for="wa-message">Mensaje</label>
+                        <textarea id="wa-message" name="wa-message" rows="4" placeholder="¿En qué puedo ayudarte?"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button teal-gradient full-width"><i class="fab fa-whatsapp"></i>
+                        Enviar WhatsApp</button>
                 </form>
                 <div class="contact-info animate-on-scroll">
                     <div class="info-box benefits">
-                        <h4>¿Por qué elegir Estética Maria Paz?</h4>
+                        <h4>¿Por qué elegirnos?</h4>
                         <ul>
-                            <li><i class="fas fa-check"></i> Resultados visibles</li>
-                            <li><i class="fas fa-check"></i> Atención profesional y humana</li>
-                            <li><i class="fas fa-check"></i> Ambiente seguro y relajante</li>
+                            <li><i class="fas fa-check"></i> Atención cálida y personalizada</li>
+                            <li><i class="fas fa-check"></i> Equipos de última tecnología</li>
+                            <li><i class="fas fa-check"></i> Resultados visibles desde la primera sesión</li>
+                            <li><i class="fas fa-check"></i> Ambiente relajante y seguro</li>
                             <li><i class="fas fa-check"></i> Protocolos de higiene certificados</li>
-                            <li><i class="fas fa-check"></i> Respuesta rápida</li>
                         </ul>
                     </div>
                     <div class="contact-cards">
                         <h3 class="contact-section-title">Información de Contacto</h3>
+                        <div class="contact-card">
+                            <div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <div class="contact-card-title">WhatsApp</div>
+                                <div class="contact-card-main"><a href="https://wa.me/573237992985" target="_blank"
+                                        style="color:inherit;text-decoration:none;">+57 323 799 2985</a></div>
+                                <div class="contact-card-sub">Lunes a Sábado, 9AM - 7PM</div>
+                            </div>
+                        </div>
                         <div class="contact-card">
                             <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
                             <div>
                                 <div class="contact-card-title">Email</div>
                                 <div class="contact-card-main">estetica.mariapaz@gmail.com</div>
                                 <div class="contact-card-sub">Respuesta en menos de 24 horas</div>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
-                            <div>
-                                <div class="contact-card-title">WhatsApp</div>
-                                <div class="contact-card-main"><a
-                                        href="https://wa.me/573001234567?text=Hola%20Maria%20Paz!%20Quiero%20agendar%20una%20limpieza%20facial%20o%20consultar%20tratamientos%20estéticos%20😊"
-                                        target="_blank" style="color:inherit;text-decoration:none;">+57 300 123 4567</a>
-                                </div>
-                                <div class="contact-card-sub">¡Escríbeme por WhatsApp!</div>
                             </div>
                         </div>
                     </div>
@@ -416,6 +896,22 @@
     <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // Theme toggle logic (independent of Firebase)
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('theme-toggle');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const saved = localStorage.getItem('theme');
+
+            if (saved === 'dark' || (!saved && prefersDark)) {
+                document.body.classList.add('dark-mode');
+            }
+
+            btn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+            });
+        });
+
         document.addEventListener("DOMContentLoaded", function () {
             new TypeIt(".hero-subtitle", {
                 speed: 44,
@@ -458,6 +954,25 @@
                         }
                     },
                     retina_detect: true
+                });
+            }
+        });
+        // WhatsApp contact form logic (modern, inspired by index.html)
+        document.addEventListener('DOMContentLoaded', function () {
+            const waForm = document.getElementById('wa-contact-form');
+            if (waForm) {
+                waForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const name = document.getElementById('wa-name').value.trim();
+                    const email = document.getElementById('wa-email').value.trim();
+                    const phone = document.getElementById('wa-phone').value.trim();
+                    const service = document.getElementById('wa-service').value;
+                    const msg = document.getElementById('wa-message').value.trim();
+                    let waMsg = `Hola Maria Paz! Mi nombre es ${name}. Email: ${email}`;
+                    if (phone) waMsg += `. Teléfono: ${phone}`;
+                    waMsg += `. Servicio: ${service}. ${msg}`;
+                    const encoded = encodeURIComponent(waMsg);
+                    window.open(`https://wa.me/573237992985?text=${encoded}`, '_blank');
                 });
             }
         });
