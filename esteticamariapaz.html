@@ -120,6 +120,16 @@
                 d: path("M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z");
             }
         }
+
+        .header-wave-container {
+            z-index: 9999;
+            width: 50vw;
+            height: 4vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -141,7 +151,8 @@
             </ul>
         </nav>
         <div class="header-wave-container">
-            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="wave-gradient-estetica" x1="0%" y1="50%" x2="100%" y2="50%">
                         <stop offset="5%" stop-color="#20c997"></stop>
