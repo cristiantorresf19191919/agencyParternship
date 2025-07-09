@@ -130,6 +130,20 @@
             left: 0;
             overflow: hidden;
         }
+
+        .hero::before {
+            z-index: 0 !important;
+        }
+
+        #particles-js {
+            z-index: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        .hero-content {
+            z-index: 2 !important;
+            position: relative;
+        }
     </style>
 </head>
 
@@ -424,13 +438,13 @@
             if (window.particlesJS) {
                 particlesJS('particles-js', {
                     particles: {
-                        number: { value: 80, density: { enable: true, value_area: 900 } },
+                        number: { value: 100, density: { enable: true, value_area: 1500 } },
                         color: { value: ['#fff', '#fff', '#fff'] },
                         shape: { type: 'circle' },
-                        opacity: { value: 0.48, random: true },
+                        opacity: { value: 0.5, random: true },
                         size: { value: 3.5, random: true },
                         line_linked: { enable: true, distance: 110, color: '#fff', opacity: 0.30, width: 1 },
-                        move: { enable: true, speed: 1.1, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+                        move: { enable: true, speed: 0.7, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
                     },
                     interactivity: {
                         detect_on: 'canvas',
