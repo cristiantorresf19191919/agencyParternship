@@ -3306,7 +3306,7 @@ body.dark-mode .experience-card:hover {
         left: 0 !important;
         right: 0 !important;
         margin-left: auto !important;
-        bottom: 1.2rem !important;
+        bottom: -0.8rem !important;
         flex-direction: column !important;
         align-items: center !important;
         gap: 10px !important;
