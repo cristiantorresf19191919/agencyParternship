@@ -2975,6 +2975,19 @@
                 }
             }
 
+            // Initialize FAB language button on page load
+            const fabLanguageButton = document.querySelector('.fab-secondary.language');
+            if (fabLanguageButton) {
+                const currentLang = document.documentElement.lang || 'es';
+                fabLanguageButton.textContent = currentLang === 'es' ? 'ES' : 'EN';
+
+                // Preserve screen reader text
+                const srText = fabLanguageButton.querySelector('.sr-only');
+                if (srText) {
+                    fabLanguageButton.appendChild(srText);
+                }
+            }
+
             // Update theme switcher label when language changes
             document.addEventListener('languageChanged', function () {
                 const currentLang = document.documentElement.lang || 'es';
@@ -2984,13 +2997,18 @@
             // Also listen for language toggle button clicks to update theme switcher immediately
             const languageToggle = document.getElementById('language-toggle');
             if (languageToggle) {
-                languageToggle.addEventListener('click', function () {
+                // Remove any existing listeners to prevent conflicts
+                languageToggle.removeEventListener('click', languageToggle.clickHandler);
+
+                languageToggle.clickHandler = function () {
                     // Small delay to ensure language has been updated
                     setTimeout(() => {
                         const currentLang = document.documentElement.lang || 'es';
                         updateThemeSwitcherLabel(currentLang);
                     }, 50);
-                });
+                };
+
+                languageToggle.addEventListener('click', languageToggle.clickHandler);
             }
 
             // Update current year in footer
@@ -3042,7 +3060,14 @@
                             const newLang = currentLang === 'es' ? 'en' : 'es';
 
                             document.documentElement.lang = newLang;
+
+                            // Update button text while preserving the screen reader text
+                            const srText = button.querySelector('.sr-only');
+                            button.innerHTML = '';
                             button.textContent = newLang === 'es' ? 'ES' : 'EN';
+                            if (srText) {
+                                button.appendChild(srText);
+                            }
 
                             // Dispatch language change event
                             document.dispatchEvent(new CustomEvent('languageChanged'));
