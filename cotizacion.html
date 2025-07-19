@@ -805,9 +805,9 @@
             display: none;
             /* Hidden by default */
             flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 24px;
+            justify-content: center;
+            width: 10px;
+            height: 6px;
             background: none;
             border: none;
             cursor: pointer;
@@ -833,23 +833,44 @@
 
             .sticky-header-wrapper .logo {
                 font-size: 1.3rem;
-                margin-left: 3rem;
+                margin-left: 2.5rem;
                 /* Make space for hamburger button */
             }
 
             /* Show hamburger menu button on mobile */
             .mobile-menu-toggle {
                 display: flex !important;
+                top: 50%;
+                left: 1rem;
+                transform: translateY(-50%);
+                gap: 5px;
             }
         }
 
         .mobile-menu-toggle .hamburger-line {
-            width: 100%;
-            height: 3px;
+            width: 63%;
+            height: 1px;
             background: #23243a;
-            border-radius: 2px;
+            border-radius: 0;
             transition: all 0.3s ease;
             transform-origin: center;
+            margin: 0;
+            flex-shrink: 0;
+            flex-grow: 0;
+            flex-basis: 4px;
+        }
+
+        /* Minimal spacing - almost touching */
+        .mobile-menu-toggle .hamburger-line:nth-child(1) {
+            margin-bottom: 0.25px;
+        }
+
+        .mobile-menu-toggle .hamburger-line:nth-child(2) {
+            margin-bottom: 0.25px;
+        }
+
+        .mobile-menu-toggle .hamburger-line:nth-child(3) {
+            margin-bottom: 0;
         }
 
         body.dark-mode .mobile-menu-toggle .hamburger-line {
@@ -857,7 +878,7 @@
         }
 
         .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            transform: rotate(45deg) translate(1px, 1px);
         }
 
         .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
@@ -865,7 +886,7 @@
         }
 
         .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
+            transform: rotate(-45deg) translate(1px, -1px);
         }
 
         /* Mobile Menu Overlay */
@@ -1202,6 +1223,21 @@
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: stageCardEntry 0.8s ease-out forwards;
+        }
+
+        @keyframes stageCardEntry {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         body:not(.dark-mode) .stage-card {
@@ -1248,12 +1284,24 @@
             background: #a06af9;
         }
 
+        .stage-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
         .stage-card:nth-child(2)::before {
             background: #35E4B2;
         }
 
+        .stage-card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
         .stage-card:nth-child(3)::before {
             background: #a06af9;
+        }
+
+        .stage-card:nth-child(3) {
+            animation-delay: 0.5s;
         }
 
         .stage-header {
@@ -1275,6 +1323,19 @@
             position: relative;
             transition: all 0.3s ease;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            animation: iconPulse 0.6s ease-out 0.8s both;
+        }
+
+        @keyframes iconPulse {
+            from {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .stage-icon::before {
@@ -1554,6 +1615,38 @@
             font-weight: bold;
             color: #fff;
             margin: 1rem 0;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: investmentAmountEntry 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes investmentAmountEntry {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Enhanced investment highlight animation */
+        .investment-highlight {
+            animation: investmentHighlightEntry 1.2s ease-out 0.3s both;
+        }
+
+        @keyframes investmentHighlightEntry {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .investment-note {
@@ -1571,6 +1664,82 @@
             line-height: 0;
             transform: rotate(180deg);
             z-index: 5 !important;
+        }
+
+        @media (max-width: 600px) {
+            .sticky-header-wrapper .nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+                padding: 0 1rem;
+                background: #fff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav
+
+            /* Mobile improvements for stage cards */
+            .stage-card {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+                border-radius: 16px;
+            }
+
+            .stage-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .stage-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .stage-title {
+                font-size: 1.4rem;
+                text-align: center;
+            }
+
+            .stage-percentage {
+                display: block;
+                margin: 0.5rem auto 0 auto;
+                width: fit-content;
+            }
+
+            .stage-price {
+                font-size: 1.2rem;
+                justify-content: center;
+            }
+
+            .stage-features li {
+                padding: 0.8rem 0;
+                padding-left: 2rem;
+                font-size: 0.95rem;
+            }
+
+            .investment-amount {
+                font-size: 2.5rem;
+            }
+
+            .investment-highlight {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
         }
     </style>
 </head>
@@ -1814,7 +1983,7 @@
         <!-- Investment Highlight -->
         <section class="investment-highlight animate-on-scroll">
             <h2 data-translate="investment-title">💰 Inversión Total Estimada</h2>
-            <div class="investment-amount">COP $4.000.000</div>
+            <div class="investment-amount">COP $4M</div>
             <p class="investment-note" data-translate="investment-note">Este valor puede variar si se añaden
                 funcionalidades no contempladas en este
                 acuerdo</p>
