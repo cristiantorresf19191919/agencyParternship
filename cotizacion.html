@@ -1585,6 +1585,10 @@
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
         }
 
+        .fab-main:active {
+            transform: scale(0.95);
+        }
+
         .fab-main.active {
             transform: rotate(45deg);
             background: linear-gradient(135deg, #a06af9 0%, #35E4B2 100%);
@@ -1617,6 +1621,7 @@
             transform: scale(0) translate(0, 0);
             pointer-events: auto;
             text-decoration: none;
+            will-change: transform;
         }
 
         .fab-secondary.language {
@@ -1643,13 +1648,13 @@
         }
 
         .fab-secondary:hover {
-            transform: scale(1.1) translate(0, 0) !important;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* 135° Radial Fan Animation (Counterclockwise) */
         .fab-container.active .fab-secondary {
             opacity: 1;
-            transform: scale(1) translate(0, 0);
         }
 
         .fab-container.active .fab-secondary:nth-child(1) {
@@ -1665,6 +1670,23 @@
         .fab-container.active .fab-secondary:nth-child(3) {
             transform: scale(1) translate(15px, -110px);
             transition-delay: 0.15s;
+        }
+
+        /* Stable hover states for active buttons */
+        .fab-container.active .fab-secondary:hover {
+            transform: scale(1.05) translate(var(--translate-x), var(--translate-y));
+        }
+
+        .fab-container.active .fab-secondary:nth-child(1):hover {
+            transform: scale(1.05) translate(-110px, -40px);
+        }
+
+        .fab-container.active .fab-secondary:nth-child(2):hover {
+            transform: scale(1.05) translate(-55px, -95px);
+        }
+
+        .fab-container.active .fab-secondary:nth-child(3):hover {
+            transform: scale(1.05) translate(15px, -110px);
         }
 
         /* Dark mode adjustments */
@@ -2910,9 +2932,29 @@
                 });
             }
 
-            // Sync mobile theme toggle with desktop theme toggle
+            // Sync mobile theme toggle with FAB theme toggle
             if (desktopThemeToggle) {
+                // Remove old event listener and add new one for FAB
                 desktopThemeToggle.addEventListener('click', function () {
+                    // Toggle dark mode class
+                    document.body.classList.toggle('dark-mode');
+                    const isDarkMode = document.body.classList.contains('dark-mode');
+
+                    // Update theme icon
+                    const themeIcon = this.querySelector('i');
+                    if (isDarkMode) {
+                        themeIcon.className = 'fas fa-sun';
+                    } else {
+                        themeIcon.className = 'fas fa-moon';
+                    }
+
+                    // Save theme preference
+                    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+                    // Dispatch theme change event
+                    document.dispatchEvent(new CustomEvent('themeChanged'));
+
+                    // Update theme switcher state
                     updateThemeSwitcherState();
                 });
             }
@@ -2920,6 +2962,18 @@
             // Initialize theme switcher state on page load
             updateThemeSwitcherState();
             updateThemeSwitcherLabel(document.documentElement.lang || 'es');
+
+            // Initialize FAB theme icon on page load
+            const fabThemeButton = document.querySelector('.fab-secondary.theme');
+            if (fabThemeButton) {
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                const themeIcon = fabThemeButton.querySelector('i');
+                if (isDarkMode) {
+                    themeIcon.className = 'fas fa-sun';
+                } else {
+                    themeIcon.className = 'fas fa-moon';
+                }
+            }
 
             // Update theme switcher label when language changes
             document.addEventListener('languageChanged', function () {
