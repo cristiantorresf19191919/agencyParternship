@@ -1552,21 +1552,167 @@
             animation-delay: 0.4s;
         }
 
-        /* Language Toggle Button */
-        .language-toggle {
-            width: 50px;
-            height: 50px;
+        /* Fixed Floating Action Button with 90° Radial Fan */
+        .fab-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .fab-main {
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             border: none;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 1.4rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
             position: relative;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+        }
+
+        .fab-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .fab-main.active {
+            transform: rotate(45deg);
+            background: linear-gradient(135deg, #a06af9 0%, #35E4B2 100%);
+        }
+
+        .fab-main i {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fab-main.active i {
+            transform: rotate(-45deg);
+        }
+
+        .fab-secondary {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: white;
+            opacity: 0;
+            transform: scale(0) translate(0, 0);
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
+        .fab-secondary.language {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .fab-secondary.theme {
+            background: white;
+            color: #23243a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .fab-secondary.whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 1003;
+        }
+
+        .fab-secondary.whatsapp i {
+            font-size: 1.2rem;
+        }
+
+        .fab-secondary:hover {
+            transform: scale(1.1) translate(0, 0) !important;
+        }
+
+        /* 135° Radial Fan Animation (Counterclockwise) */
+        .fab-container.active .fab-secondary {
+            opacity: 1;
+            transform: scale(1) translate(0, 0);
+        }
+
+        .fab-container.active .fab-secondary:nth-child(1) {
+            transform: scale(1) translate(-110px, -40px);
+            transition-delay: 0.05s;
+        }
+
+        .fab-container.active .fab-secondary:nth-child(2) {
+            transform: scale(1) translate(-55px, -95px);
+            transition-delay: 0.1s;
+        }
+
+        .fab-container.active .fab-secondary:nth-child(3) {
+            transform: scale(1) translate(0, -110px);
+            transition-delay: 0.15s;
+        }
+
+        /* Dark mode adjustments */
+        body.dark-mode .fab-secondary.theme {
+            background: #23243a;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .fab-container {
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+
+            /* Ensure WhatsApp button is visible on mobile */
+            .fab-container.active .fab-secondary:nth-child(1) {
+                transform: scale(1) translate(-85px, -30px);
+            }
+
+            .fab-container.active .fab-secondary:nth-child(2) {
+                transform: scale(1) translate(-45px, -75px);
+            }
+
+            .fab-container.active .fab-secondary:nth-child(3) {
+                transform: scale(1) translate(0, -85px);
+            }
+        }
+
+        /* Accessibility */
+        .fab-main:focus,
+        .fab-secondary:focus {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        /* Screen reader only text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
             overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         .language-toggle::before {
@@ -2411,20 +2557,25 @@
         </div>
     </footer>
 
-    <div class="button-stack">
-        <button id="language-toggle" class="language-toggle" data-lang="en" aria-label="Cambiar idioma">
+    <!-- Fixed Floating Action Button with 90° Radial Fan -->
+    <div class="fab-container" id="fab-container">
+        <button class="fab-secondary language" id="language-toggle" data-lang="en" aria-label="Cambiar idioma">
             EN
+            <span class="sr-only">Toggle language between English and Spanish</span>
         </button>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo">
-            <span class="icon-sun"><i class="fas fa-sun"></i></span>
-            <span class="icon-moon"><i class="fas fa-moon"></i></span>
+        <button class="fab-secondary theme" id="theme-toggle" aria-label="Cambiar modo">
+            <i class="fas fa-moon"></i>
+            <span class="sr-only">Toggle dark/light mode</span>
         </button>
         <a href="https://wa.me/573237992985?text=Hola,%20he%20revisado%20la%20propuesta%20y%20me%20interesa%20proceder."
-            class="whatsapp-button-container" target="_blank">
-            <div class="whatsapp-blob">
-                <i class="fab fa-whatsapp"></i>
-            </div>
+            class="fab-secondary whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="sr-only">Open WhatsApp chat</span>
         </a>
+        <button class="fab-main" id="fab-main" aria-label="Abrir menú de acciones" aria-expanded="false">
+            <i class="fas fa-plus"></i>
+            <span class="sr-only">Toggle action menu</span>
+        </button>
     </div>
 
     <script type="module" src="script.js"></script>
@@ -2790,6 +2941,115 @@
 
             // Update current year in footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Floating Action Button (FAB) with 90° Radial Fan
+            const fabContainer = document.getElementById('fab-container');
+            const fabMain = document.getElementById('fab-main');
+            const fabSecondaries = document.querySelectorAll('.fab-secondary');
+
+            if (fabContainer && fabMain) {
+                fabMain.addEventListener('click', function () {
+                    const isActive = fabContainer.classList.contains('active');
+
+                    if (isActive) {
+                        // Close FAB
+                        fabContainer.classList.remove('active');
+                        fabMain.classList.remove('active');
+                        fabMain.setAttribute('aria-expanded', 'false');
+
+                        // Update icon
+                        const icon = fabMain.querySelector('i');
+                        icon.className = 'fas fa-plus';
+                    } else {
+                        // Open FAB
+                        fabContainer.classList.add('active');
+                        fabMain.classList.add('active');
+                        fabMain.setAttribute('aria-expanded', 'true');
+
+                        // Update icon
+                        const icon = fabMain.querySelector('i');
+                        icon.className = 'fas fa-times';
+                    }
+                });
+
+                // Handle secondary button clicks
+                fabSecondaries.forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        // Prevent event bubbling for WhatsApp link
+                        if (button.classList.contains('whatsapp')) {
+                            return; // Allow normal link behavior
+                        }
+
+                        e.preventDefault();
+
+                        // Handle language toggle
+                        if (button.classList.contains('language')) {
+                            const currentLang = document.documentElement.lang || 'es';
+                            const newLang = currentLang === 'es' ? 'en' : 'es';
+
+                            document.documentElement.lang = newLang;
+                            button.textContent = newLang === 'es' ? 'ES' : 'EN';
+
+                            // Dispatch language change event
+                            document.dispatchEvent(new CustomEvent('languageChanged'));
+
+                            // Save language preference
+                            localStorage.setItem('language', newLang);
+                        }
+
+                        // Handle theme toggle
+                        if (button.classList.contains('theme')) {
+                            document.body.classList.toggle('dark-mode');
+                            const isDarkMode = document.body.classList.contains('dark-mode');
+
+                            // Update theme icon
+                            const themeIcon = button.querySelector('i');
+                            if (isDarkMode) {
+                                themeIcon.className = 'fas fa-sun';
+                            } else {
+                                themeIcon.className = 'fas fa-moon';
+                            }
+
+                            // Save theme preference
+                            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+                            // Dispatch theme change event
+                            document.dispatchEvent(new CustomEvent('themeChanged'));
+                        }
+
+                        // Close FAB after action
+                        setTimeout(() => {
+                            fabContainer.classList.remove('active');
+                            fabMain.classList.remove('active');
+                            fabMain.setAttribute('aria-expanded', 'false');
+                            const icon = fabMain.querySelector('i');
+                            icon.className = 'fas fa-plus';
+                        }, 300);
+                    });
+                });
+
+                // Close FAB when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!fabContainer.contains(e.target)) {
+                        fabContainer.classList.remove('active');
+                        fabMain.classList.remove('active');
+                        fabMain.setAttribute('aria-expanded', 'false');
+                        const icon = fabMain.querySelector('i');
+                        icon.className = 'fas fa-plus';
+                    }
+                });
+
+                // Close FAB on escape key
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && fabContainer.classList.contains('active')) {
+                        fabContainer.classList.remove('active');
+                        fabMain.classList.remove('active');
+                        fabMain.setAttribute('aria-expanded', 'false');
+                        const icon = fabMain.querySelector('i');
+                        icon.className = 'fas fa-plus';
+                    }
+                });
+            }
 
             // particles.js in .hero with theme adaptation
             if (window.particlesJS) {
