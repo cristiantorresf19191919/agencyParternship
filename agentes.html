@@ -180,6 +180,139 @@
             z-index: 2 !important;
             position: relative;
         }
+
+        /* Sticky Header Styles */
+        .header.sticky-header-wrapper {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        body.dark-mode .sticky-header-wrapper {
+            background: rgba(35, 36, 58, 0.98);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Enhanced header styles for sticky behavior */
+        .sticky-header-wrapper .nav {
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-header-wrapper .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #23243a;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        body.dark-mode .sticky-header-wrapper .logo {
+            color: #fff;
+        }
+
+        .sticky-header-wrapper .logo i {
+            color: #a06af9;
+            font-size: 1.8rem;
+            transition: color 0.3s;
+        }
+
+        body.dark-mode .sticky-header-wrapper .logo i {
+            color: #a06af9;
+        }
+
+        /* Light mode header and footer logo icon styling - Violet gradient */
+        body:not(.dark-mode) .logo i {
+            background: linear-gradient(135deg, #a06af9 0%, #8e44ad 50%, #a06af9 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            text-shadow: 0 2px 4px rgba(160, 106, 249, 0.2) !important;
+        }
+
+        /* Mobile hamburger menu button - Hidden by default, only visible on mobile */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10001;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        /* Mobile responsive for sticky header */
+        @media (max-width: 768px) {
+            .sticky-header-wrapper .nav {
+                padding: 0.8rem 1rem;
+                position: relative;
+                justify-content: center;
+            }
+
+            .sticky-header-wrapper .nav-links {
+                display: none;
+            }
+
+            .sticky-header-wrapper .logo {
+                font-size: 1.3rem;
+                margin: 0;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .mobile-menu-toggle {
+                display: flex !important;
+                position: absolute;
+                left: 1rem;
+                z-index: 1001;
+            }
+        }
+
+        .mobile-menu-toggle .hamburger-line {
+            width: 100%;
+            height: 3px;
+            background: #23243a;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        body.dark-mode .mobile-menu-toggle .hamburger-line {
+            background: #fff;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
     </style>
 </head>
 

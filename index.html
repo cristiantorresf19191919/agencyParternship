@@ -292,6 +292,7 @@
             .sticky-header-wrapper .nav {
                 padding: 0.8rem 1rem;
                 position: relative;
+                justify-content: center;
             }
 
             .sticky-header-wrapper .nav-links {
@@ -300,11 +301,17 @@
 
             .sticky-header-wrapper .logo {
                 font-size: 1.3rem;
-                margin-left: 3rem;
+                margin: 0;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             .mobile-menu-toggle {
                 display: flex !important;
+                position: absolute;
+                left: 1rem;
+                z-index: 1001;
             }
         }
 
