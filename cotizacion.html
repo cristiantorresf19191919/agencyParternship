@@ -1984,24 +1984,96 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Simple TypeIt initialization - Same as index.html
-            new TypeIt("#typed-subtitle", {
-                speed: 48,
-                loop: true,
-                html: true
-            })
-                .type("Diseño, desarrollo y optimización de sitio web enfocado en generación de leads.", { delay: 900 })
-                .break({ delay: 400 })
-                .type("Marketing y conversión para empresas de paneles solares.", { delay: 1200 })
-                .pause(1200)
-                .delete(null, { delay: 600 })
-                .type("Calculadora solar interactiva con estimación de ahorros.", { delay: 900 })
-                .pause(1200)
-                .delete(null, { delay: 600 })
-                .type("Tu sitio web, tu mejor vendedor 24/7.", { delay: 900 })
-                .pause(1200)
-                .delete(null, { delay: 600 })
-                .go();
+            // TypeIt initialization with language switching
+            let typeItInstance = null;
+
+            function initializeTypeIt(language = 'es') {
+                // Destroy existing instance if it exists
+                if (typeItInstance) {
+                    typeItInstance.destroy();
+                }
+
+                // Hardcoded texts for each language
+                const texts = {
+                    es: [
+                        "Diseño, desarrollo y optimización de sitio web enfocado en generación de leads.",
+                        "Marketing y conversión para empresas de paneles solares.",
+                        "Calculadora solar interactiva con estimación de ahorros.",
+                        "Tu sitio web, tu mejor vendedor 24/7."
+                    ],
+                    en: [
+                        "Design, development and optimization of website focused on lead generation.",
+                        "Marketing and conversion for solar panel companies.",
+                        "Interactive solar calculator with savings estimation.",
+                        "Your website, your best 24/7 salesperson."
+                    ]
+                };
+
+                const currentTexts = texts[language] || texts.es;
+
+                // Clear the element first
+                const typedElement = document.getElementById('typed-subtitle');
+                if (typedElement) {
+                    typedElement.innerHTML = '';
+                }
+
+                // Initialize new TypeIt instance
+                typeItInstance = new TypeIt("#typed-subtitle", {
+                    speed: 48,
+                    loop: true,
+                    html: true
+                })
+                    .type(currentTexts[0], { delay: 900 })
+                    .break({ delay: 400 })
+                    .type(currentTexts[1], { delay: 1200 })
+                    .pause(1200)
+                    .delete(null, { delay: 600 })
+                    .type(currentTexts[2], { delay: 900 })
+                    .pause(1200)
+                    .delete(null, { delay: 600 })
+                    .type(currentTexts[3], { delay: 900 })
+                    .pause(1200)
+                    .delete(null, { delay: 600 })
+                    .go();
+            }
+
+            // Initialize with Spanish by default
+            initializeTypeIt('es');
+
+            // Function to update quotation stats labels
+            function updateQuotationStatsLabels(language = 'es') {
+                const labels = {
+                    es: {
+                        'stat-inversion-label': 'Inversión Total',
+                        'stat-etapas-label': 'Etapas de Desarrollo',
+                        'stat-semanas-label': 'Semanas de Entrega'
+                    },
+                    en: {
+                        'stat-inversion-label': 'Total Investment',
+                        'stat-etapas-label': 'Development Stages',
+                        'stat-semanas-label': 'Weeks of Delivery'
+                    }
+                };
+
+                const currentLabels = labels[language] || labels.es;
+
+                Object.keys(currentLabels).forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.textContent = currentLabels[id];
+                    }
+                });
+            }
+
+            // Initialize labels on page load
+            updateQuotationStatsLabels('es');
+
+            // Listen for language changes
+            document.addEventListener('languageChanged', function () {
+                const currentLang = document.documentElement.lang || 'es';
+                initializeTypeIt(currentLang);
+                updateQuotationStatsLabels(currentLang);
+            });
 
             // GSAP number animation for quotation stats
             function animateNumber(id, end, duration, suffix = "") {
