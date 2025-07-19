@@ -935,3 +935,7 @@ const performanceObserver = new PerformanceObserver((list) => {
 });
 
 performanceObserver.observe({ entryTypes: ['navigation'] });
+
+// Make translations globally available and dispatch event
+window.translations = translations;
+document.dispatchEvent(new Event('translationsLoaded'));

@@ -2356,7 +2356,7 @@ body.dark-mode .service-card .features-list {
 
 @media (max-width: 1000px) {
     .header-wave-container {
-        bottom: 42px;
+        bottom: 70px !important;
     }
 }
 
