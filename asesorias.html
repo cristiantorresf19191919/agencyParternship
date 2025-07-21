@@ -15,66 +15,8 @@
 </head>
 
 <body>
-    <header class="header sticky-header-wrapper">
-        <nav class="nav">
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-            </button>
-            <a href="#" class="logo">
-                <i class="fas fa-chalkboard-teacher"></i> Optimus<strong>Agency</strong>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#casos-de-exito">Testimonios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <a href="index.html" class="gradient-link">Desarrollo Web</a>
-                <a href="agentes.html" class="gradient-link">Agentes</a>
-            </ul>
-        </nav>
-        <div class="header-wave-container">
-            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                    .path-anim-asesorias {
-                        animation: path-anim-asesorias 10s linear infinite;
-                    }
-
-                    @keyframes path-anim-asesorias {
-                        0% {
-                            d: path("M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z");
-                        }
-
-                        25% {
-                            d: path("M0,150 C123.3,119.5,246.7,88.9,431,77 C615.3,65.1,860.7,71.7,1039,87 C1217.3,102.3,1328.7,126.1,1440,150L1440,151L0,151Z");
-                        }
-
-                        50% {
-                            d: path("M0,150 C131.7,168.4,263.5,186.8,432,188 C600.5,189.2,805.9,173.2,980,164 C1154.1,154.8,1297.1,152.4,1440,150L1440,151L0,151Z");
-                        }
-
-                        75% {
-                            d: path("M0,150 C171.6,149.5,343.2,148.9,500,141 C656.8,133.1,798.8,117.7,953,118 C1107.2,118.3,1273.6,134.1,1440,150L1440,151L0,151Z");
-                        }
-
-                        100% {
-                            d: path("M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z");
-                        }
-                    }
-                </style>
-                <defs>
-                    <linearGradient id="wave-gradient-asesorias" x1="0%" y1="50%" x2="100%" y2="50%">
-                        <stop offset="5%" stop-color="#9b59b6"></stop>
-                        <stop offset="95%" stop-color="#3498db"></stop>
-                    </linearGradient>
-                </defs>
-                <path
-                    d="M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z"
-                    stroke="none" stroke-width="0" fill="url(#wave-gradient-asesorias)" class="path-anim-asesorias">
-                </path>
-            </svg>
-        </div>
-    </header>
+    <!-- Header container where the reusable header will be injected -->
+    <div id="header-container"></div>
     <main>
         <section class="hero" style="position:relative;overflow:hidden;">
             <div id="particles-js" style="position:absolute;inset:0;"></div>
@@ -942,94 +884,124 @@
             cursor: pointer;
             padding: 0;
             position: relative;
-            width: 60px;
-            height: 32px;
-            border-radius: 16px;
+            width: 46px;
+            height: 28px;
             transition: all 0.3s ease;
+        }
+        
+        .fab-container.active .fab-secondary:nth-child(3):hover {
+            transform: scale(1.05) translate(15px, -110px);
+        }
+        
+        /* Dark mode adjustments */
+        body.dark-mode .fab-secondary.theme {
+            background: #23243a;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .fab-container {
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+
+            /* Ensure WhatsApp button is visible on mobile */
+            .fab-container.active .fab-secondary:nth-child(1) {
+                transform: scale(1) translate(-85px, -30px);
+            }
+
+            .fab-container.active .fab-secondary:nth-child(2) {
+                transform: scale(1) translate(-45px, -75px);
+            }
+
+            .fab-container.active .fab-secondary:nth-child(3) {
+                transform: scale(1) translate(10px, -85px);
+            }
+        }
+
+        /* Accessibility */
+        .fab-main:focus,
+        .fab-secondary:focus {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
         }
 
         .theme-toggle-track {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
-            border: 2px solid rgba(160, 106, 249, 0.2);
-            border-radius: 16px;
+            background: #f0f0f5;
+            border-radius: 6px;
             position: relative;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border: 1px solid rgba(160, 106, 249, 0.2);
+            overflow: hidden;
         }
 
         body.dark-mode .theme-toggle-track {
-            background: linear-gradient(135deg, #23243a 0%, #2d2e3a 100%);
-            border-color: rgba(160, 106, 249, 0.3);
+            background: rgba(93, 53, 158, 0.4);
+            border-color: rgba(160, 106, 249, 0.2);
         }
 
-        .theme-toggle-thumb {
-            position: absolute;
-            top: 50%;
-            left: 0px;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #a06af9 0%, #8e44ad 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 8px rgba(160, 106, 249, 0.3);
-            overflow: hidden;
-            transform: translateY(-50%);
+        body:not(.dark-mode) .theme-toggle-track {
+            background: #f0f0f5;
+            border: 1px solid rgba(160, 106, 249, 0.2);
         }
 
-        body.dark-mode .theme-toggle-thumb {
-            transform: translateX(32px) translateY(-50%);
-        }
+            /* Theme Toggle Styles */
+            .theme-toggle-btn {
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                position: relative;
+                width: 46px;
+                height: 28px;
+                transition: all 0.3s ease;
+            }
 
-        .theme-toggle-thumb i {
-            font-size: 0.9rem;
-            color: white;
-            transition: all 0.3s ease;
-        }
+            .theme-toggle-track {
+                width: 100%;
+                height: 100%;
+                background: #f0f0f5;
+                border-radius: 6px;
+                position: relative;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(160, 106, 249, 0.2);
+                overflow: hidden;
+            }
 
-        .theme-toggle-thumb .light-icon {
-            opacity: 1;
-            transform: scale(1);
-        }
+            body.dark-mode .theme-toggle-track {
+                background: rgba(93, 53, 158, 0.4);
+                border-color: rgba(160, 106, 249, 0.2);
+            }
 
-        .theme-toggle-thumb .dark-icon {
-            opacity: 0;
-            transform: scale(0);
-        }
+            body:not(.dark-mode) .theme-toggle-track {
+                background: #f0f0f5;
+                border: 1px solid rgba(160, 106, 249, 0.2);
+            }
 
-        body.dark-mode .theme-toggle-thumb .light-icon {
-            opacity: 0;
-            transform: scale(0);
-        }
+            .theme-toggle-thumb {
+                position: absolute;
+                top: 1px;
+                left: 1px;
+                width: 26px;
+                height: 26px;
+                background: #ffffff;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                overflow: hidden;
+                border: 1px solid rgba(160, 106, 249, 0.15);
+            }
 
-        body.dark-mode .theme-toggle-thumb .dark-icon {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .theme-toggle-btn:hover .theme-toggle-track {
-            border-color: rgba(160, 106, 249, 0.4);
-            box-shadow: 0 4px 12px rgba(160, 106, 249, 0.2);
-        }
-
-        body.dark-mode .theme-toggle-btn:hover .theme-toggle-track {
-            border-color: rgba(160, 106, 249, 0.5);
-            box-shadow: 0 4px 12px rgba(160, 106, 249, 0.3);
-        }
-
-        body.dark-mode .theme-toggle-btn:hover .theme-toggle-thumb {
-            transform: translateX(32px) translateY(-50%) scale(1.05);
-        }
-
-        .hero::before {
-            z-index: 0 !important;
-        }
+            body.dark-mode .theme-toggle-thumb {
+                transform: translateX(18px);
+                background: #a06af9;
+                border-color: rgba(255, 255, 255, 0.2);
+            }
 
         #particles-js {
             z-index: 1 !important;
@@ -1389,6 +1361,31 @@
                         icon.className = 'fas fa-plus';
                     }
                 });
+            }
+
+            // Initialize FAB theme icon on page load
+            const fabThemeButton = document.querySelector('.fab-secondary.theme');
+            if (fabThemeButton) {
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                const themeIcon = fabThemeButton.querySelector('i');
+                if (isDarkMode) {
+                    themeIcon.className = 'fas fa-sun';
+                } else {
+                    themeIcon.className = 'fas fa-moon';
+                }
+            }
+
+            // Initialize FAB language button on page load
+            const fabLanguageButton = document.querySelector('.fab-secondary.language');
+            if (fabLanguageButton) {
+                const currentLang = document.documentElement.lang || 'es';
+                fabLanguageButton.textContent = currentLang === 'es' ? 'ES' : 'EN';
+
+                // Preserve screen reader text
+                const srText = fabLanguageButton.querySelector('.sr-only');
+                if (srText) {
+                    fabLanguageButton.appendChild(srText);
+                }
             }
         });
     </script>

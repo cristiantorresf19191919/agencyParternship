@@ -900,7 +900,7 @@
         body:not(.dark-mode) .theme-switcher-label {
             color: #23243a;
         }
-
+        
         /* Theme Toggle Styles */
         .theme-toggle-btn {
             background: none;
@@ -915,7 +915,7 @@
             border-radius: 40px;
             width: 100%;
         }
-
+        
         .theme-icon-container {
             position: relative;
             width: 24px;
@@ -924,25 +924,25 @@
             align-items: center;
             justify-content: center;
         }
-
+        
         .theme-toggle-btn i {
             position: absolute;
             font-size: 1.1rem;
             transition: all 0.3s ease;
             color: #a06af9;
         }
-
+        
         body.dark-mode .theme-toggle-btn i {
             color: white;
         }
-
+        
         .theme-text {
             font-size: 0.95rem;
             font-weight: 500;
             color: #4a277b;
             transition: color 0.3s ease;
         }
-
+        
         body.dark-mode .theme-text {
             color: white;
         }
@@ -961,7 +961,7 @@
             opacity: 1;
             transform: rotate(0) scale(1);
         }
-
+        
         body.dark-mode .light-icon {
             opacity: 0;
             transform: rotate(-90deg) scale(0.5);
@@ -971,7 +971,7 @@
             opacity: 1;
             transform: rotate(0) scale(1);
         }
-
+        
         body:not(.dark-mode) .dark-icon {
             opacity: 0;
             transform: rotate(90deg) scale(0.5);
@@ -984,7 +984,7 @@
         body.dark-mode .theme-toggle-btn:hover {
             background: rgba(160, 106, 249, 0.12);
         }
-
+        
         .theme-switcher-container {
             display: flex;
             align-items: center;
@@ -997,13 +997,103 @@
             max-width: 450px;
             box-shadow: 0 2px 8px rgba(160, 106, 249, 0.05);
         }
-
+        
         body.dark-mode .theme-switcher-container {
             background: rgba(62, 55, 102, 0.7);
             border-color: rgba(160, 106, 249, 0.2);
         }
-
+        
         /* Mobile menu theme switcher polish */
+        .mobile-menu-theme-switcher {
+            border-top: 1px solid rgba(160, 106, 249, 0.1);
+            margin-top: 1rem;
+            padding-top: 1rem;
+        }
+
+        body:not(.dark-mode) .mobile-menu-theme-switcher {
+            border-top-color: rgba(160, 106, 249, 0.1);
+        }
+
+        .theme-switcher-container:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(160, 106, 249, 0.15);
+        }
+
+        body:not(.dark-mode) .theme-switcher-container:hover {
+            box-shadow: 0 6px 16px rgba(160, 106, 249, 0.2);
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <header class="header sticky-header-wrapper">
+            <nav class="nav">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </button>
+                <a href="#" class="logo">
+                    <i class="fas fa-code"></i> Optimus<strong>Agency</strong>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#casos-de-exito">Casos de Éxito</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="asesorias.html" class="gradient-link">Asesorías</a></li>
+                    <li><a href="agentes.html" class="gradient-link">Agentes</a></li>
+                </ul>
+            </nav>
+            <div class="header-wave-container">
+                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+                    <style>
+                        .path-anim-index {
+                            animation: path-anim-index 10s linear infinite;
+        }
+
+        body.dark-mode .theme-toggle-btn:hover .theme-toggle-track {
+            border-color: rgba(160, 106, 249, 0.4);
+            background: rgba(93, 53, 158, 0.5);
+        }
+        
+        .theme-switcher-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border: 1px solid rgba(160, 106, 249, 0.15);
+            border-radius: 12px;
+            padding: 0.5rem 1rem;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 2px 8px rgba(160, 106, 249, 0.05);
+        }
+        
+        body.dark-mode .theme-switcher-container {
+            background: rgba(62, 55, 102, 0.7);
+            border-color: rgba(160, 106, 249, 0.2);
+        }
+        
+        .theme-switcher-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4a277b;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        body.dark-mode .theme-switcher-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .theme-switcher-label i {
+            color: #a06af9;
+            font-size: 1rem;
+        }
+
+        /* Additional mobile menu theme switcher polish */
         .mobile-menu-theme-switcher {
             border-top: 1px solid rgba(160, 106, 249, 0.1);
             margin-top: 1rem;
@@ -1029,23 +1119,21 @@
 
     <header class="header sticky-header-wrapper">
         <nav class="nav">
-            <a href="index.html" class="logo">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </button>
+            <a href="#" class="logo">
                 <i class="fas fa-code"></i> Optimus<strong>Agency</strong>
             </a>
             <ul class="nav-links">
-                <li><a href="#detalles">Detalles</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#casos-de-exito">Casos de Éxito</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li><a href="asesorias.html" class="gradient-link">Asesorías</a></li>
                 <li><a href="agentes.html" class="gradient-link">Agentes</a></li>
             </ul>
-
-            <!-- Mobile hamburger menu button -->
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú móvil">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
         </nav>
         <div class="header-wave-container">
             <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
@@ -1106,80 +1194,80 @@
 
             <!-- Menu title -->
             <div class="mobile-menu-title">
-                <h2>OptimusAgency</h2>
+                <h2>Optimus<strong>Agency</strong></h2>
             </div>
 
             <!-- Navigation items -->
             <nav class="mobile-menu-nav">
                 <div class="mobile-menu-nav-item">
-                    <a href="#detalles" class="mobile-menu-nav-link" data-translate="mobile-nav-detalles">
+                    <a href="#servicios" class="mobile-menu-nav-link">
                         <div class="mobile-menu-nav-content">
                             <div class="mobile-menu-nav-icon">
-                                <i class="fas fa-list-alt"></i>
+                                <i class="fas fa-cubes"></i>
                             </div>
                             <div class="mobile-menu-nav-text">
-                                <span class="title" data-translate="mobile-nav-detalles-title">Detalles</span>
-                                <span class="description" data-translate="mobile-nav-detalles-desc">Información del
-                                    proyecto</span>
+                                <span class="title">Servicios</span>
+                                <span class="description">Nuestras soluciones</span>
                             </div>
                         </div>
                         <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
                     </a>
                 </div>
+
                 <div class="mobile-menu-nav-item">
-                    <a href="#faq" class="mobile-menu-nav-link" data-translate="mobile-nav-faq">
+                    <a href="#casos-de-exito" class="mobile-menu-nav-link">
                         <div class="mobile-menu-nav-content">
                             <div class="mobile-menu-nav-icon">
-                                <i class="fas fa-question-circle"></i>
+                                <i class="fas fa-trophy"></i>
                             </div>
                             <div class="mobile-menu-nav-text">
-                                <span class="title" data-translate="mobile-nav-faq-title">FAQ</span>
-                                <span class="description" data-translate="mobile-nav-faq-desc">Preguntas
-                                    frecuentes</span>
+                                <span class="title">Casos de Éxito</span>
+                                <span class="description">Proyectos destacados</span>
                             </div>
                         </div>
                         <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
                     </a>
                 </div>
+
                 <div class="mobile-menu-nav-item">
-                    <a href="#contacto" class="mobile-menu-nav-link" data-translate="mobile-nav-contacto">
+                    <a href="#contacto" class="mobile-menu-nav-link">
                         <div class="mobile-menu-nav-content">
                             <div class="mobile-menu-nav-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="mobile-menu-nav-text">
-                                <span class="title" data-translate="mobile-nav-contacto-title">Contacto</span>
-                                <span class="description" data-translate="mobile-nav-contacto-desc">Ponte en
-                                    contacto</span>
+                                <span class="title">Contacto</span>
+                                <span class="description">Ponte en contacto</span>
                             </div>
                         </div>
                         <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
                     </a>
                 </div>
+
                 <div class="mobile-menu-nav-item">
-                    <a href="asesorias.html" class="mobile-menu-nav-link" data-translate="mobile-nav-asesorias">
+                    <a href="asesorias.html" class="mobile-menu-nav-link">
                         <div class="mobile-menu-nav-content">
                             <div class="mobile-menu-nav-icon">
                                 <i class="fas fa-chalkboard-teacher"></i>
                             </div>
                             <div class="mobile-menu-nav-text">
-                                <span class="title" data-translate="mobile-nav-asesorias-title">Asesorías</span>
-                                <span class="description" data-translate="mobile-nav-asesorias-desc">Consultoría
-                                    especializada</span>
+                                <span class="title">Asesorías</span>
+                                <span class="description">Consultoría especializada</span>
                             </div>
                         </div>
                         <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
                     </a>
                 </div>
+
                 <div class="mobile-menu-nav-item">
-                    <a href="agentes.html" class="mobile-menu-nav-link" data-translate="mobile-nav-agentes">
+                    <a href="agentes.html" class="mobile-menu-nav-link">
                         <div class="mobile-menu-nav-content">
                             <div class="mobile-menu-nav-icon">
                                 <i class="fas fa-users"></i>
                             </div>
                             <div class="mobile-menu-nav-text">
-                                <span class="title" data-translate="mobile-nav-agentes-title">Agentes</span>
-                                <span class="description" data-translate="mobile-nav-agentes-desc">Nuestro equipo</span>
+                                <span class="title">Agentes</span>
+                                <span class="description">Nuestro equipo</span>
                             </div>
                         </div>
                         <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
@@ -1190,23 +1278,19 @@
             <!-- Theme Switcher -->
             <div class="mobile-menu-theme-switcher">
                 <div class="theme-switcher-container">
-                    <div class="theme-switcher-label">
+                    <button class="theme-toggle-btn" id="mobile-theme-toggle" aria-label="Cambiar tema">
                         <div class="theme-icon-container">
                             <i class="fas fa-sun light-icon"></i>
                             <i class="fas fa-moon dark-icon"></i>
                         </div>
-                        <span data-translate="theme-switcher">Tema</span>
-                    </div>
-                    <div class="btn-holder" id="mobile-theme-toggle" aria-label="Cambiar tema">
-                        <div class="btn-circle"></div>
-                        <input type="checkbox" class="checkbox">
-                    </div>
+                        <span class="theme-text">Tema</span>
+                    </button>
                 </div>
             </div>
 
             <!-- Footer -->
             <div class="mobile-menu-footer">
-                <p>OptimusAgency © <span id="current-year"></span></p>
+                <p>OptimusAgency &copy; <span id="current-year"></span></p>
                 <p>Conectando el futuro digital</p>
             </div>
         </div>
@@ -1224,8 +1308,7 @@
                 </div>
 
                 <h1 class="hero-title">
-                    <span>Convierte <strong>clics</strong> en clientes en
-                        <strong>14&nbsp;días</strong></span>
+                    <span>Convierte <strong>clics</strong> en clientes en <strong>14&nbsp;días</strong></span>
                 </h1>
 
                 <div class="floating-gradient-banner">
@@ -1263,17 +1346,14 @@
             <div class="pill animate-on-scroll">
                 <i class="fas fa-cubes"></i> ¿Qué podemos crear para tu negocio?
             </div>
-            <h2 class="section-title animate-on-scroll">Soluciones <strong>Digitales</strong> a tu
-                Medida</h2>
-            <p class="section-subtitle animate-on-scroll">Desarrollo web profesional para cada
-                necesidad: desde landing
+            <h2 class="section-title animate-on-scroll">Soluciones <strong>Digitales</strong> a tu Medida</h2>
+            <p class="section-subtitle animate-on-scroll">Desarrollo web profesional para cada necesidad: desde landing
                 pages hasta plataformas SaaS y mantenimiento continuo.</p>
             <div class="services-cards-container">
                 <div class="service-card card-green animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-globe"></i></div>
                     <h3>Landing Pages</h3>
-                    <p>Páginas de aterrizaje optimizadas para conversión con diseño responsivo y carga
-                        ultrarrápida.</p>
+                    <p>Páginas de aterrizaje optimizadas para conversión con diseño responsivo y carga ultrarrápida.</p>
                     <ul class="features-list">
                         <li>Diseño responsivo</li>
                         <li>SEO optimizado</li>
@@ -1284,8 +1364,7 @@
                 <div class="service-card card-blue animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-code"></i></div>
                     <h3>Aplicaciones Web</h3>
-                    <p>Aplicaciones web completas con funcionalidades avanzadas y experiencia de usuario
-                        excepcional.
+                    <p>Aplicaciones web completas con funcionalidades avanzadas y experiencia de usuario excepcional.
                     </p>
                     <ul class="features-list">
                         <li>React/Vue/Angular</li>
@@ -1297,8 +1376,7 @@
                 <div class="service-card card-purple animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>Sitios Corporativos</h3>
-                    <p>Sitios web empresariales que reflejan la profesionalidad y valores de tu marca.
-                    </p>
+                    <p>Sitios web empresariales que reflejan la profesionalidad y valores de tu marca.</p>
                     <ul class="features-list">
                         <li>CMS personalizado</li>
                         <li>Múltiples idiomas</li>
@@ -1309,8 +1387,7 @@
                 <div class="service-card card-orange animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-bolt"></i></div>
                     <h3>E-commerce</h3>
-                    <p>Tiendas online completas con pasarelas de pago y gestión de inventario integrada.
-                    </p>
+                    <p>Tiendas online completas con pasarelas de pago y gestión de inventario integrada.</p>
                     <ul class="features-list">
                         <li>Carrito de compras</li>
                         <li>Pagos seguros</li>
@@ -1321,8 +1398,7 @@
                 <div class="service-card card-teal animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-users"></i></div>
                     <h3>Plataformas SaaS</h3>
-                    <p>Plataformas de software como servicio escalables con dashboard y gestión de
-                        usuarios.</p>
+                    <p>Plataformas de software como servicio escalables con dashboard y gestión de usuarios.</p>
                     <ul class="features-list">
                         <li>Multi-tenancy</li>
                         <li>Subscripciones</li>
@@ -1333,8 +1409,7 @@
                 <div class="service-card card-pink animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Mantenimiento</h3>
-                    <p>Soporte continuo, actualizaciones de seguridad y optimizaciones de rendimiento.
-                    </p>
+                    <p>Soporte continuo, actualizaciones de seguridad y optimizaciones de rendimiento.</p>
                     <ul class="features-list">
                         <li>Soporte 24/7</li>
                         <li>Backups automáticos</li>
@@ -1350,8 +1425,7 @@
                 <i class="far fa-star"></i> Nuestras Soluciones Digitales
             </div>
             <h2 class="section-title animate-on-scroll">Precios <strong>Transparentes</strong></h2>
-            <p class="section-subtitle animate-on-scroll">Planes flexibles diseñados para adaptarse a
-                proyectos de
+            <p class="section-subtitle animate-on-scroll">Planes flexibles diseñados para adaptarse a proyectos de
                 cualquier tamaño. Precios en pesos colombianos, sin costos ocultos.</p>
             <div class="pricing-cards-container">
                 <!-- Starter Card -->
@@ -1407,8 +1481,7 @@
                     <div class="card-header">
                         <div class="card-icon teal"><i class="bi bi-gear"></i></div>
                         <h3>¿Necesitas algo más complejo?</h3>
-                        <span class="tag">Aplicaciones web, sistemas empresariales, integraciones
-                            avanzadas</span>
+                        <span class="tag">Aplicaciones web, sistemas empresariales, integraciones avanzadas</span>
                     </div>
                     <ul class="features-list">
                         <li><i class="fas fa-check"></i> Aplicaciones web complejas</li>
@@ -1419,8 +1492,7 @@
                         <span>Precios desde</span> <strong>$8,000,000</strong> <span class="currency">COP ($2,000
                             USD)</span>
                     </div>
-                    <a href="#contacto" class="cta-button teal-gradient">Solicitar cotización
-                        personalizada</a>
+                    <a href="#contacto" class="cta-button teal-gradient">Solicitar cotización personalizada</a>
                 </div>
             </div>
             <div class="consult-cta">
@@ -1436,76 +1508,62 @@
                 <div class="accordion-item">
                     <button class="accordion-trigger">¿Cuánto tiempo toma desarrollar mi proyecto?<span
                             class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Los tiempos varían según la complejidad: Landing
-                        pages básicas (7-10
-                        días), sitios corporativos (14-21 días), y aplicaciones complejas (30-45 días).
-                        Siempre
+                    <div class="accordion-content">Los tiempos varían según la complejidad: Landing pages básicas (7-10
+                        días), sitios corporativos (14-21 días), y aplicaciones complejas (30-45 días). Siempre
                         mantenemos comunicación constante sobre el progreso.</div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-trigger">¿Qué tecnologías utilizan para el desarrollo?<span
                             class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Usamos tecnologías modernas como React, Next.js,
-                        Node.js, Firebase, y
-                        herramientas de diseño como Figma y Webflow, según las necesidades del proyecto.
-                    </div>
+                    <div class="accordion-content">Usamos tecnologías modernas como React, Next.js, Node.js, Firebase, y
+                        herramientas de diseño como Figma y Webflow, según las necesidades del proyecto.</div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-trigger">¿Incluyen hosting y dominio en el precio?<span class="chevron"><i
                                 class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, todos los planes incluyen hosting por 1 año. El
-                        dominio puede
+                    <div class="accordion-content">Sí, todos los planes incluyen hosting por 1 año. El dominio puede
                         incluirse o gestionarse aparte según el plan y la preferencia del cliente.</div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-trigger">¿Ofrecen soporte después de la entrega?<span class="chevron"><i
                                 class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, ofrecemos soporte post-entrega: 30 días para
-                        Starter, 3 meses
+                    <div class="accordion-content">Sí, ofrecemos soporte post-entrega: 30 días para Starter, 3 meses
                         para Professional, y opciones personalizadas para proyectos complejos.</div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Puedo solicitar cambios durante el
-                        desarrollo?<span class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, puedes solicitar cambios. Starter incluye 1
-                        revisión,
-                        Professional incluye 3, y los proyectos personalizados se acuerdan según el
-                        alcance.</div>
+                    <button class="accordion-trigger">¿Puedo solicitar cambios durante el desarrollo?<span
+                            class="chevron"><i class="fas fa-chevron-right"></i></span></button>
+                    <div class="accordion-content">Sí, puedes solicitar cambios. Starter incluye 1 revisión,
+                        Professional incluye 3, y los proyectos personalizados se acuerdan según el alcance.</div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Qué pasa si no estoy satisfecho con el
-                        resultado?<span class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Trabajamos contigo hasta que estés satisfecho dentro
-                        de las
-                        revisiones incluidas. Si hay desacuerdo, buscamos una solución justa y
-                        transparente.</div>
+                    <button class="accordion-trigger">¿Qué pasa si no estoy satisfecho con el resultado?<span
+                            class="chevron"><i class="fas fa-chevron-right"></i></span></button>
+                    <div class="accordion-content">Trabajamos contigo hasta que estés satisfecho dentro de las
+                        revisiones incluidas. Si hay desacuerdo, buscamos una solución justa y transparente.</div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Pueden integrar mi sitio con sistemas
-                        existentes?<span class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, realizamos integraciones con CRMs, ERPs,
-                        pasarelas de pago y
+                    <button class="accordion-trigger">¿Pueden integrar mi sitio con sistemas existentes?<span
+                            class="chevron"><i class="fas fa-chevron-right"></i></span></button>
+                    <div class="accordion-content">Sí, realizamos integraciones con CRMs, ERPs, pasarelas de pago y
                         otros sistemas según tus necesidades.</div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-trigger">¿Los sitios son optimizados para móviles?<span class="chevron"><i
                                 class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Todos nuestros sitios son 100% responsive y
-                        optimizados para móviles
+                    <div class="accordion-content">Todos nuestros sitios son 100% responsive y optimizados para móviles
                         y tablets.</div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-trigger">¿Cómo es el proceso de pago?<span class="chevron"><i
                                 class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">El pago se realiza en dos partes: 50% al iniciar y
-                        50% al entregar el
+                    <div class="accordion-content">El pago se realiza en dos partes: 50% al iniciar y 50% al entregar el
                         proyecto, salvo acuerdos especiales.</div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Proporcionan capacitación para usar el
-                        sitio?<span class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, ofrecemos capacitación básica para que puedas
-                        administrar tu
+                    <button class="accordion-trigger">¿Proporcionan capacitación para usar el sitio?<span
+                            class="chevron"><i class="fas fa-chevron-right"></i></span></button>
+                    <div class="accordion-content">Sí, ofrecemos capacitación básica para que puedas administrar tu
                         sitio o tienda.</div>
                 </div>
             </div>
@@ -1520,11 +1578,9 @@
             <div class="pill animate-on-scroll">
                 <i class="fas fa-chart-line"></i> Casos de Éxito
             </div>
-            <h2 class="section-title animate-on-scroll">Lo que hemos hecho para <br><strong>otros
-                    negocios como el
+            <h2 class="section-title animate-on-scroll">Lo que hemos hecho para <br><strong>otros negocios como el
                     tuyo</strong></h2>
-            <p class="section-subtitle animate-on-scroll">Más de <strong>120 casos de éxito</strong>
-                respaldan nuestro
+            <p class="section-subtitle animate-on-scroll">Más de <strong>120 casos de éxito</strong> respaldan nuestro
                 enfoque en
                 <strong>resultados reales</strong> y medibles.
             </p>
@@ -1538,11 +1594,9 @@
                         <p>Landing page para startup de delivery que aumentó conversiones en 340%</p>
                     </div>
                     <div class="portfolio-stats">
-                        <div><i class="fas fa-arrow-up-trending"></i><span>+340%</span><small>Conversión</small>
-                        </div>
+                        <div><i class="fas fa-arrow-up-trending"></i><span>+340%</span><small>Conversión</small></div>
                         <div><i class="far fa-eye"></i><span>50K</span><small>Visitas</small></div>
-                        <div><i class="fas fa-dollar-sign"></i><span>$25K</span><small>Ingresos</small>
-                        </div>
+                        <div><i class="fas fa-dollar-sign"></i><span>$25K</span><small>Ingresos</small></div>
                     </div>
                 </div>
                 <div class="portfolio-item animate-on-scroll">
@@ -1553,11 +1607,9 @@
                         <p>Tienda online de suplementos deportivos con sistema de suscripciones</p>
                     </div>
                     <div class="portfolio-stats">
-                        <div><i class="fas fa-arrow-up-trending"></i><span>+280%</span><small>Conversión</small>
-                        </div>
+                        <div><i class="fas fa-arrow-up-trending"></i><span>+280%</span><small>Conversión</small></div>
                         <div><i class="far fa-eye"></i><span>100K</span><small>Visitas</small></div>
-                        <div><i class="fas fa-dollar-sign"></i><span>$45K</span><small>Ingresos</small>
-                        </div>
+                        <div><i class="fas fa-dollar-sign"></i><span>$45K</span><small>Ingresos</small></div>
                     </div>
                 </div>
                 <div class="portfolio-item animate-on-scroll">
@@ -1567,11 +1619,9 @@
                         <p>Plataforma educativa que conecta estudiantes con tutores especializados</p>
                     </div>
                     <div class="portfolio-stats">
-                        <div><i class="fas fa-arrow-up-trending"></i><span>+220%</span><small>Conversión</small>
-                        </div>
+                        <div><i class="fas fa-arrow-up-trending"></i><span>+220%</span><small>Conversión</small></div>
                         <div><i class="far fa-eye"></i><span>75K</span><small>Visitas</small></div>
-                        <div><i class="fas fa-dollar-sign"></i><span>$35K</span><small>Ingresos</small>
-                        </div>
+                        <div><i class="fas fa-dollar-sign"></i><span>$35K</span><small>Ingresos</small></div>
                     </div>
                 </div>
             </div>
@@ -1587,10 +1637,8 @@
             <div class="pill animate-on-scroll">
                 <i class="far fa-paper-plane"></i> Empezá Tu Proyecto
             </div>
-            <h2 class="section-title animate-on-scroll">¿Listo para dar el <br><strong>siguiente
-                    paso?</strong></h2>
-            <p class="section-subtitle animate-on-scroll">Completa el formulario y empecemos. Te
-                contactaremos con una
+            <h2 class="section-title animate-on-scroll">¿Listo para dar el <br><strong>siguiente paso?</strong></h2>
+            <p class="section-subtitle animate-on-scroll">Completa el formulario y empecemos. Te contactaremos con una
                 propuesta clara y <strong>alineada a los objetivos</strong> de tu negocio.</p>
             <div class="contact-container">
                 <form id="contact-form" class="animate-on-scroll">
@@ -1618,8 +1666,7 @@
                         <div class="form-group">
                             <label for="project-type">Tipo de proyecto *</label>
                             <select id="project-type" name="project-type" required>
-                                <option value="" disabled selected>Selecciona el tipo de proyecto
-                                </option>
+                                <option value="" disabled selected>Selecciona el tipo de proyecto</option>
                                 <option value="landing-page">Landing Page</option>
                                 <option value="corporativo">Sitio Web Corporativo</option>
                                 <option value="e-commerce">Tienda Online (E-commerce)</option>
@@ -1655,8 +1702,7 @@
                             placeholder="Describe tu negocio, objetivos, público objetivo, funcionalidades específicas que necesitas..."
                             rows="5"></textarea>
                     </div>
-                    <button type="submit" class="cta-button purple-gradient full-width">Solicitar
-                        Propuesta
+                    <button type="submit" class="cta-button purple-gradient full-width">Solicitar Propuesta
                         Gratuita</button>
                 </form>
                 <div class="contact-info animate-on-scroll">
@@ -1667,8 +1713,7 @@
                             <li><i class="fas fa-check"></i> Respuesta rápida en menos de 24 horas</li>
                             <li><i class="fas fa-check"></i> Experiencia con empresas colombianas</li>
                             <li><i class="fas fa-check"></i> Soporte en español</li>
-                            <li><i class="fas fa-check"></i> Precios competitivos en pesos colombianos
-                            </li>
+                            <li><i class="fas fa-check"></i> Precios competitivos en pesos colombianos</li>
                         </ul>
                     </div>
                     <div class="contact-cards">
@@ -1686,14 +1731,12 @@
                             <div>
                                 <div class="contact-card-title">WhatsApp</div>
                                 <div class="contact-card-main"><a href="https://wa.me/573237992985" target="_blank"
-                                        style="color:inherit;text-decoration:none;">+57
-                                        323 799 2985</a></div>
+                                        style="color:inherit;text-decoration:none;">+57 323 799 2985</a></div>
                                 <div class="contact-card-sub">Lunes a Viernes, 9AM - 6PM (COT)</div>
                             </div>
                         </div>
                         <div class="contact-card">
-                            <div class="contact-icon location"><i class="fas fa-map-marker-alt"></i>
-                            </div>
+                            <div class="contact-icon location"><i class="fas fa-map-marker-alt"></i></div>
                             <div>
                                 <div class="contact-card-title">Ubicación</div>
                                 <div class="contact-card-main">Bogotá, Colombia</div>
@@ -1726,8 +1769,7 @@
                 <a href="#" class="logo">
                     <i class="fas fa-code"></i> OptimusAgency
                 </a>
-                <p>Transformamos ideas en activos digitales que venden. Especialistas en landing pages
-                    de alta
+                <p>Transformamos ideas en activos digitales que venden. Especialistas en landing pages de alta
                     conversión y desarrollo web profesional.</p>
                 <p class="made-with">Hecho con <i class="fas fa-heart"></i> y <i class="fas fa-bolt"></i> en Colombia
                 </p>
@@ -2080,10 +2122,10 @@
 
                             // Save theme preference
                             localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-
+                            
                             // Dispatch theme change event
                             document.dispatchEvent(new CustomEvent('themeChanged'));
-
+                            
                             // Update theme switcher state
                             updateThemeSwitcherState();
                         }

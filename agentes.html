@@ -358,91 +358,119 @@
             background: none;
             border: none;
             cursor: pointer;
-            padding: 0;
+            padding: 10px 16px;
             position: relative;
-            width: 60px;
-            height: 32px;
-            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             transition: all 0.3s ease;
-        }
-
-        .theme-toggle-track {
+            border-radius: 40px;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
-            border: 2px solid rgba(160, 106, 249, 0.2);
-            border-radius: 16px;
+        }
+        
+        .theme-icon-container {
             position: relative;
-            transition: all 0.3s ease;
+            width: 24px;
+            height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        body.dark-mode .theme-toggle-track {
-            background: linear-gradient(135deg, #23243a 0%, #2d2e3a 100%);
-            border-color: rgba(160, 106, 249, 0.3);
-        }
-
-        .theme-toggle-thumb {
+        .theme-toggle-btn i {
             position: absolute;
-            top: 50%;
-            left: 0px;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #a06af9 0%, #8e44ad 100%);
-            border-radius: 50%;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            color: #a06af9;
+        }
+        
+        body.dark-mode .theme-toggle-btn i {
+            color: white;
+        }
+        
+        .theme-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #4a277b;
+            transition: color 0.3s ease;
+        }
+        
+        body.dark-mode .theme-text {
+            color: white;
+        }
+
+        .light-icon {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.5);
+        }
+
+        .dark-icon {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.5);
+        }
+
+        body:not(.dark-mode) .light-icon {
+            opacity: 1;
+            transform: rotate(0) scale(1);
+        }
+        
+        body.dark-mode .light-icon {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.5);
+        }
+
+        body.dark-mode .dark-icon {
+            opacity: 1;
+            transform: rotate(0) scale(1);
+        }
+        
+        body:not(.dark-mode) .dark-icon {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.5);
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(160, 106, 249, 0.08);
+        }
+
+        body.dark-mode .theme-toggle-btn:hover {
+            background: rgba(160, 106, 249, 0.12);
+        }
+        
+        .theme-switcher-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 8px rgba(160, 106, 249, 0.3);
-            overflow: hidden;
-            transform: translateY(-50%);
+            justify-content: space-between;
+            background: #ffffff;
+            border: 1px solid rgba(160, 106, 249, 0.15);
+            border-radius: 12px;
+            padding: 0.5rem 1rem;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 2px 8px rgba(160, 106, 249, 0.05);
         }
-
-        body.dark-mode .theme-toggle-thumb {
-            transform: translateX(32px) translateY(-50%);
+        
+        body.dark-mode .theme-switcher-container {
+            background: rgba(62, 55, 102, 0.7);
+            border-color: rgba(160, 106, 249, 0.2);
         }
-
-        .theme-toggle-thumb i {
+        
+        .theme-switcher-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4a277b;
+            font-weight: 500;
             font-size: 0.9rem;
-            color: white;
-            transition: all 0.3s ease;
         }
-
-        .theme-toggle-thumb .light-icon {
-            opacity: 1;
-            transform: scale(1);
+        
+        body.dark-mode .theme-switcher-label {
+            color: rgba(255, 255, 255, 0.95);
         }
-
-        .theme-toggle-thumb .dark-icon {
-            opacity: 0;
-            transform: scale(0);
-        }
-
-        body.dark-mode .theme-toggle-thumb .light-icon {
-            opacity: 0;
-            transform: scale(0);
-        }
-
-        body.dark-mode .theme-toggle-thumb .dark-icon {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .theme-toggle-btn:hover .theme-toggle-track {
-            border-color: rgba(160, 106, 249, 0.4);
-            box-shadow: 0 4px 12px rgba(160, 106, 249, 0.2);
-        }
-
-        body.dark-mode .theme-toggle-btn:hover .theme-toggle-track {
-            border-color: rgba(160, 106, 249, 0.5);
-            box-shadow: 0 4px 12px rgba(160, 106, 249, 0.3);
-        }
-
-        body.dark-mode .theme-toggle-btn:hover .theme-toggle-thumb {
-            transform: translateX(32px) translateY(-50%) scale(1.05);
+        
+        .theme-switcher-label i {
+            color: #a06af9;
+            font-size: 1rem;
         }
 
         .hero::before {
@@ -594,189 +622,8 @@
 </head>
 
 <body>
-    <header class="header sticky-header-wrapper">
-        <nav class="nav">
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-            </button>
-            <a href="#" class="logo">
-                <i class="fas fa-robot"></i> Optimus<strong>Agency</strong>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#servicios">Soluciones</a></li>
-                <li><a href="#casos-de-exito">Casos de Éxito</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <a href="asesorias.html" class="gradient-link">Asesorías</a>
-                <a href="index.html" class="gradient-link">Desarrollo Web</a>
-            </ul>
-        </nav>
-        <div class="header-wave-container">
-            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                    .path-anim-agentes {
-                        animation: path-anim-agentes 10s linear infinite;
-                    }
-
-                    @keyframes path-anim-agentes {
-                        0% {
-                            d: path("M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z");
-                        }
-
-                        25% {
-                            d: path("M0,150 C123.3,119.5,246.7,88.9,431,77 C615.3,65.1,860.7,71.7,1039,87 C1217.3,102.3,1328.7,126.1,1440,150L1440,151L0,151Z");
-                        }
-
-                        50% {
-                            d: path("M0,150 C131.7,168.4,263.5,186.8,432,188 C600.5,189.2,805.9,173.2,980,164 C1154.1,154.8,1297.1,152.4,1440,150L1440,151L0,151Z");
-                        }
-
-                        75% {
-                            d: path("M0,150 C171.6,149.5,343.2,148.9,500,141 C656.8,133.1,798.8,117.7,953,118 C1107.2,118.3,1273.6,134.1,1440,150L1440,151L0,151Z");
-                        }
-
-                        100% {
-                            d: path("M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z");
-                        }
-                    }
-                </style>
-                <defs>
-                    <linearGradient id="wave-gradient-agentes" x1="0%" y1="50%" x2="100%" y2="50%">
-                        <stop offset="0%" stop-color="#a06af9"></stop>
-                        <stop offset="100%" stop-color="#f8549b"></stop>
-                    </linearGradient>
-                </defs>
-                <path
-                    d="M0,150 C172.4,113.1,344.8,76.1,500,75 C655.2,73.9,793.2,108.5,947,127 C1100.8,145.5,1270.4,147.7,1440,150L1440,151L0,151Z"
-                    stroke="none" stroke-width="0" fill="url(#wave-gradient-agentes)" class="path-anim-agentes"></path>
-            </svg>
-        </div>
-    </header>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
-        <div class="mobile-menu-content">
-            <!-- Close button -->
-            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Cerrar menú">
-                <i class="fas fa-times"></i>
-            </button>
-
-            <!-- Logo section -->
-            <div class="mobile-menu-logo">
-                <div class="logo-container">
-                    <i class="fas fa-robot" style="font-size: 3.5rem; position: relative; z-index: 1;"></i>
-                </div>
-            </div>
-
-            <!-- Menu title -->
-            <div class="mobile-menu-title">
-                <h2>Optimus<strong>Agency</strong></h2>
-            </div>
-
-            <!-- Navigation items -->
-            <nav class="mobile-menu-nav">
-                <div class="mobile-menu-nav-item">
-                    <a href="#servicios" class="mobile-menu-nav-link">
-                        <div class="mobile-menu-nav-content">
-                            <div class="mobile-menu-nav-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <div class="mobile-menu-nav-text">
-                                <span class="title">Soluciones</span>
-                                <span class="description">Nuestras soluciones de IA</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
-                    </a>
-                </div>
-
-                <div class="mobile-menu-nav-item">
-                    <a href="#casos-de-exito" class="mobile-menu-nav-link">
-                        <div class="mobile-menu-nav-content">
-                            <div class="mobile-menu-nav-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="mobile-menu-nav-text">
-                                <span class="title">Casos de Éxito</span>
-                                <span class="description">Resultados reales</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
-                    </a>
-                </div>
-
-                <div class="mobile-menu-nav-item">
-                    <a href="#contacto" class="mobile-menu-nav-link">
-                        <div class="mobile-menu-nav-content">
-                            <div class="mobile-menu-nav-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="mobile-menu-nav-text">
-                                <span class="title">Contacto</span>
-                                <span class="description">Ponte en contacto</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
-                    </a>
-                </div>
-
-                <div class="mobile-menu-nav-item">
-                    <a href="asesorias.html" class="mobile-menu-nav-link">
-                        <div class="mobile-menu-nav-content">
-                            <div class="mobile-menu-nav-icon">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                            </div>
-                            <div class="mobile-menu-nav-text">
-                                <span class="title">Asesorías</span>
-                                <span class="description">Consultoría especializada</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
-                    </a>
-                </div>
-
-                <div class="mobile-menu-nav-item">
-                    <a href="index.html" class="mobile-menu-nav-link">
-                        <div class="mobile-menu-nav-content">
-                            <div class="mobile-menu-nav-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="mobile-menu-nav-text">
-                                <span class="title">Desarrollo Web</span>
-                                <span class="description">Sitios web profesionales</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
-                    </a>
-                </div>
-            </nav>
-
-            <!-- Theme Switcher -->
-            <div class="mobile-menu-theme-switcher">
-                <div class="theme-switcher-container">
-                    <div class="theme-switcher-label">
-                        <i class="fas fa-palette"></i>
-                        <span data-translate="theme-switcher">Tema</span>
-                    </div>
-                    <button class="theme-toggle-btn" id="mobile-theme-toggle" aria-label="Cambiar tema">
-                        <div class="theme-toggle-track">
-                            <div class="theme-toggle-thumb">
-                                <i class="fas fa-sun light-icon"></i>
-                                <i class="fas fa-moon dark-icon"></i>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Footer -->
-            <div class="mobile-menu-footer">
-                <p>OptimusAgency © <span id="current-year"></span></p>
-                <p>Conectando el futuro digital</p>
-            </div>
-        </div>
-    </div>
+    <!-- Header container where the reusable header will be injected -->
+    <div id="header-container"></div>
 
     <main>
         <section class="hero" style="position:relative;overflow:hidden;">
@@ -1281,6 +1128,31 @@
                         icon.className = 'fas fa-plus';
                     }
                 });
+            }
+
+            // Initialize FAB theme icon on page load
+            const fabThemeButton = document.querySelector('.fab-secondary.theme');
+            if (fabThemeButton) {
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                const themeIcon = fabThemeButton.querySelector('i');
+                if (isDarkMode) {
+                    themeIcon.className = 'fas fa-sun';
+                } else {
+                    themeIcon.className = 'fas fa-moon';
+                }
+            }
+
+            // Initialize FAB language button on page load
+            const fabLanguageButton = document.querySelector('.fab-secondary.language');
+            if (fabLanguageButton) {
+                const currentLang = document.documentElement.lang || 'es';
+                fabLanguageButton.textContent = currentLang === 'es' ? 'ES' : 'EN';
+
+                // Preserve screen reader text
+                const srText = fabLanguageButton.querySelector('.sr-only');
+                if (srText) {
+                    fabLanguageButton.appendChild(srText);
+                }
             }
         });
     </script>

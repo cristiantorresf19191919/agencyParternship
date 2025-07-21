@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Component Example</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        body.dark-mode {
+            background-color: #1c1c23;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            margin-top: 100px; /* Add space below header */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        body.dark-mode .content-section {
+            background-color: #282830;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <!-- Header Component -->
+    <header-component>
+        <!-- Regular nav links (slot="nav-links") -->
+        <li slot="nav-links"><a href="index.html">Inicio</a></li>
+        <li slot="nav-links"><a href="#servicios">Servicios</a></li>
+        <li slot="nav-links"><a href="#contacto">Contacto</a></li>
+        <li slot="nav-links"><a href="asesorias.html" class="gradient-link">Asesorías</a></li>
+        <li slot="nav-links"><a href="agentes.html" class="gradient-link">Agentes</a></li>
+
+        <!-- Mobile menu items (slot="mobile-nav-items") -->
+        <div slot="mobile-nav-items" class="mobile-menu-nav-item">
+            <a href="index.html" class="mobile-menu-nav-link">
+                <div class="mobile-menu-nav-content">
+                    <div class="mobile-menu-nav-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="mobile-menu-nav-text">
+                        <span class="title">Inicio</span>
+                        <span class="description">Página principal</span>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
+            </a>
+        </div>
+        <div slot="mobile-nav-items" class="mobile-menu-nav-item">
+            <a href="#servicios" class="mobile-menu-nav-link">
+                <div class="mobile-menu-nav-content">
+                    <div class="mobile-menu-nav-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="mobile-menu-nav-text">
+                        <span class="title">Servicios</span>
+                        <span class="description">Nuestros servicios</span>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
+            </a>
+        </div>
+        <div slot="mobile-nav-items" class="mobile-menu-nav-item">
+            <a href="#contacto" class="mobile-menu-nav-link">
+                <div class="mobile-menu-nav-content">
+                    <div class="mobile-menu-nav-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="mobile-menu-nav-text">
+                        <span class="title">Contacto</span>
+                        <span class="description">Ponte en contacto</span>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right mobile-menu-nav-arrow"></i>
+            </a>
+        </div>
+    </header-component>
+
+    <main class="container">
+        <div class="content-section">
+            <h1>Ejemplo de Componente de Cabecera</h1>
+            <p>Este es un ejemplo de cómo usar el componente de cabecera reutilizable en todas tus páginas.</p>
+            <p>El encabezado incluye:</p>
+            <ul>
+                <li>Logo con enlace a la página de inicio</li>
+                <li>Menú de navegación</li>
+                <li>Botón de hamburguesa para móviles</li>
+                <li>Animación de onda en la parte inferior</li>
+                <li>Menú desplegable para móviles con animación</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Cómo Implementarlo</h2>
+            <p>Para usar este componente en cualquier página:</p>
+            <ol>
+                <li>Incluir el script del componente</li>
+                <li>Agregar el tag <code>&lt;header-component&gt;</code> en tu HTML</li>
+                <li>Personalizar los enlaces del menú usando slots</li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- Import the component script -->
+    <script src="components/header-component.js"></script>
+    
+    <!-- Additional scripts -->
+    <script>
+        // Toggle dark mode example
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>
