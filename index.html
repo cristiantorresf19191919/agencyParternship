@@ -552,8 +552,8 @@
             display: none;
             flex-direction: column;
             justify-content: space-between;
-            width: 30px;
-            height: 24px;
+            width: 24px;
+            height: 20px;
             background: none;
             border: none;
             cursor: pointer;
@@ -587,8 +587,9 @@
             .mobile-menu-toggle {
                 display: flex !important;
                 position: absolute;
-                left: 1rem;
+                left: 0%;
                 z-index: 1001;
+                top: 4vh;
             }
         }
 
@@ -697,7 +698,7 @@
         /* Logo section */
         .mobile-menu-logo {
             text-align: center;
-            padding: 3rem 2rem 1rem 2rem;
+            padding: 1rem 2rem 0.3rem 2rem;
         }
 
         .logo-container {
@@ -1022,6 +1023,19 @@
         body:not(.dark-mode) .theme-switcher-container:hover {
             box-shadow: 0 6px 16px rgba(160, 106, 249, 0.2);
         }
+
+        .fab-secondary {
+            opacity: 0;
+            transform: scale(0) translate(0, 0);
+            pointer-events: none;
+            /* ...other styles... */
+        }
+
+        .fab-container.active .fab-secondary {
+            opacity: 1;
+            pointer-events: auto;
+            /* ...other transform/animation styles... */
+        }
     </style>
 </head>
 
@@ -1100,7 +1114,7 @@
             <!-- Logo section -->
             <div class="mobile-menu-logo">
                 <div class="logo-container">
-                    <i class="fas fa-code" style="font-size: 3.5rem; position: relative; z-index: 1;"></i>
+                    <i class="fas fa-code" style="font-size: 1.7rem; position: relative; z-index: 1;"></i>
                 </div>
             </div>
 
@@ -1224,122 +1238,122 @@
                 </div>
 
                 <h1 class="hero-title">
-                    <span>Convierte <strong>clics</strong> en clientes en
+                    <span data-translate="hero-title">Convierte <strong>clics</strong> en clientes en
                         <strong>14&nbsp;días</strong></span>
                 </h1>
 
                 <div class="floating-gradient-banner">
                     <i class="fas fa-route"></i>
-                    <span>Lleva tu negocio a vender 24/7 desde el día 1</span>
+                    <span data-translate="hero-banner">Lleva tu negocio a vender 24/7 desde el día 1</span>
                 </div>
                 <p class="hero-subtitle">
-                    <span id="typed-subtitle"></span>
+                    <span id="typed-subtitle" data-translate="hero-subtitle"></span>
                 </p>
 
                 <div class="hero-features">
                     <div class="hero-stat">
                         <span class="hero-stat-value stat-blue" id="stat-proyectos">0</span>
-                        <div class="hero-stat-label">Proyectos completados</div>
+                        <div class="hero-stat-label" data-translate="stat-proyectos-label">Proyectos completados</div>
                     </div>
                     <div class="hero-stat">
                         <span class="hero-stat-value stat-blue" id="stat-satisfaccion">0</span>
-                        <div class="hero-stat-label">Satisfacción del cliente</div>
+                        <div class="hero-stat-label" data-translate="stat-satisfaccion-label">Satisfacción del cliente
+                        </div>
                     </div>
                     <div class="hero-stat">
                         <span class="hero-stat-value stat-blue" id="stat-entrega">0</span>
-                        <div class="hero-stat-label">Entrega promedio</div>
+                        <div class="hero-stat-label" data-translate="stat-entrega-label">Entrega promedio</div>
                     </div>
                 </div>
 
                 <div class="hero-buttons">
-                    <a href="#contacto" class="cta-button primary">Empezar mi proyecto</a>
-                    <a href="#servicios" class="cta-button secondary">Ver nuestros servicios</a>
+                    <a href="#contacto" class="cta-button primary" data-translate="cta-start">Empezar mi proyecto</a>
+                    <a href="#servicios" class="cta-button secondary" data-translate="cta-services">Ver nuestros
+                        servicios</a>
                 </div>
             </div>
         </section>
 
         <!-- Services Overview Section -->
         <section id="servicios-overview" class="services-overview animate-on-scroll">
-            <div class="pill animate-on-scroll">
-                <i class="fas fa-cubes"></i> ¿Qué podemos crear para tu negocio?
-            </div>
-            <h2 class="section-title animate-on-scroll">Soluciones <strong>Digitales</strong> a tu
-                Medida</h2>
-            <p class="section-subtitle animate-on-scroll">Desarrollo web profesional para cada
-                necesidad: desde landing
-                pages hasta plataformas SaaS y mantenimiento continuo.</p>
+            <div class="pill animate-on-scroll" data-translate="services-pill"><i class="fas fa-cubes"></i> ¿Qué podemos
+                crear para tu negocio?</div>
+            <h2 class="section-title animate-on-scroll" data-translate="services-title">Soluciones
+                <strong>Digitales</strong> a tu Medida
+            </h2>
+            <p class="section-subtitle animate-on-scroll" data-translate="services-subtitle">Desarrollo web profesional
+                para cada necesidad: desde landing pages hasta plataformas SaaS y mantenimiento continuo.</p>
             <div class="services-cards-container">
                 <div class="service-card card-green animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-globe"></i></div>
-                    <h3>Landing Pages</h3>
-                    <p>Páginas de aterrizaje optimizadas para conversión con diseño responsivo y carga
-                        ultrarrápida.</p>
+                    <h3 data-translate="service-landing-title">Landing Pages</h3>
+                    <p data-translate="service-landing-desc">Páginas de aterrizaje optimizadas para conversión con
+                        diseño responsivo y carga ultrarrápida.</p>
                     <ul class="features-list">
-                        <li>Diseño responsivo</li>
-                        <li>SEO optimizado</li>
-                        <li>Análisis integrado</li>
-                        <li>Formularios de contacto</li>
+                        <li data-translate="service-landing-feature1">Diseño responsivo</li>
+                        <li data-translate="service-landing-feature2">SEO optimizado</li>
+                        <li data-translate="service-landing-feature3">Análisis integrado</li>
+                        <li data-translate="service-landing-feature4">Formularios de contacto</li>
                     </ul>
                 </div>
                 <div class="service-card card-blue animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-code"></i></div>
-                    <h3>Aplicaciones Web</h3>
-                    <p>Aplicaciones web completas con funcionalidades avanzadas y experiencia de usuario
-                        excepcional.
-                    </p>
+                    <h3 data-translate="service-app-title">Aplicaciones Web</h3>
+                    <p data-translate="service-app-desc">Aplicaciones web completas con funcionalidades avanzadas y
+                        experiencia de usuario excepcional.</p>
                     <ul class="features-list">
-                        <li>React/Vue/Angular</li>
-                        <li>Backend personalizado</li>
-                        <li>Base de datos</li>
-                        <li>Autenticación</li>
+                        <li data-translate="service-app-feature1">React/Vue/Angular</li>
+                        <li data-translate="service-app-feature2">Backend personalizado</li>
+                        <li data-translate="service-app-feature3">Base de datos</li>
+                        <li data-translate="service-app-feature4">Autenticación</li>
                     </ul>
                 </div>
                 <div class="service-card card-purple animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Sitios Corporativos</h3>
-                    <p>Sitios web empresariales que reflejan la profesionalidad y valores de tu marca.
-                    </p>
+                    <h3 data-translate="service-corp-title">Sitios Corporativos</h3>
+                    <p data-translate="service-corp-desc">Sitios web empresariales que reflejan la profesionalidad y
+                        valores de tu marca.</p>
                     <ul class="features-list">
-                        <li>CMS personalizado</li>
-                        <li>Múltiples idiomas</li>
-                        <li>Integración social</li>
-                        <li>Blog incorporado</li>
+                        <li data-translate="service-corp-feature1">CMS personalizado</li>
+                        <li data-translate="service-corp-feature2">Múltiples idiomas</li>
+                        <li data-translate="service-corp-feature3">Integración social</li>
+                        <li data-translate="service-corp-feature4">Blog incorporado</li>
                     </ul>
                 </div>
                 <div class="service-card card-orange animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>E-commerce</h3>
-                    <p>Tiendas online completas con pasarelas de pago y gestión de inventario integrada.
-                    </p>
+                    <h3 data-translate="service-ecom-title">E-commerce</h3>
+                    <p data-translate="service-ecom-desc">Tiendas online completas con pasarelas de pago y gestión de
+                        inventario integrada.</p>
                     <ul class="features-list">
-                        <li>Carrito de compras</li>
-                        <li>Pagos seguros</li>
-                        <li>Gestión de stock</li>
-                        <li>Panel de admin</li>
+                        <li data-translate="service-ecom-feature1">Carrito de compras</li>
+                        <li data-translate="service-ecom-feature2">Pagos seguros</li>
+                        <li data-translate="service-ecom-feature3">Gestión de stock</li>
+                        <li data-translate="service-ecom-feature4">Panel de admin</li>
                     </ul>
                 </div>
                 <div class="service-card card-teal animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-users"></i></div>
-                    <h3>Plataformas SaaS</h3>
-                    <p>Plataformas de software como servicio escalables con dashboard y gestión de
-                        usuarios.</p>
+                    <h3 data-translate="service-saas-title">Plataformas SaaS</h3>
+                    <p data-translate="service-saas-desc">Plataformas de software como servicio escalables con dashboard
+                        y gestión de usuarios.</p>
                     <ul class="features-list">
-                        <li>Multi-tenancy</li>
-                        <li>Subscripciones</li>
-                        <li>API REST</li>
-                        <li>Dashboard analytics</li>
+                        <li data-translate="service-saas-feature1">Multi-tenancy</li>
+                        <li data-translate="service-saas-feature2">Subscripciones</li>
+                        <li data-translate="service-saas-feature3">API REST</li>
+                        <li data-translate="service-saas-feature4">Dashboard analytics</li>
                     </ul>
                 </div>
                 <div class="service-card card-pink animate-on-scroll">
                     <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Mantenimiento</h3>
-                    <p>Soporte continuo, actualizaciones de seguridad y optimizaciones de rendimiento.
-                    </p>
+                    <h3 data-translate="service-maint-title">Mantenimiento</h3>
+                    <p data-translate="service-maint-desc">Soporte continuo, actualizaciones de seguridad y
+                        optimizaciones de rendimiento.</p>
                     <ul class="features-list">
-                        <li>Soporte 24/7</li>
-                        <li>Backups automáticos</li>
-                        <li>Actualizaciones</li>
-                        <li>Monitoreo</li>
+                        <li data-translate="service-maint-feature1">Soporte 24/7</li>
+                        <li data-translate="service-maint-feature2">Backups automáticos</li>
+                        <li data-translate="service-maint-feature3">Actualizaciones</li>
+                        <li data-translate="service-maint-feature4">Monitoreo</li>
                     </ul>
                 </div>
             </div>
@@ -1358,24 +1372,26 @@
                 <div class="pricing-card animate-on-scroll">
                     <div class="card-header">
                         <div class="card-icon purple"><i class="bi bi-rocket"></i></div>
-                        <h3>Starter</h3>
-                        <span class="tag">Perfecto para landing pages y sitios web básicos</span>
+                        <h3 data-translate="pricing-starter-title">Starter</h3>
+                        <span class="tag" data-translate="pricing-starter-tag">Perfecto para landing pages y sitios web
+                            básicos</span>
                     </div>
                     <ul class="features-list">
-                        <li><i class="fas fa-check"></i> Hasta 5 páginas</li>
-                        <li><i class="fas fa-check"></i> Diseño responsivo</li>
-                        <li><i class="fas fa-check"></i> SEO básico</li>
-                        <li><i class="fas fa-check"></i> Formulario de contacto</li>
-                        <li><i class="fas fa-check"></i> Hosting por 1 año</li>
-                        <li><i class="fas fa-check"></i> Soporte por 30 días</li>
-                        <li><i class="fas fa-check"></i> 1 revisión incluida</li>
-                        <li><i class="fas fa-check"></i> Entrega en 7-10 días</li>
+                        <li data-translate="pricing-starter-feature1">Hasta 5 páginas</li>
+                        <li data-translate="pricing-starter-feature2">Diseño responsivo</li>
+                        <li data-translate="pricing-starter-feature3">SEO básico</li>
+                        <li data-translate="pricing-starter-feature4">Formulario de contacto</li>
+                        <li data-translate="pricing-starter-feature5">Hosting por 1 año</li>
+                        <li data-translate="pricing-starter-feature6">Soporte por 30 días</li>
+                        <li data-translate="pricing-starter-feature7">1 revisión incluida</li>
+                        <li data-translate="pricing-starter-feature8">Entrega en 7-10 días</li>
                     </ul>
                     <div class="price-container">
                         <span><del>$800,000</del></span><br>
                         <strong>$600,000</strong> <span class="currency">COP ($150 USD)</span>
                     </div>
-                    <a href="#contacto" class="cta-button purple-gradient">Comenzar proyecto</a>
+                    <a href="#contacto" class="cta-button purple-gradient" data-translate="pricing-starter-btn">Comenzar
+                        proyecto</a>
                 </div>
                 <!-- Professional Card -->
                 <div class="pricing-card featured animate-on-scroll">
@@ -1431,111 +1447,101 @@
 
         <!-- FAQ Accordion Section -->
         <section id="faq" class="faq-section">
-            <h2 class="section-title">Preguntas <strong>Frecuentes</strong></h2>
+            <h2 class="section-title" data-translate="faq-main-title">Preguntas <strong>Frecuentes</strong></h2>
             <div class="accordion">
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Cuánto tiempo toma desarrollar mi proyecto?<span
-                            class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Los tiempos varían según la complejidad: Landing
-                        pages básicas (7-10
-                        días), sitios corporativos (14-21 días), y aplicaciones complejas (30-45 días).
-                        Siempre
-                        mantenemos comunicación constante sobre el progreso.</div>
+                    <button class="accordion-trigger" data-translate="faq-q1">¿Cuánto tiempo toma desarrollar mi
+                        proyecto?</button>
+                    <div class="accordion-content" data-translate="faq-a1">Los tiempos varían según la complejidad:
+                        Landing pages básicas (7-10 días), sitios corporativos (14-21 días), y aplicaciones complejas
+                        (30-45 días). Siempre mantenemos comunicación constante sobre el progreso.</div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Qué tecnologías utilizan para el desarrollo?<span
-                            class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Usamos tecnologías modernas como React, Next.js,
-                        Node.js, Firebase, y
-                        herramientas de diseño como Figma y Webflow, según las necesidades del proyecto.
+                    <button class="accordion-trigger" data-translate="faq-q2">¿Qué tecnologías utilizan para el
+                        desarrollo?</button>
+                    <div class="accordion-content" data-translate="faq-a2">Usamos tecnologías modernas como React,
+                        Next.js, Node.js, Firebase, y herramientas de diseño como Figma y Webflow, según las necesidades
+                        del proyecto.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger" data-translate="faq-q3">¿Incluyen hosting y dominio en el
+                        precio?</button>
+                    <div class="accordion-content" data-translate="faq-a3">Sí, todos los planes incluyen hosting por 1
+                        año. El dominio puede incluirse o gestionarse aparte según el plan y la preferencia del cliente.
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Incluyen hosting y dominio en el precio?<span class="chevron"><i
-                                class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, todos los planes incluyen hosting por 1 año. El
-                        dominio puede
-                        incluirse o gestionarse aparte según el plan y la preferencia del cliente.</div>
+                    <button class="accordion-trigger" data-translate="faq-q4">¿Ofrecen soporte después de la
+                        entrega?</button>
+                    <div class="accordion-content" data-translate="faq-a4">Sí, ofrecemos soporte post-entrega: 30 días
+                        para Starter, 3 meses para Professional, y opciones personalizadas para proyectos complejos.
+                    </div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Ofrecen soporte después de la entrega?<span class="chevron"><i
-                                class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, ofrecemos soporte post-entrega: 30 días para
-                        Starter, 3 meses
-                        para Professional, y opciones personalizadas para proyectos complejos.</div>
+                    <button class="accordion-trigger" data-translate="faq-q5">¿Puedo solicitar cambios durante el
+                        desarrollo?</button>
+                    <div class="accordion-content" data-translate="faq-a5">Sí, puedes solicitar cambios. Starter incluye
+                        1 revisión, Professional incluye 3, y los proyectos personalizados se acuerdan según el alcance.
+                    </div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Puedo solicitar cambios durante el
-                        desarrollo?<span class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, puedes solicitar cambios. Starter incluye 1
-                        revisión,
-                        Professional incluye 3, y los proyectos personalizados se acuerdan según el
-                        alcance.</div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-trigger">¿Qué pasa si no estoy satisfecho con el
-                        resultado?<span class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Trabajamos contigo hasta que estés satisfecho dentro
-                        de las
-                        revisiones incluidas. Si hay desacuerdo, buscamos una solución justa y
+                    <button class="accordion-trigger" data-translate="faq-q6">¿Qué pasa si no estoy satisfecho con el
+                        resultado?</button>
+                    <div class="accordion-content" data-translate="faq-a6">Trabajamos contigo hasta que estés satisfecho
+                        dentro de las revisiones incluidas. Si hay desacuerdo, buscamos una solución justa y
                         transparente.</div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Pueden integrar mi sitio con sistemas
-                        existentes?<span class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, realizamos integraciones con CRMs, ERPs,
-                        pasarelas de pago y
-                        otros sistemas según tus necesidades.</div>
+                    <button class="accordion-trigger" data-translate="faq-q7">¿Pueden integrar mi sitio con sistemas
+                        existentes?</button>
+                    <div class="accordion-content" data-translate="faq-a7">Sí, realizamos integraciones con CRMs, ERPs,
+                        pasarelas de pago y otros sistemas según tus necesidades.</div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Los sitios son optimizados para móviles?<span class="chevron"><i
-                                class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Todos nuestros sitios son 100% responsive y
-                        optimizados para móviles
-                        y tablets.</div>
+                    <button class="accordion-trigger" data-translate="faq-q8">¿Los sitios son optimizados para
+                        móviles?</button>
+                    <div class="accordion-content" data-translate="faq-a8">Todos nuestros sitios son 100% responsive y
+                        optimizados para móviles y tablets.</div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Cómo es el proceso de pago?<span class="chevron"><i
-                                class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">El pago se realiza en dos partes: 50% al iniciar y
-                        50% al entregar el
-                        proyecto, salvo acuerdos especiales.</div>
+                    <button class="accordion-trigger" data-translate="faq-q9">¿Cómo es el proceso de pago?</button>
+                    <div class="accordion-content" data-translate="faq-a9">El pago se realiza en dos partes: 50% al
+                        iniciar y 50% al entregar el proyecto, salvo acuerdos especiales.</div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger">¿Proporcionan capacitación para usar el
-                        sitio?<span class="chevron"><i class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion-content">Sí, ofrecemos capacitación básica para que puedas
-                        administrar tu
-                        sitio o tienda.</div>
+                    <button class="accordion-trigger" data-translate="faq-q10">¿Proporcionan capacitación para usar el
+                        sitio?</button>
+                    <div class="accordion-content" data-translate="faq-a10">Sí, ofrecemos capacitación básica para que
+                        puedas administrar tu sitio o tienda.</div>
                 </div>
             </div>
         </section>
         <!-- FAQ Contact Suggestion -->
         <div class="faq-contact-suggest">
-            <p>¿No encuentras la respuesta que buscas?</p>
+            <p data-translate="faq-contact">¿No encuentras la respuesta que buscas?</p>
             <a href="#contacto" class="cta-button secondary">Contacta con nosotros</a>
         </div>
 
         <section id="casos-de-exito" class="portfolio">
-            <div class="pill animate-on-scroll">
-                <i class="fas fa-chart-line"></i> Casos de Éxito
-            </div>
-            <h2 class="section-title animate-on-scroll">Lo que hemos hecho para <br><strong>otros
-                    negocios como el
-                    tuyo</strong></h2>
-            <p class="section-subtitle animate-on-scroll">Más de <strong>120 casos de éxito</strong>
-                respaldan nuestro
-                enfoque en
-                <strong>resultados reales</strong> y medibles.
-            </p>
+            <div class="pill animate-on-scroll" data-translate="portfolio-pill"><i class="fas fa-chart-line"></i> Casos
+                de Éxito</div>
+            <h2 class="section-title animate-on-scroll" data-translate="portfolio-title">Lo que hemos hecho para
+                <br><strong>otros negocios como el tuyo</strong>
+            </h2>
+            <p class="section-subtitle animate-on-scroll" data-translate="portfolio-subtitle">Más de <strong>120 casos
+                    de éxito</strong> respaldan nuestro enfoque en <strong>resultados reales</strong> y medibles.</p>
 
             <div class="portfolio-grid">
                 <div class="portfolio-item animate-on-scroll">
                     <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
                         alt="Proyecto 1">
                     <div class="portfolio-info">
-                        <h4>RestauranTech</h4>
-                        <p>Landing page para startup de delivery que aumentó conversiones en 340%</p>
+                        <h4 data-translate="portfolio1-title">RestauranTech</h4>
+                        <p data-translate="portfolio1-desc">Landing page para startup de delivery que aumentó
+                            conversiones en 340%</p>
+                        <small data-translate="portfolio1-conv">Conversión</small>
+                        <small data-translate="portfolio1-visits">Visitas</small>
+                        <small data-translate="portfolio1-income">Ingresos</small>
                     </div>
                     <div class="portfolio-stats">
                         <div><i class="fas fa-arrow-up-trending"></i><span>+340%</span><small>Conversión</small>
@@ -1549,8 +1555,12 @@
                     <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
                         alt="Proyecto 2">
                     <div class="portfolio-info">
-                        <h4>FitnessPro</h4>
-                        <p>Tienda online de suplementos deportivos con sistema de suscripciones</p>
+                        <h4 data-translate="portfolio2-title">FitnessPro</h4>
+                        <p data-translate="portfolio2-desc">Tienda online de suplementos deportivos con sistema de
+                            suscripciones</p>
+                        <small data-translate="portfolio2-conv">Conversión</small>
+                        <small data-translate="portfolio2-visits">Visitas</small>
+                        <small data-translate="portfolio2-income">Ingresos</small>
                     </div>
                     <div class="portfolio-stats">
                         <div><i class="fas fa-arrow-up-trending"></i><span>+280%</span><small>Conversión</small>
@@ -1563,8 +1573,12 @@
                 <div class="portfolio-item animate-on-scroll">
                     <img src="https://epicwebsol.com/wp-content/uploads/2013/09/co03.jpg" alt="Proyecto 3">
                     <div class="portfolio-info">
-                        <h4>EduTech Solutions</h4>
-                        <p>Plataforma educativa que conecta estudiantes con tutores especializados</p>
+                        <h4 data-translate="portfolio3-title">EduTech Solutions</h4>
+                        <p data-translate="portfolio3-desc">Plataforma educativa que conecta estudiantes con tutores
+                            especializados</p>
+                        <small data-translate="portfolio3-conv">Conversión</small>
+                        <small data-translate="portfolio3-visits">Visitas</small>
+                        <small data-translate="portfolio3-income">Ingresos</small>
                     </div>
                     <div class="portfolio-stats">
                         <div><i class="fas fa-arrow-up-trending"></i><span>+220%</span><small>Conversión</small>
@@ -1578,126 +1592,143 @@
         </section>
 
         <section class="full-width-cta">
-            <h2 class="section-title">¿Listo para ser nuestro próximo caso de éxito?</h2>
-            <p>Únete a más de 120 negocios que han transformado su presencia digital con nosotros</p>
+            <h2 class="section-title" data-translate="section-title-cta">¿Listo para ser nuestro próximo caso de éxito?
+            </h2>
+            <p data-translate="cta-subtitle">Únete a más de 120 negocios que han transformado su presencia digital con
+                nosotros</p>
             <a href="#contacto" class="cta-button primary-light">Empezar Mi Proyecto Ahora</a>
         </section>
 
         <section id="contacto" class="contact">
-            <div class="pill animate-on-scroll">
-                <i class="far fa-paper-plane"></i> Empezá Tu Proyecto
-            </div>
-            <h2 class="section-title animate-on-scroll">¿Listo para dar el <br><strong>siguiente
-                    paso?</strong></h2>
-            <p class="section-subtitle animate-on-scroll">Completa el formulario y empecemos. Te
-                contactaremos con una
-                propuesta clara y <strong>alineada a los objetivos</strong> de tu negocio.</p>
+            <div class="pill animate-on-scroll" data-translate="contact-pill"><i class="far fa-paper-plane"></i> Empezá
+                Tu Proyecto</div>
+            <h2 class="section-title animate-on-scroll" data-translate="contact-title">¿Listo para dar el
+                <br><strong>siguiente paso?</strong>
+            </h2>
+            <p class="section-subtitle animate-on-scroll" data-translate="contact-subtitle">Completa el formulario y
+                empecemos. Te contactaremos con una propuesta clara y <strong>alineada a los objetivos</strong> de tu
+                negocio.</p>
             <div class="contact-container">
                 <form id="contact-form" class="animate-on-scroll">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Nombre completo *</label>
-                            <input type="text" id="name" name="name" placeholder="Juan Camilo" required>
+                            <label for="name" data-translate="form-label-name">Nombre completo *</label>
+                            <input type="text" id="name" name="name" placeholder="Juan Camilo"
+                                data-translate="form-ph-name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="test@gmail.com" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Teléfono</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+57 322 347 93 37">
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Empresa</label>
-                            <input type="text" id="company" name="company" placeholder="Mi Empresa SRL">
+                            <label for="email" data-translate="form-label-email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="test@gmail.com"
+                                data-translate="form-ph-email" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="project-type">Tipo de proyecto *</label>
+                            <label for="phone" data-translate="form-label-phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+57 322 347 93 37"
+                                data-translate="form-ph-phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="company" data-translate="form-label-company">Empresa</label>
+                            <input type="text" id="company" name="company" placeholder="Mi Empresa SRL"
+                                data-translate="form-ph-company">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="project-type" data-translate="form-label-type">Tipo de proyecto *</label>
                             <select id="project-type" name="project-type" required>
-                                <option value="" disabled selected>Selecciona el tipo de proyecto
+                                <option value="" disabled selected data-translate="form-opt-type">Selecciona el tipo de
+                                    proyecto
                                 </option>
-                                <option value="landing-page">Landing Page</option>
-                                <option value="corporativo">Sitio Web Corporativo</option>
-                                <option value="e-commerce">Tienda Online (E-commerce)</option>
-                                <option value="web-app">Aplicación Web</option>
-                                <option value="rediseño">Rediseño de sitio existente</option>
-                                <option value="otro">Otro</option>
+                                <option value="landing-page" data-translate="form-opt-landing">Landing Page</option>
+                                <option value="corporativo" data-translate="form-opt-corporate">Sitio Web Corporativo
+                                </option>
+                                <option value="e-commerce" data-translate="form-opt-ecommerce">Tienda Online
+                                    (E-commerce)</option>
+                                <option value="web-app" data-translate="form-opt-webapp">Aplicación Web</option>
+                                <option value="rediseño" data-translate="form-opt-redesign">Rediseño de sitio existente
+                                </option>
+                                <option value="otro" data-translate="form-opt-other">Otro</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="budget">Presupuesto estimado</label>
+                            <label for="budget" data-translate="form-label-budget">Presupuesto estimado</label>
                             <select id="budget" name="budget">
-                                <option value="" disabled selected>Selecciona tu presupuesto</option>
-                                <option value="starter">$600,000 COP (Starter)</option>
-                                <option value="professional">$3,200,000 COP (Professional)</option>
-                                <option value="custom">$8,000,000 COP (Custom)</option>
-                                <option value="no-seguro">No estoy seguro</option>
+                                <option value="" disabled selected data-translate="form-opt-budget">Selecciona tu
+                                    presupuesto</option>
+                                <option value="starter" data-translate="form-opt-starter">$600,000 COP (Starter)
+                                </option>
+                                <option value="professional" data-translate="form-opt-professional">$3,200,000 COP
+                                    (Professional)</option>
+                                <option value="custom" data-translate="form-opt-custom">$8,000,000 COP (Custom)</option>
+                                <option value="no-seguro" data-translate="form-opt-unsure">No estoy seguro</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="timeline">Timeframe esperado</label>
+                        <label for="timeline" data-translate="form-label-timeline">Timeframe esperado</label>
                         <select id="timeline" name="timeline">
-                            <option value="" disabled selected>¿Cuándo necesitas el proyecto?</option>
-                            <option value="1-2-weeks">1-2 Semanas</option>
-                            <option value="3-4-weeks">3-4 Semanas</option>
-                            <option value="1-2-months">1-2 Meses</option>
-                            <option value="flexible">Flexible</option>
+                            <option value="" disabled selected data-translate="form-opt-timeline">¿Cuándo necesitas el
+                                proyecto?</option>
+                            <option value="1-2-weeks" data-translate="form-opt-1-2w">1-2 Semanas</option>
+                            <option value="3-4-weeks" data-translate="form-opt-3-4w">3-4 Semanas</option>
+                            <option value="1-2-months" data-translate="form-opt-1-2m">1-2 Meses</option>
+                            <option value="flexible" data-translate="form-opt-flexible">Flexible</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Cuéntanos sobre tu proyecto</label>
+                        <label for="message" data-translate="form-ph-message">Cuéntanos sobre tu proyecto</label>
                         <textarea id="message" name="message"
                             placeholder="Describe tu negocio, objetivos, público objetivo, funcionalidades específicas que necesitas..."
-                            rows="5"></textarea>
+                            data-translate="form-ph-message" rows="5"></textarea>
                     </div>
-                    <button type="submit" class="cta-button purple-gradient full-width">Solicitar
-                        Propuesta
-                        Gratuita</button>
+                    <button type="submit" class="cta-button purple-gradient full-width"
+                        data-translate="contact-btn">Solicitar Propuesta Gratuita</button>
                 </form>
                 <div class="contact-info animate-on-scroll">
                     <div class="info-box benefits">
-                        <h4>¿Por qué elegirnos?</h4>
+                        <h4 data-translate="contact-why-title">¿Por qué elegirnos?</h4>
                         <ul>
-                            <li><i class="fas fa-check"></i> Consulta gratuita sin compromiso</li>
-                            <li><i class="fas fa-check"></i> Respuesta rápida en menos de 24 horas</li>
-                            <li><i class="fas fa-check"></i> Experiencia con empresas colombianas</li>
-                            <li><i class="fas fa-check"></i> Soporte en español</li>
-                            <li><i class="fas fa-check"></i> Precios competitivos en pesos colombianos
+                            <li data-translate="contact-why1">Consulta gratuita sin compromiso</li>
+                            <li data-translate="contact-why2">Respuesta rápida en menos de 24 horas</li>
+                            <li data-translate="contact-why3">Experiencia con empresas colombianas</li>
+                            <li data-translate="contact-why4">Soporte en español</li>
+                            <li data-translate="contact-why5">Precios competitivos en pesos colombianos
                             </li>
                         </ul>
                     </div>
                     <div class="contact-cards">
-                        <h3 class="contact-section-title">Información de Contacto</h3>
+                        <h3 class="contact-section-title" data-translate="contact-info-title">Información de Contacto
+                        </h3>
                         <div class="contact-card">
                             <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
                             <div>
-                                <div class="contact-card-title">Email</div>
+                                <div class="contact-card-title" data-translate="contact-email-title">Email</div>
                                 <div class="contact-card-main">cristian.torres19@hotmail.com</div>
-                                <div class="contact-card-sub">Respuesta en menos de 24 horas</div>
+                                <div class="contact-card-sub" data-translate="contact-email-sub">Respuesta en menos de
+                                    24 horas</div>
                             </div>
                         </div>
                         <div class="contact-card">
                             <div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
                             <div>
-                                <div class="contact-card-title">WhatsApp</div>
+                                <div class="contact-card-title" data-translate="contact-whatsapp-title">WhatsApp</div>
                                 <div class="contact-card-main"><a href="https://wa.me/573237992985" target="_blank"
                                         style="color:inherit;text-decoration:none;">+57
                                         323 799 2985</a></div>
-                                <div class="contact-card-sub">Lunes a Viernes, 9AM - 6PM (COT)</div>
+                                <div class="contact-card-sub" data-translate="contact-whatsapp-sub">Lunes a Viernes, 9AM
+                                    - 6PM (COT)</div>
                             </div>
                         </div>
                         <div class="contact-card">
                             <div class="contact-icon location"><i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <div class="contact-card-title">Ubicación</div>
+                                <div class="contact-card-title" data-translate="contact-location-title">Ubicación</div>
                                 <div class="contact-card-main">Bogotá, Colombia</div>
-                                <div class="contact-card-sub">Servicio remoto disponible</div>
+                                <div class="contact-card-sub" data-translate="contact-location-sub">Servicio remoto
+                                    disponible</div>
                             </div>
                         </div>
                     </div>
@@ -1726,15 +1757,19 @@
                 <a href="#" class="logo">
                     <i class="fas fa-code"></i> OptimusAgency
                 </a>
-                <p>Transformamos ideas en activos digitales que venden. Especialistas en landing pages
-                    de alta
-                    conversión y desarrollo web profesional.</p>
-                <p class="made-with">Hecho con <i class="fas fa-heart"></i> y <i class="fas fa-bolt"></i> en Colombia
-                </p>
+                <p data-translate="footer-about">Transformamos ideas en activos digitales que venden. Especialistas en
+                    landing pages de alta conversión y desarrollo web profesional.</p>
+                <p class="made-with" data-translate="footer-made-with">Hecho con <i class="fas fa-heart"></i> y <i
+                        class="fas fa-bolt"></i> en Colombia</p>
+                <p data-translate="footer-copyright">&copy; 2024 OptimusAgency. Todos los derechos reservados.</p>
+                <a href="#" data-translate="footer-privacy">Política de Privacidad</a>
+                <a href="#" data-translate="footer-terms">Términos de Servicio</a>
+                <a href="asesorias.html" class="gradient-link" data-translate="footer-asesorias">Asesorías</a>
+                <a href="agentes.html" class="gradient-link" data-translate="footer-agentes">Agentes</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 OptimusAgency. Todos los derechos reservados.</p>
+            <p data-translate="footer-copyright">&copy; 2024 OptimusAgency. Todos los derechos reservados.</p>
             <div class="legal-links">
                 <a href="#">Política de Privacidad</a>
                 <a href="#">Términos de Servicio</a>
@@ -1744,118 +1779,32 @@
         </div>
     </footer>
 
-    <div class="button-stack">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo">
-            <span class="icon-sun"><i class="fas fa-sun"></i></span>
-            <span class="icon-moon"><i class="fas fa-moon"></i></span>
+    <!-- Removed always-visible WhatsApp and theme toggle button-stack -->
+
+    <div class="fab-container" id="fab-container">
+        <button class="fab-secondary language" id="language-toggle" data-lang="en" aria-label="Cambiar idioma">
+            EN
+            <span class="sr-only">Toggle language between English and Spanish</span>
         </button>
-        <a href="https://wa.me/573237992985?text=Hola,%20estoy%20interesado%20en%20una%20soluci%C3%B3n%20web."
-            class="whatsapp-button-container" target="_blank">
-            <div class="whatsapp-blob">
-                <i class="fab fa-whatsapp"></i>
-            </div>
+        <button class="fab-secondary theme" id="theme-toggle" aria-label="Cambiar modo">
+            <i class="fas fa-moon"></i>
+            <span class="sr-only">Toggle dark/light mode</span>
+        </button>
+        <a href="https://wa.me/573237992985?text=Hola,%20he%20visto%20tu%20web%20y%20quiero%20una%20cotizaci%C3%B3n"
+            class="fab-secondary whatsapp" id="whatsapp-fab" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="sr-only">Contactar por WhatsApp</span>
         </a>
+        <button class="fab-main" id="fab-main" aria-label="Abrir acciones rápidas">
+            <i class="fas fa-plus"></i>
+        </button>
     </div>
 
     <script type="module" src="script.js"></script>
-    <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
-    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            new TypeIt("#typed-subtitle", {
-                speed: 48,
-                loop: true,
-                html: true
-            })
-                .type("Impulsa tu negocio con <strong>páginas web que convierten</strong>.", { delay: 900 })
-                .break({ delay: 400 })
-                .type("Landing pages irresistibles para captar más clientes.", { delay: 1200 })
-                .pause(1200)
-                .delete(null, { delay: 600 })
-                .type("Desarrollamos tu presencia digital <strong>en tiempo récord</strong>.", { delay: 900 })
-                .pause(1200)
-                .delete(null, { delay: 600 })
-                .type("Tu web, tu mejor vendedor <strong>24/7</strong>.", { delay: 900 })
-                .pause(1200)
-                .delete(null, { delay: 600 })
-                .go();
-
-            // GSAP number animation for hero stats
-            function animateNumber(id, end, duration, suffix = "") {
-                const el = document.getElementById(id);
-                if (!el) return;
-                gsap.fromTo(el, { innerText: 0 }, {
-                    innerText: end,
-                    duration: duration,
-                    ease: "power1.out",
-                    snap: { innerText: 1 },
-                    onUpdate: function () {
-                        el.innerText = Math.floor(el.innerText) + suffix;
-                    },
-                    onComplete: function () {
-                        el.innerText = end + suffix;
-                    }
-                });
-            }
-            animateNumber("stat-proyectos", 4, 0.5, "+");
-            animateNumber("stat-satisfaccion", 98, 1.4, "%");
-            animateNumber("stat-entrega", 15, 1.2, " días");
-
-            // GSAP staggered nav animation ONLY in .hero
-            let navAnimated = false;
-            const navLinks = document.querySelectorAll('.nav-links li');
-            const heroSection = document.querySelector('.hero');
-            if (window.gsap && navLinks.length && heroSection) {
-                gsap.set(navLinks, { opacity: 0, y: 30, scale: 2, x: 30 });
-                const observer = new IntersectionObserver((entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !navAnimated) {
-                            gsap.to(navLinks, {
-                                opacity: 1,
-                                y: 0,
-                                x: 0,
-                                scale: 1,
-                                duration: 0.6,
-                                ease: 'power3.out',
-                                stagger: 0.13,
-                                delay: 0.2
-                            });
-                            navAnimated = true;
-                            obs.disconnect();
-                        }
-                    });
-                }, { threshold: 0.3 });
-                observer.observe(heroSection);
-            }
-
-            // particles.js in .hero
-            if (window.particlesJS) {
-                particlesJS('particles-js', {
-                    particles: {
-                        number: { value: 80, density: { enable: true, value_area: 900 } },
-                        color: { value: ['#fff', '#fff', '#fff'] },
-                        shape: { type: 'circle' },
-                        opacity: { value: 0.18, random: true },
-                        size: { value: 3.5, random: true },
-                        line_linked: { enable: true, distance: 110, color: '#fff', opacity: 0.30, width: 1 },
-                        move: { enable: true, speed: 1.1, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
-                    },
-                    interactivity: {
-                        detect_on: 'canvas',
-                        events: {
-                            onhover: { enable: true, mode: 'repulse' },
-                            onclick: { enable: false },
-                            resize: true
-                        },
-                        modes: {
-                            repulse: { distance: 90, duration: 0.4 }
-                        }
-                    },
-                    retina_detect: true
-                });
-            }
-
+        // --- Begin: Mobile Menu Functionality from cotizacion.html ---
+        document.addEventListener('DOMContentLoaded', function () {
             // Mobile Menu Functionality with Amazing Clip-Path Animation
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
@@ -1940,70 +1889,7 @@
                 }
             });
 
-            // Mobile Theme Toggle Functionality
-            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-            const desktopThemeToggle = document.getElementById('theme-toggle');
-
-            // Function to update theme switcher state
-            function updateThemeSwitcherState() {
-                const isDarkMode = document.body.classList.contains('dark-mode');
-                if (mobileThemeToggle) {
-                    mobileThemeToggle.setAttribute('aria-pressed', isDarkMode);
-                }
-                if (desktopThemeToggle) {
-                    desktopThemeToggle.setAttribute('aria-pressed', isDarkMode);
-                }
-            }
-
-            // Function to update theme switcher label
-            function updateThemeSwitcherLabel(language = 'es') {
-                const themeLabel = document.querySelector('[data-translate="theme-switcher"]');
-                if (themeLabel) {
-                    themeLabel.textContent = language === 'en' ? 'Theme' : 'Tema';
-                }
-            }
-
-            if (mobileThemeToggle) {
-                mobileThemeToggle.addEventListener('click', function () {
-                    // Toggle dark mode class
-                    document.body.classList.toggle('dark-mode');
-
-                    // Update HTML lang attribute for theme
-                    const isDarkMode = document.body.classList.contains('dark-mode');
-                    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-
-                    // Save theme preference
-                    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-
-                    // Dispatch theme change event
-                    document.dispatchEvent(new CustomEvent('themeChanged'));
-
-                    // Update both theme toggles
-                    updateThemeSwitcherState();
-                });
-            }
-
-            // Sync mobile theme toggle with desktop theme toggle
-            if (desktopThemeToggle) {
-                desktopThemeToggle.addEventListener('click', function () {
-                    updateThemeSwitcherState();
-                });
-            }
-
-            // Initialize theme switcher state on page load
-            updateThemeSwitcherState();
-            updateThemeSwitcherLabel(document.documentElement.lang || 'es');
-
-            // Update theme switcher label when language changes
-            document.addEventListener('languageChanged', function () {
-                const currentLang = document.documentElement.lang || 'es';
-                updateThemeSwitcherLabel(currentLang);
-            });
-
-            // Update current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // Floating Action Button (FAB) with 135° Radial Fan
+            // --- Begin: FAB Functionality from cotizacion.html ---
             const fabContainer = document.getElementById('fab-container');
             const fabMain = document.getElementById('fab-main');
             const fabSecondaries = document.querySelectorAll('.fab-secondary');
@@ -2065,13 +1951,13 @@
                             localStorage.setItem('language', newLang);
                         }
 
-                        // Handle theme toggle button click
+                        // Handle theme toggle
                         if (button.classList.contains('theme')) {
                             document.body.classList.toggle('dark-mode');
                             const isDarkMode = document.body.classList.contains('dark-mode');
-                            const themeIcon = button.querySelector('i');
 
-                            // Update icon
+                            // Update theme icon
+                            const themeIcon = button.querySelector('i');
                             if (isDarkMode) {
                                 themeIcon.className = 'fas fa-sun';
                             } else {
@@ -2084,8 +1970,19 @@
                             // Dispatch theme change event
                             document.dispatchEvent(new CustomEvent('themeChanged'));
 
-                            // Update theme switcher state
-                            updateThemeSwitcherState();
+                            // Sync mobile menu toggle
+                            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+                            if (mobileThemeToggle) {
+                                const btnCircle = mobileThemeToggle.querySelector('.btn-circle');
+                                const checkbox = mobileThemeToggle.querySelector('.checkbox');
+                                if (isDarkMode) {
+                                    btnCircle.classList.add('active');
+                                    if (checkbox) checkbox.checked = true;
+                                } else {
+                                    btnCircle.classList.remove('active');
+                                    if (checkbox) checkbox.checked = false;
+                                }
+                            }
                         }
 
                         // Close FAB after action
@@ -2121,55 +2018,553 @@
                     }
                 });
             }
+        });
+        // ... existing code ...
 
-            // Initialize FAB theme icon on page load
-            const fabThemeButton = document.querySelector('.fab-secondary.theme');
-            if (fabThemeButton) {
-                const isDarkMode = document.body.classList.contains('dark-mode');
-                const themeIcon = fabThemeButton.querySelector('i');
-                if (isDarkMode) {
-                    themeIcon.className = 'fas fa-sun';
+        // GSAP number animation for hero stats (from cotizacion.html)
+        document.addEventListener("DOMContentLoaded", function () {
+            function animateNumber(id, end, duration, suffix = "") {
+                const el = document.getElementById(id);
+                if (!el) return;
+
+                // Set initial value
+                el.innerText = "0" + suffix;
+
+                // Check if GSAP is available
+                if (typeof gsap !== 'undefined') {
+                    gsap.fromTo(el, { innerText: 0 }, {
+                        innerText: end,
+                        duration: duration,
+                        ease: "power1.out",
+                        snap: { innerText: 1 },
+                        onUpdate: function () {
+                            el.innerText = Math.floor(el.innerText) + suffix;
+                        },
+                        onComplete: function () {
+                            el.innerText = end + suffix;
+                        }
+                    });
                 } else {
-                    themeIcon.className = 'fas fa-moon';
+                    // Fallback animation without GSAP
+                    let current = 0;
+                    const increment = end / (duration * 60); // 60fps
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= end) {
+                            current = end;
+                            clearInterval(timer);
+                        }
+                        el.innerText = Math.floor(current) + suffix;
+                    }, 1000 / 60);
                 }
             }
 
-            // Initialize FAB language button on page load
-            const fabLanguageButton = document.querySelector('.fab-secondary.language');
-            if (fabLanguageButton) {
-                const currentLang = document.documentElement.lang || 'es';
-                fabLanguageButton.textContent = currentLang === 'es' ? 'ES' : 'EN';
+            // Trigger animations when elements are visible
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        if (id === "stat-inversion") {
+                            animateNumber("stat-inversion", 4, 2, "M");
+                        } else if (id === "stat-etapas") {
+                            animateNumber("stat-etapas", 3, 2, "");
+                        } else if (id === "stat-semanas") {
+                            animateNumber("stat-semanas", 5, 2, "");
+                        }
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
 
-                // Preserve screen reader text
-                const srText = fabLanguageButton.querySelector('.sr-only');
-                if (srText) {
-                    fabLanguageButton.appendChild(srText);
-                }
+            // Observe the stat elements
+            document.querySelectorAll('.quotation-stat-value, .hero-stat-value').forEach(stat => {
+                statsObserver.observe(stat);
+            });
+        });
+        // ... existing code ...
+
+        // --- Begin: Mobile Menu Theme Switcher Functionality from cotizacion.html ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+            if (mobileThemeToggle) {
+                mobileThemeToggle.addEventListener('click', function () {
+                    const btnCircle = this.querySelector('.btn-circle');
+                    const checkbox = this.querySelector('.checkbox');
+
+                    // Toggle active state on circle
+                    btnCircle.classList.toggle('active');
+
+                    // Update checkbox
+                    if (checkbox) {
+                        checkbox.checked = btnCircle.classList.contains('active');
+                    }
+
+                    // Toggle dark mode class
+                    document.body.classList.toggle('dark-mode');
+                    const isDarkMode = document.body.classList.contains('dark-mode');
+                    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+                    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                    document.dispatchEvent(new CustomEvent('themeChanged'));
+
+                    // Sync FAB theme button icon
+                    const fabThemeButton = document.querySelector('.fab-secondary.theme');
+                    if (fabThemeButton) {
+                        const themeIcon = fabThemeButton.querySelector('i');
+                        if (isDarkMode) {
+                            themeIcon.className = 'fas fa-sun';
+                        } else {
+                            themeIcon.className = 'fas fa-moon';
+                        }
+                    }
+                });
             }
         });
+        // ... existing code ...
+
+        // --- Fix: FAB Theme Switcher Functionality ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const fabThemeButton = document.querySelector('.fab-secondary.theme');
+            if (fabThemeButton) {
+                fabThemeButton.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.body.classList.toggle('dark-mode');
+                    const isDarkMode = document.body.classList.contains('dark-mode');
+                    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+                    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                    document.dispatchEvent(new CustomEvent('themeChanged'));
+
+                    // Update icon
+                    const themeIcon = fabThemeButton.querySelector('i');
+                    if (isDarkMode) {
+                        themeIcon.className = 'fas fa-sun';
+                    } else {
+                        themeIcon.className = 'fas fa-moon';
+                    }
+
+                    // Sync mobile menu toggle
+                    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+                    if (mobileThemeToggle) {
+                        const btnCircle = mobileThemeToggle.querySelector('.btn-circle');
+                        const checkbox = mobileThemeToggle.querySelector('.checkbox');
+                        if (isDarkMode) {
+                            btnCircle.classList.add('active');
+                            if (checkbox) checkbox.checked = true;
+                        } else {
+                            btnCircle.classList.remove('active');
+                            if (checkbox) checkbox.checked = false;
+                        }
+                    }
+                });
+            }
+        });
+        // ... existing code ...
+
+        // --- Language Switcher for FAB (from cotizacion.html) ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const languageButton = document.querySelector('.fab-secondary.language');
+            if (!languageButton) return;
+
+            // Language labels for translation
+            const translations = {
+                es: {
+                    'mobile-nav-detalles-title': 'Detalles',
+                    'mobile-nav-detalles-desc': 'Información del proyecto',
+                    'mobile-nav-faq-title': 'FAQ',
+                    'mobile-nav-faq-desc': 'Preguntas frecuentes',
+                    'mobile-nav-contacto-title': 'Contacto',
+                    'mobile-nav-contacto-desc': 'Ponte en contacto',
+                    'mobile-nav-asesorias-title': 'Asesorías',
+                    'mobile-nav-asesorias-desc': 'Consultoría especializada',
+                    'mobile-nav-agentes-title': 'Agentes',
+                    'mobile-nav-agentes-desc': 'Nuestro equipo',
+                    'theme-switcher': 'Tema',
+                    'stat-inversion-label': 'Proyectos completados',
+                    'stat-etapas-label': 'Satisfacción del cliente',
+                    'stat-semanas-label': 'Entrega promedio',
+                    'hero-title': 'Convierte <strong>clics</strong> en clientes en <strong>14&nbsp;días</strong>',
+                    'hero-banner': 'Lleva tu negocio a vender 24/7 desde el día 1',
+                    'hero-subtitle': 'Desarrollo web profesional para tu negocio',
+                    'cta-button': 'Empezar Mi Proyecto Ahora',
+                    'cta-subtitle': 'Únete a más de 120 negocios que han transformado su presencia digital con nosotros',
+                    'section-title-cta': '¿Listo para ser nuestro próximo caso de éxito?',
+                    'faq-title': 'Preguntas <strong>Frecuentes</strong>',
+                    'faq-contact': '¿No encuentras la respuesta que buscas?',
+                    'faq-contact-btn': 'Contacta con nosotros',
+                    'portfolio-title': 'Lo que hemos hecho para <br><strong>otros negocios como el tuyo</strong>',
+                    'portfolio-subtitle': 'Más de <strong>120 casos de éxito</strong> respaldan nuestro enfoque en <strong>resultados reales</strong> y medibles.',
+                    'footer-about': 'Transformamos ideas en activos digitales que venden. Especialistas en landing pages de alta conversión y desarrollo web profesional.',
+                    'footer-made-with': 'Hecho con <i class="fas fa-heart"></i> y <i class="fas fa-bolt"></i> en Colombia',
+                    'footer-copyright': 'Todos los derechos reservados.',
+                    'services-pill': '¿Qué podemos crear para tu negocio?',
+                    'services-title': 'Soluciones <strong>Digitales</strong> a tu Medida',
+                    'services-subtitle': 'Desarrollo web profesional para cada necesidad: desde landing pages hasta plataformas SaaS y mantenimiento continuo.',
+                    'cta-start': 'Empezar mi proyecto',
+                    'cta-services': 'Ver nuestros servicios',
+                    'stat-proyectos-label': 'Proyectos completados',
+                    'stat-satisfaccion-label': 'Satisfacción del cliente',
+                    'stat-entrega-label': 'Entrega promedio',
+                    'service-landing-title': 'Landing Pages',
+                    'service-landing-desc': 'Páginas de aterrizaje optimizadas para conversión con diseño responsivo y carga ultrarrápida.',
+                    'service-landing-feature1': 'Diseño responsivo',
+                    'service-landing-feature2': 'SEO optimizado',
+                    'service-landing-feature3': 'Análisis integrado',
+                    'service-landing-feature4': 'Formularios de contacto',
+                    'service-app-title': 'Aplicaciones Web',
+                    'service-app-desc': 'Aplicaciones web completas con funcionalidades avanzadas y experiencia de usuario excepcional.',
+                    'service-app-feature1': 'React/Vue/Angular',
+                    'service-app-feature2': 'Backend personalizado',
+                    'service-app-feature3': 'Base de datos',
+                    'service-app-feature4': 'Autenticación',
+                    'pricing-starter-title': 'Starter',
+                    'pricing-starter-tag': 'Perfecto para landing pages y sitios web básicos',
+                    'pricing-starter-feature1': 'Hasta 5 páginas',
+                    'pricing-starter-feature2': 'Diseño responsivo',
+                    'pricing-starter-feature3': 'SEO básico',
+                    'pricing-starter-feature4': 'Formulario de contacto',
+                    'pricing-starter-feature5': 'Hosting por 1 año',
+                    'pricing-starter-feature6': 'Soporte por 30 días',
+                    'pricing-starter-feature7': '1 revisión incluida',
+                    'pricing-starter-feature8': 'Entrega en 7-10 días',
+                    'pricing-starter-btn': 'Comenzar proyecto',
+                    'faq-main-title': 'Preguntas <strong>Frecuentes</strong>',
+                    'faq-q1': '¿Cuánto tiempo toma desarrollar mi proyecto?',
+                    'faq-a1': 'Los tiempos varían según la complejidad: Landing pages básicas (7-10 días), sitios corporativos (14-21 días), y aplicaciones complejas (30-45 días). Siempre mantenemos comunicación constante sobre el progreso.',
+                    'faq-q2': '¿Qué tecnologías utilizan para el desarrollo?',
+                    'faq-a2': 'Usamos tecnologías modernas como React, Next.js, Node.js, Firebase, y herramientas de diseño como Figma y Webflow, según las necesidades del proyecto.',
+                    'faq-q3': '¿Incluyen hosting y dominio en el precio?',
+                    'faq-a3': 'Sí, todos los planes incluyen hosting por 1 año. El dominio puede incluirse o gestionarse aparte según el plan y la preferencia del cliente.',
+                    'faq-q4': '¿Ofrecen soporte después de la entrega?',
+                    'faq-a4': 'Sí, ofrecemos soporte post-entrega: 30 días para Starter, 3 meses para Professional, y opciones personalizadas para proyectos complejos.',
+                    'faq-q5': '¿Puedo solicitar cambios durante el desarrollo?',
+                    'faq-a5': 'Sí, puedes solicitar cambios. Starter incluye 1 revisión, Professional incluye 3, y los proyectos personalizados se acuerdan según el alcance.',
+                    'faq-q6': '¿Qué pasa si no estoy satisfecho con el resultado?',
+                    'faq-a6': 'Trabajamos contigo hasta que estés satisfecho dentro de las revisiones incluidas. Si hay desacuerdo, buscamos una solución justa y transparente.',
+                    'faq-q7': '¿Pueden integrar mi sitio con sistemas existentes?',
+                    'faq-a7': 'Sí, realizamos integraciones con CRMs, ERPs, pasarelas de pago y otros sistemas según tus necesidades.',
+                    'faq-q8': '¿Los sitios son optimizados para móviles?',
+                    'faq-a8': 'Todos nuestros sitios son 100% responsive y optimizados para móviles y tablets.',
+                    'faq-q9': '¿Cómo es el proceso de pago?',
+                    'faq-a9': 'El pago se realiza en dos partes: 50% al iniciar y 50% al entregar el proyecto, salvo acuerdos especiales.',
+                    'faq-q10': '¿Proporcionan capacitación para usar el sitio?',
+                    'faq-a10': 'Sí, ofrecemos capacitación básica para que puedas administrar tu sitio o tienda.',
+                    'portfolio-pill': 'Casos de Éxito',
+                    'portfolio-title': 'Lo que hemos hecho para <br><strong>otros negocios como el tuyo</strong>',
+                    'portfolio-subtitle': 'Más de <strong>120 casos de éxito</strong> respaldan nuestro enfoque en <strong>resultados reales</strong> y medibles.',
+                    'cta-main-title': '¿Listo para ser nuestro próximo caso de éxito?',
+                    'cta-main-subtitle': 'Únete a más de 120 negocios que han transformado su presencia digital con nosotros',
+                    'cta-main-btn': 'Empezar Mi Proyecto Ahora',
+                    'contact-pill': 'Empezá Tu Proyecto',
+                    'contact-title': '¿Listo para dar el <br><strong>siguiente paso?</strong>',
+                    'contact-subtitle': 'Completa el formulario y empecemos. Te contactaremos con una propuesta clara y <strong>alineada a los objetivos</strong> de tu negocio.',
+                    'contact-btn': 'Solicitar Propuesta Gratuita',
+                    'contact-why-title': '¿Por qué elegirnos?',
+                    'contact-why1': 'Consulta gratuita sin compromiso',
+                    'contact-why2': 'Respuesta rápida en menos de 24 horas',
+                    'contact-why3': 'Experiencia con empresas colombianas',
+                    'contact-why4': 'Soporte en español',
+                    'contact-why5': 'Precios competitivos en pesos colombianos',
+                    'contact-info-title': 'Información de Contacto',
+                    'contact-email-title': 'Email',
+                    'contact-email-sub': 'Respuesta en menos de 24 horas',
+                    'contact-whatsapp-title': 'WhatsApp',
+                    'contact-whatsapp-sub': 'Lunes a Viernes, 9AM - 6PM (COT)',
+                    'contact-location-title': 'Ubicación',
+                    'contact-location-sub': 'Servicio remoto disponible',
+                    'footer-about': 'Transformamos ideas en activos digitales que venden. Especialistas en landing pages de alta conversión y desarrollo web profesional.',
+                    'footer-made-with': 'Hecho con <i class="fas fa-heart"></i> y <i class="fas fa-bolt"></i> en Colombia',
+                    'footer-copyright': 'Todos los derechos reservados.',
+                    'footer-privacy': 'Política de Privacidad',
+                    'footer-terms': 'Términos de Servicio',
+                    'footer-asesorias': 'Asesorías',
+                    'footer-agentes': 'Agentes',
+                    'portfolio1-title': 'RestauranTech',
+                    'portfolio1-desc': 'Landing page para startup de delivery que aumentó conversiones en 340%',
+                    'portfolio1-conv': 'Conversión',
+                    'portfolio1-visits': 'Visitas',
+                    'portfolio1-income': 'Ingresos',
+                    'stat-proyectos-label': 'Proyectos completados',
+                    'stat-satisfaccion-label': 'Satisfacción del cliente',
+                    'stat-entrega-label': 'Entrega promedio',
+                    'cta-start': 'Empezar mi proyecto',
+                    'cta-services': 'Ver nuestros servicios',
+                    'form-label-name': 'Nombre completo *',
+                    'form-ph-name': 'Juan Camilo',
+                    'form-opt-type': 'Selecciona el tipo de proyecto',
+                    'form-ph-message': 'Describe tu negocio, objetivos, público objetivo, funcionalidades específicas que necesitas...',
+                    'footer-privacy': 'Política de Privacidad',
+                    'footer-terms': 'Términos de Servicio',
+                    'portfolio2-title': 'FitnessPro',
+                    'portfolio2-desc': 'Tienda online de suplementos deportivos con sistema de suscripciones',
+                    'portfolio2-conv': 'Conversión',
+                    'portfolio2-visits': 'Visitas',
+                    'portfolio2-income': 'Ingresos',
+                    'portfolio3-title': 'EduTech Solutions',
+                    'portfolio3-desc': 'Plataforma educativa que conecta estudiantes con tutores especializados',
+                    'portfolio3-conv': 'Conversión',
+                    'portfolio3-visits': 'Visitas',
+                    'portfolio3-income': 'Ingresos',
+                    'form-label-email': 'Email *',
+                    'form-ph-email': 'test@gmail.com',
+                    'form-label-phone': 'Teléfono',
+                    'form-ph-phone': '+57 322 347 93 37',
+                    'form-label-company': 'Empresa',
+                    'form-ph-company': 'Mi Empresa SRL',
+                    'form-label-type': 'Tipo de proyecto *',
+                    'form-opt-landing': 'Landing Page',
+                    'form-opt-corporate': 'Sitio Web Corporativo',
+                    'form-opt-ecommerce': 'Tienda Online (E-commerce)',
+                    'form-opt-webapp': 'Aplicación Web',
+                    'form-opt-redesign': 'Rediseño de sitio existente',
+                    'form-opt-other': 'Otro',
+                    'form-label-budget': 'Presupuesto estimado',
+                    'form-opt-budget': 'Selecciona tu presupuesto',
+                    'form-opt-starter': '$600,000 COP (Starter)',
+                    'form-opt-professional': '$3,200,000 COP (Professional)',
+                    'form-opt-custom': '$8,000,000 COP (Custom)',
+                    'form-opt-unsure': 'No estoy seguro',
+                    'form-label-timeline': 'Timeframe esperado',
+                    'form-opt-timeline': '¿Cuándo necesitas el proyecto?',
+                    'form-opt-1-2w': '1-2 Semanas',
+                    'form-opt-3-4w': '3-4 Semanas',
+                    'form-opt-1-2m': '1-2 Meses',
+                    'form-opt-flexible': 'Flexible',
+                    'service-corp-title': 'Sitios Corporativos',
+                    'service-corp-desc': 'Sitios web empresariales que reflejan la profesionalidad y valores de tu marca.',
+                    'service-corp-feature1': 'CMS personalizado',
+                    'service-corp-feature2': 'Múltiples idiomas',
+                    'service-corp-feature3': 'Integración social',
+                    'service-corp-feature4': 'Blog incorporado',
+                    'service-ecom-title': 'E-commerce',
+                    'service-ecom-desc': 'Tiendas online completas con pasarelas de pago y gestión de inventario integrada.',
+                    'service-ecom-feature1': 'Carrito de compras',
+                    'service-ecom-feature2': 'Pagos seguros',
+                    'service-ecom-feature3': 'Gestión de stock',
+                    'service-ecom-feature4': 'Panel de admin',
+                    'service-saas-title': 'Plataformas SaaS',
+                    'service-saas-desc': 'Plataformas de software como servicio escalables con dashboard y gestión de usuarios.',
+                    'service-saas-feature1': 'Multi-tenancy',
+                    'service-saas-feature2': 'Subscripciones',
+                    'service-saas-feature3': 'API REST',
+                    'service-saas-feature4': 'Dashboard analytics',
+                    'service-maint-title': 'Mantenimiento',
+                    'service-maint-desc': 'Soporte continuo, actualizaciones de seguridad y optimizaciones de rendimiento.',
+                    'service-maint-feature1': 'Soporte 24/7',
+                    'service-maint-feature2': 'Backups automáticos',
+                    'service-maint-feature3': 'Actualizaciones',
+                    'service-maint-feature4': 'Monitoreo'
+                },
+                en: {
+                    'mobile-nav-detalles-title': 'Details',
+                    'mobile-nav-detalles-desc': 'Project information',
+                    'mobile-nav-faq-title': 'FAQ',
+                    'mobile-nav-faq-desc': 'Frequently asked questions',
+                    'mobile-nav-contacto-title': 'Contact',
+                    'mobile-nav-contacto-desc': 'Get in touch',
+                    'mobile-nav-asesorias-title': 'Consulting',
+                    'mobile-nav-asesorias-desc': 'Specialized consulting',
+                    'mobile-nav-agentes-title': 'Agents',
+                    'mobile-nav-agentes-desc': 'Our team',
+                    'theme-switcher': 'Theme',
+                    'stat-inversion-label': 'Completed Projects',
+                    'stat-etapas-label': 'Client Satisfaction',
+                    'stat-semanas-label': 'Avg. Delivery',
+                    'hero-title': 'Turn <strong>clicks</strong> into clients in <strong>14&nbsp;days</strong>',
+                    'hero-banner': 'Get your business selling 24/7 from day one',
+                    'hero-subtitle': 'Professional web development for your business',
+                    'cta-button': 'Start My Project Now',
+                    'cta-subtitle': 'Join over 120 businesses that have transformed their digital presence with us',
+                    'section-title-cta': 'Ready to be our next success story?',
+                    'faq-title': 'Frequently <strong>Asked Questions</strong>',
+                    'faq-contact': 'Can\'t find the answer you\'re looking for?',
+                    'faq-contact-btn': 'Contact us',
+                    'portfolio-title': 'What we\'ve done for <br><strong>other businesses like yours</strong>',
+                    'portfolio-subtitle': 'Over <strong>120 success stories</strong> back our focus on <strong>real, measurable results</strong>.',
+                    'footer-about': 'We turn ideas into digital assets that sell. Specialists in high-conversion landing pages and professional web development.',
+                    'footer-made-with': 'Made with <i class="fas fa-heart"></i> and <i class="fas fa-bolt"></i> in Colombia',
+                    'footer-copyright': 'All rights reserved.',
+                    'services-pill': 'What can we create for your business?',
+                    'services-title': '<strong>Digital</strong> Solutions Tailored for You',
+                    'services-subtitle': 'Professional web development for every need: from landing pages to SaaS platforms and ongoing maintenance.',
+                    'cta-start': 'Start my project',
+                    'cta-services': 'See our services',
+                    'stat-proyectos-label': 'Completed Projects',
+                    'stat-satisfaccion-label': 'Client Satisfaction',
+                    'stat-entrega-label': 'Average Delivery',
+                    'service-landing-title': 'Landing Pages',
+                    'service-landing-desc': 'Landing pages optimized for conversion with responsive design and ultra-fast loading.',
+                    'service-landing-feature1': 'Responsive design',
+                    'service-landing-feature2': 'SEO optimized',
+                    'service-landing-feature3': 'Integrated analytics',
+                    'service-landing-feature4': 'Contact forms',
+                    'service-app-title': 'Web Applications',
+                    'service-app-desc': 'Full web applications with advanced features and exceptional user experience.',
+                    'service-app-feature1': 'React/Vue/Angular',
+                    'service-app-feature2': 'Custom backend',
+                    'service-app-feature3': 'Database',
+                    'service-app-feature4': 'Authentication',
+                    'pricing-starter-title': 'Starter',
+                    'pricing-starter-tag': 'Perfect for landing pages and basic websites',
+                    'pricing-starter-feature1': 'Up to 5 pages',
+                    'pricing-starter-feature2': 'Responsive design',
+                    'pricing-starter-feature3': 'Basic SEO',
+                    'pricing-starter-feature4': 'Contact form',
+                    'pricing-starter-feature5': '1 year hosting',
+                    'pricing-starter-feature6': '30 days support',
+                    'pricing-starter-feature7': '1 revision included',
+                    'pricing-starter-feature8': 'Delivery in 7-10 days',
+                    'pricing-starter-btn': 'Start project',
+                    'faq-main-title': 'Frequently <strong>Asked Questions</strong>',
+                    'faq-q1': 'How long does it take to develop my project?',
+                    'faq-a1': 'Timelines vary by complexity: Basic landing pages (7-10 days), corporate sites (14-21 days), and complex apps (30-45 days). We always keep you updated on progress.',
+                    'faq-q2': 'What technologies do they use for development?',
+                    'faq-a2': 'We use modern technologies like React, Next.js, Node.js, Firebase, and design tools like Figma and Webflow, depending on the project needs.',
+                    'faq-q3': 'Do they include hosting and domain in the price?',
+                    'faq-a3': 'Yes, all plans include hosting for 1 year. The domain can be included or managed separately according to the plan and the client\'s preference.',
+                    'faq-q4': 'Do they offer post-delivery support?',
+                    'faq-a4': 'Yes, we offer post-delivery support: 30 days for Starter, 3 months for Professional, and customized options for complex projects.',
+                    'faq-q5': 'Can I request changes during development?',
+                    'faq-a5': 'Yes, you can request changes. Starter includes 1 review, Professional includes 3, and custom projects are agreed upon based on scope.',
+                    'faq-q6': 'What happens if I\'m not satisfied with the result?',
+                    'faq-a6': 'We work with you until you\'re satisfied within the included reviews. If there\'s disagreement, we seek a fair and transparent solution.',
+                    'faq-q7': 'Can they integrate my site with existing systems?',
+                    'faq-a7': 'Yes, we perform integrations with CRMs, ERPs, payment gateways, and other systems as per your needs.',
+                    'faq-q8': 'Are their sites optimized for mobile devices?',
+                    'faq-a8': 'All of our sites are 100% responsive and optimized for mobile devices and tablets.',
+                    'faq-q9': 'How is the payment process?',
+                    'faq-a9': 'The payment is made in two parts: 50% at the start and 50% upon delivery of the project, unless otherwise agreed.',
+                    'faq-q10': 'Do they provide training to use the site?',
+                    'faq-a10': 'Yes, we provide basic training so you can manage your site or store.',
+                    'portfolio-pill': 'Success Stories',
+                    'portfolio-title': 'What we\'ve done for <br><strong>other businesses like yours</strong>',
+                    'portfolio-subtitle': 'Over <strong>120 success stories</strong> back our focus on <strong>real, measurable results</strong>.',
+                    'cta-main-title': 'Ready to be our next success story?',
+                    'cta-main-subtitle': 'Join over 120 businesses that have transformed their digital presence with us',
+                    'cta-main-btn': 'Start My Project Now',
+                    'contact-pill': 'Start Your Project',
+                    'contact-title': 'Ready to take the <br><strong>next step?</strong>',
+                    'contact-subtitle': 'Fill out the form and let\'s get started. We\'ll contact you with a clear proposal <strong>aligned with your business goals</strong>.',
+                    'contact-btn': 'Request Free Proposal',
+                    'contact-why-title': 'Why choose us?',
+                    'contact-why1': 'Free consultation with no obligation',
+                    'contact-why2': 'Fast response in less than 24 hours',
+                    'contact-why3': 'Experience with Colombian companies',
+                    'contact-why4': 'Support in Spanish',
+                    'contact-why5': 'Competitive prices in Colombian pesos',
+                    'contact-info-title': 'Contact Information',
+                    'contact-email-title': 'Email',
+                    'contact-email-sub': 'Response in less than 24 hours',
+                    'contact-whatsapp-title': 'WhatsApp',
+                    'contact-whatsapp-sub': 'Monday to Friday, 9AM - 6PM (COT)',
+                    'contact-location-title': 'Location',
+                    'contact-location-sub': 'Remote service available',
+                    'footer-about': 'We turn ideas into digital assets that sell. Specialists in high-conversion landing pages and professional web development.',
+                    'footer-made-with': 'Made with <i class="fas fa-heart"></i> and <i class="fas fa-bolt"></i> in Colombia',
+                    'footer-copyright': 'All rights reserved.',
+                    'footer-privacy': 'Privacy Policy',
+                    'footer-terms': 'Terms of Service',
+                    'footer-asesorias': 'Consulting',
+                    'footer-agentes': 'Agents',
+                    'portfolio1-title': 'RestauranTech',
+                    'portfolio1-desc': 'Landing page for startup of delivery that increased conversions by 340%',
+                    'portfolio1-conv': 'Conversion',
+                    'portfolio1-visits': 'Visits',
+                    'portfolio1-income': 'Revenue',
+                    'portfolio2-title': 'FitnessPro',
+                    'portfolio2-desc': 'Online store for sports supplements with subscription system',
+                    'portfolio2-conv': 'Conversion',
+                    'portfolio2-visits': 'Visits',
+                    'portfolio2-income': 'Revenue',
+                    'portfolio3-title': 'EduTech Solutions',
+                    'portfolio3-desc': 'Educational platform connecting students with specialized tutors',
+                    'portfolio3-conv': 'Conversion',
+                    'portfolio3-visits': 'Visits',
+                    'portfolio3-income': 'Revenue',
+                    'form-label-name': 'Name',
+                    'form-ph-name': 'John Doe',
+                    'form-label-email': 'Email *',
+                    'form-ph-email': 'john@example.com',
+                    'form-label-phone': 'Phone',
+                    'form-ph-phone': '+1 555 123 4567',
+                    'form-label-company': 'Company',
+                    'form-ph-company': 'My Company LLC',
+                    'form-label-type': 'Project type *',
+                    'form-opt-landing': 'Landing Page',
+                    'form-opt-corporate': 'Corporate Website',
+                    'form-opt-ecommerce': 'Online Store (E-commerce)',
+                    'form-opt-webapp': 'Web Application',
+                    'form-opt-redesign': 'Website Redesign',
+                    'form-opt-other': 'Other',
+                    'form-label-budget': 'Estimated budget',
+                    'form-opt-budget': 'Select your budget',
+                    'form-opt-starter': '$600,000 COP (Starter)',
+                    'form-opt-professional': '$3,200,000 COP (Professional)',
+                    'form-opt-custom': '$8,000,000 COP (Custom)',
+                    'form-opt-unsure': 'Not sure',
+                    'form-label-timeline': 'Expected timeframe',
+                    'form-opt-timeline': 'When do you need the project?',
+                    'form-opt-1-2w': '1-2 Weeks',
+                    'form-opt-3-4w': '3-4 Weeks',
+                    'form-opt-1-2m': '1-2 Months',
+                    'form-opt-flexible': 'Flexible',
+                    'service-corp-title': 'Corporate Websites',
+                    'service-corp-desc': 'Business websites that reflect your brand\'s professionalism and values.',
+                    'service-corp-feature1': 'Custom CMS',
+                    'service-corp-feature2': 'Multiple languages',
+                    'service-corp-feature3': 'Social integration',
+                    'service-corp-feature4': 'Built-in blog',
+                    'service-ecom-title': 'E-commerce',
+                    'service-ecom-desc': 'Complete online stores with payment gateways and integrated inventory management.',
+                    'service-ecom-feature1': 'Shopping cart',
+                    'service-ecom-feature2': 'Secure payments',
+                    'service-ecom-feature3': 'Stock management',
+                    'service-ecom-feature4': 'Admin panel',
+                    'service-saas-title': 'SaaS Platforms',
+                    'service-saas-desc': 'Scalable software-as-a-service platforms with dashboard and user management.',
+                    'service-saas-feature1': 'Multi-tenancy',
+                    'service-saas-feature2': 'Subscriptions',
+                    'service-saas-feature3': 'REST API',
+                    'service-saas-feature4': 'Dashboard analytics',
+                    'service-maint-title': 'Maintenance',
+                    'service-maint-desc': 'Continuous support, security updates, and performance optimizations.',
+                    'service-maint-feature1': '24/7 support',
+                    'service-maint-feature2': 'Automatic backups',
+                    'service-maint-feature3': 'Updates',
+                    'service-maint-feature4': 'Monitoring'
+                }
+            };
+
+            languageButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                const currentLang = document.documentElement.lang || 'es';
+                const newLang = currentLang === 'es' ? 'en' : 'es';
+                document.documentElement.lang = newLang;
+                // Update button text
+                const srText = languageButton.querySelector('.sr-only');
+                languageButton.innerHTML = '';
+                languageButton.textContent = newLang === 'es' ? 'ES' : 'EN';
+                if (srText) languageButton.appendChild(srText);
+                // Update all translatable elements
+                const langMap = translations[newLang];
+                Object.keys(langMap).forEach(key => {
+                    const el = document.querySelector(`[data-translate="${key}"]`);
+                    if (el) el.textContent = langMap[key];
+                });
+                // Save language preference
+                localStorage.setItem('language', newLang);
+                // Dispatch language change event
+                document.dispatchEvent(new CustomEvent('languageChanged'));
+            });
+
+            // On page load, set language from localStorage if available
+            const savedLang = localStorage.getItem('language');
+            if (savedLang && savedLang !== document.documentElement.lang) {
+                document.documentElement.lang = savedLang;
+                languageButton.click();
+            }
+        });
+        // ... existing code ...
     </script>
-
-    <!-- Fixed Floating Action Button with 135° Radial Fan -->
-    <div class="fab-container" id="fab-container">
-        <button class="fab-secondary language" id="language-toggle" data-lang="en" aria-label="Cambiar idioma">
-            EN
-            <span class="sr-only">Toggle language between English and Spanish</span>
-        </button>
-        <button class="fab-secondary theme" id="theme-toggle" aria-label="Cambiar modo">
-            <i class="fas fa-moon"></i>
-            <span class="sr-only">Toggle dark/light mode</span>
-        </button>
-        <a href="https://wa.me/573237992985?text=Hola,%20he%20revisado%20la%20propuesta%20y%20me%20interesa%20proceder."
-            class="fab-secondary whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="sr-only">Open WhatsApp chat</span>
-        </a>
-        <button class="fab-main" id="fab-main" aria-label="Abrir menú de acciones" aria-expanded="false">
-            <i class="fas fa-plus"></i>
-            <span class="sr-only">Toggle action menu</span>
-        </button>
-    </div>
-
+    // ... existing code ...
 </body>
 
 </html>

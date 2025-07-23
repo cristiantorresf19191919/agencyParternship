@@ -823,10 +823,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Improve touch targets
         const touchTargets = document.querySelectorAll('button, a, .cta-button');
-        touchTargets.forEach(target => {
-            target.style.minHeight = '44px';
-            target.style.minWidth = '44px';
-        });
+   
     }
 });
 

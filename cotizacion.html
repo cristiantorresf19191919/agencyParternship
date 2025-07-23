@@ -637,7 +637,7 @@
             margin-right: 12px;
             font-size: 0.95rem;
         }
-        
+
         .theme-icon-container {
             position: relative;
             width: 20px;
@@ -647,31 +647,31 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .theme-icon-container .light-icon,
         .theme-icon-container .dark-icon {
             position: absolute;
             font-size: 1rem;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-        
+
         .theme-icon-container .light-icon {
             color: #ffb74d;
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .theme-icon-container .dark-icon {
             color: #5c6bc0;
             opacity: 0;
             transform: translateY(10px);
         }
-        
+
         body.dark-mode .theme-icon-container .light-icon {
             opacity: 0;
             transform: translateY(-10px);
         }
-        
+
         body.dark-mode .theme-icon-container .dark-icon {
             opacity: 1;
             transform: translateY(0);
@@ -758,7 +758,7 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         body.dark-mode .light-icon {
             opacity: 0;
             transform: translateY(100%);
@@ -768,7 +768,7 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         body:not(.dark-mode) .dark-icon {
             opacity: 0;
             transform: translateY(-100%);
@@ -2951,12 +2951,12 @@
             // Function to update theme toggle state
             function updateThemeSwitcherState() {
                 const isDarkMode = document.body.classList.contains('dark-mode');
-                
+
                 // Update toggle button appearance
                 if (mobileThemeToggle) {
                     const btnCircle = mobileThemeToggle.querySelector('.btn-circle');
                     const checkbox = mobileThemeToggle.querySelector('.checkbox');
-                    
+
                     if (isDarkMode) {
                         btnCircle.classList.add('active');
                         if (checkbox) checkbox.checked = true;
@@ -2964,10 +2964,10 @@
                         btnCircle.classList.remove('active');
                         if (checkbox) checkbox.checked = false;
                     }
-                    
+
                     mobileThemeToggle.setAttribute('aria-pressed', isDarkMode);
                 }
-                
+
                 if (desktopThemeToggle) {
                     desktopThemeToggle.setAttribute('aria-pressed', isDarkMode);
                 }
@@ -2982,18 +2982,18 @@
             }
 
             if (mobileThemeToggle) {
-                mobileThemeToggle.addEventListener('click', function() {
+                mobileThemeToggle.addEventListener('click', function () {
                     const btnCircle = this.querySelector('.btn-circle');
                     const checkbox = this.querySelector('.checkbox');
-                    
+
                     // Toggle active state on circle
                     btnCircle.classList.toggle('active');
-                    
+
                     // Update checkbox
                     if (checkbox) {
                         checkbox.checked = btnCircle.classList.contains('active');
                     }
-                    
+
                     // Toggle dark mode class
                     document.body.classList.toggle('dark-mode');
 
@@ -3006,7 +3006,7 @@
 
                     // Dispatch theme change event
                     document.dispatchEvent(new CustomEvent('themeChanged'));
-                    
+
                     // Update particles if they exist
                     if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
                         const particles = window.pJSDom[0].pJS.particles;
