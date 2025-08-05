@@ -2730,6 +2730,22 @@
                         de conversión del 1% actual.</span>
                 </p>
 
+                <div class="hero-features">
+                    <div class="hero-stat">
+                        <span class="hero-stat-value stat-blue" id="stat-proyectos">0</span>
+                        <div class="hero-stat-label" data-translate="stat-proyectos-label">Proyectos completados</div>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value stat-green" id="stat-satisfaccion">0</span>
+                        <div class="hero-stat-label" data-translate="stat-satisfaccion-label">Satisfacción del cliente
+                        </div>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value stat-blue" id="stat-entrega">0</span>
+                        <div class="hero-stat-label" data-translate="stat-entrega-label">Entrega promedio</div>
+                    </div>
+                </div>
+
                 <div class="quotation-stats">
                     <div class="quotation-stat">
                         <span class="quotation-stat-value" id="stat-inversion">0</span>
@@ -3707,6 +3723,12 @@
                             animateNumber("stat-etapas", 5, 2, "");
                         } else if (id === "stat-semanas") {
                             animateNumber("stat-semanas", 25, 2, "%");
+                        } else if (id === "stat-proyectos") {
+                            animateNumber("stat-proyectos", 15, 2, "+");
+                        } else if (id === "stat-satisfaccion") {
+                            animateNumber("stat-satisfaccion", 98, 2, "%");
+                        } else if (id === "stat-entrega") {
+                            animateNumber("stat-entrega", 7, 2, " días");
                         }
                         statsObserver.unobserve(entry.target);
                     }
@@ -3714,7 +3736,7 @@
             }, { threshold: 0.5 });
 
             // Observe the stat elements
-            document.querySelectorAll('.quotation-stat-value').forEach(stat => {
+            document.querySelectorAll('.quotation-stat-value, .hero-stat-value').forEach(stat => {
                 statsObserver.observe(stat);
             });
 

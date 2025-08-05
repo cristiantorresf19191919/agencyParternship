@@ -2070,6 +2070,12 @@
                             animateNumber("stat-etapas", 3, 2, "");
                         } else if (id === "stat-semanas") {
                             animateNumber("stat-semanas", 5, 2, "");
+                        } else if (id === "stat-proyectos") {
+                            animateNumber("stat-proyectos", 15, 2, "+");
+                        } else if (id === "stat-satisfaccion") {
+                            animateNumber("stat-satisfaccion", 98, 2, "%");
+                        } else if (id === "stat-entrega") {
+                            animateNumber("stat-entrega", 7, 2, " días");
                         }
                         statsObserver.unobserve(entry.target);
                     }
